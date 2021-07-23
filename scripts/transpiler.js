@@ -37,9 +37,11 @@ task('sjs', () => src(`${components}/**/*.sjs`).pipe(dest(dist)));
 const build = series(...exTypes);
 build();
 
-exTypes.forEach((type) => {
-  const watcher = watch(`${components}/**/*${type}`, series(type));
-  watcher.on('change', (evt) => console.log(`File ${evt} was changed`));
-  watcher.on('add', (evt) => console.log(`File ${evt} was added`));
-  watcher.on('unlink', (evt) => console.log(`File ${evt} was removed`));
-});
+if (isProduct === false) {
+  exTypes.forEach((type) => {
+    const watcher = watch(`${components}/**/*${type}`, series(type));
+    watcher.on('change', (evt) => console.log(`File ${evt} was changed`));
+    watcher.on('add', (evt) => console.log(`File ${evt} was added`));
+    watcher.on('unlink', (evt) => console.log(`File ${evt} was removed`));
+  });
+}

@@ -1,16 +1,17 @@
 {
   "name": "lensung_item_element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "邻商商品小程序组件",
   "main": "index.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "dev": "rm -rf ./examples/components && node scripts/transpiler.js",
+    "start": "rm -rf ./examples/components && node scripts/transpiler.js",
     "build": "rm -rf ./components && NODE_ENV=product node scripts/transpiler.js",
-    "start": "dumi dev",
-    "doc": "dumi build"
+    "doc:dev": "dumi dev",
+    "doc:build": "dumi build",
+    "publish": "npm run build && npm run publish"
   },
   "keywords": [
     "components",

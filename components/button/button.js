@@ -1,9 +1,10 @@
-import fmtEvent from "../_utils/fmtEvent";
-import fmtClass from "../_utils/fmtClass";
+import fmtEvent from '../_utils/fmtEvent';
+import fmtClass from '../_utils/fmtClass';
 const defaultProps = {
-  type: "default",
-  size: "medium",
+  type: 'default',
+  size: 'medium',
   disabled: false,
+  block: false,
   icon: undefined,
   className: undefined,
   style: undefined
@@ -11,7 +12,7 @@ const defaultProps = {
 Component({
   props: defaultProps,
   data: {
-    baseClasses: ""
+    baseClasses: ''
   },
 
   onInit() {
@@ -25,13 +26,16 @@ Component({
       const {
         type,
         size,
-        disabled
+        disabled,
+        block
       } = this.props;
-      const prefixCls = "ls-component_button";
+      const prefixCls = 'ls_button';
       return fmtClass({
+        [`${prefixCls}-block`]: block,
+        [`${prefixCls}-inline`]: !block,
         [`${prefixCls}-${type}`]: type,
-        [`${prefixCls}-disabled`]: disabled,
-        [`${prefixCls}-${size}`]: size
+        [`${prefixCls}-${size}`]: size,
+        [`${prefixCls}-disabled`]: disabled
       });
     },
 
