@@ -12,4 +12,6 @@ export default {
     { title: 'GitHub', path: 'https://github.com/alibaba/hooks' },
     { title: '更新日志', path: 'https://github.com/alibaba/hooks/releases' },
   ],
+
+  publicPath: "/lensung_element/",
 };
