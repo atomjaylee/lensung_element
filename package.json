@@ -1,22 +1,28 @@
 {
   "name": "lensung_item_element",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "邻商商品小程序组件",
   "main": "index.js",
   "directories": {
     "example": "examples"
   },
+  "files": [
+    "components"
+  ],
   "scripts": {
     "start": "rm -rf ./examples/components && node scripts/transpiler.js",
     "build": "rm -rf ./components && NODE_ENV=product node scripts/transpiler.js",
     "doc:dev": "dumi dev",
     "doc:build": "dumi build",
-    "publish": "npm run build && npm run publish"
+    "pub": "npm run build && sudo npm publish"
   },
   "keywords": [
     "components",
     "lensung",
     "item"
+  ],
+  "browserslist": [
+    "last 1 chrome version"
   ],
   "author": "lensung",
   "license": "MIT",
