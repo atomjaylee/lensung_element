@@ -1,0 +1,25 @@
+@import "./iconfont/iconfont.acss";
+
+page {
+  background: #fff;
+  padding: 20rpx 12rpx;
+}
+
+.preview-title {
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.preview-subTitle {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 12rpx;
+}
+
+.preview-content {
+  border: 1rpx solid #c4c6cf;
+  border-radius: 6rpx;
+  margin-top: 12rpx;
+  padding: 10rpx;
+}

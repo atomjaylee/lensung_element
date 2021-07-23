@@ -1,0 +1,37 @@
+{
+  "name": "lensung_mobile_item_components",
+  "version": "0.0.1",
+  "description": "邻商商品小程序组件",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "dev": "rm -rf ./examples/components && node scripts/transpiler.js",
+    "build": "rm -rf ./components && NODE_ENV=product node scripts/transpiler.js",
+    "start": "dumi dev",
+    "doc": "dumi build"
+  },
+  "keywords": [
+    "components",
+    "lensung",
+    "item"
+  ],
+  "author": "lensung",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-typescript": "^7.14.5",
+    "dumi": "^1.1.23",
+    "dumi-theme-default": "^1.1.6",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "mini-types": "^0.1.7",
+    "typescript": "^4.3.5"
+  }
+}

@@ -1,0 +1,4 @@
+<view class="ls-component_button {{ baseClasses }}" catchTap="onClickHandler">
+  <text a:if="{{ icon }}" class="iconfont {{ icon }}"></text>
+  <slot></slot>
+</view>

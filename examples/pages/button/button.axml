@@ -1,0 +1,35 @@
+<view class="preview-title">按钮类型</view>
+<view class="preview-content">
+  <ls-button>默认按钮</ls-button>
+  <ls-button type="primary">主要按钮</ls-button>
+  <ls-button type="ghost">镂空按钮</ls-button>
+  <ls-button type="info">信息按钮</ls-button>
+  <ls-button type="warn">提示按钮</ls-button>
+  <ls-button type="warn" disabled>提示按钮</ls-button>
+</view>
+
+<view class="preview-title">按钮尺寸</view>
+<view class="preview-content">
+  <ls-button size="large">大型按钮</ls-button>
+  <ls-button size="medium">默认按钮</ls-button>
+  <ls-button size="small">小型按钮</ls-button>
+  <ls-button size="mini">超小按钮</ls-button>
+</view>
+
+<view class="preview-title">Block按钮</view>
+<view class="preview-content">
+  <ls-button block>主要按钮</ls-button>
+</view>
+
+<view class="preview-title">禁用按钮</view>
+<view class="preview-content">
+  <ls-button disabled>主要按钮</ls-button>
+</view>
+
+<view class="preview-title">图标按钮</view>
+<view class="preview-content">
+  <ls-button icon="icon-shanchu-3" size="large">主要按钮</ls-button>
+  <ls-button icon="icon-shanchu-3" disabled>主要按钮</ls-button>
+  <ls-button type="primary" icon="icon-shanchu-3">主要按钮</ls-button>
+  <ls-button type="warn" size="mini" icon="icon-shanchu-3">主要按钮</ls-button>
+</view>

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES6",
+    "noImplicitThis": true,
+    "noImplicitUseStrict": true,
+    "moduleResolution": "Node",
+    "types": ["mini-types"]
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", "docs"]
+}

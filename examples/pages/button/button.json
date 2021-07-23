@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "按钮",
+  "usingComponents": {
+    "ls-button": "/components/button/button"
+  }
+}
