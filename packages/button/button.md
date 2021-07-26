@@ -23,9 +23,14 @@ group:
 }
 ```
 
-## 代码演示
-
 ## 基础用法
+```html
+<ls-button>默认按钮</ls-button>
+<ls-button type="primary">主图按钮</ls-button>
+<ls-button size="mini">超小按钮</ls-button>
+<ls-button disabled>禁用按钮</ls-button>
+<ls-button icon="search">图标按钮</ls-button>
+```
 
 ## API
 
