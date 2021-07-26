@@ -26,7 +26,20 @@ group:
 ## 基础用法
 
 ```html
-
+<ls-switch checked="{{ checked }}" size="medium" checkedText="开" unCheckedText="关"></ls-switch>
+<ls-switch checked="{{ checked }}" size="small" unCheckedColor="red"></ls-switch>
+<ls-switch
+  checked="{{ checked }}"
+  size="small"
+  checkedText="开"
+  unCheckedText="关"
+  disabled
+></ls-switch>
+<!-- 插槽定义label -->
+<ls-switch size="large" checked="{{ checked }}" onChange="onChangeHandler">
+  <text slot="checkedText" class="iconfont open"></text>
+  <text slot="unCheckedText" class="iconfont close"></text>
+</ls-switch>
 ```
 
 ## API
@@ -49,6 +62,13 @@ group:
 
 ### Events
 
-| 事件名称 | 说明                            | 回调参数                            |
-| -------- | ------------------------------- | ----------------------------------- |
+| 事件名称 | 说明                            | 回调参数                              |
+| -------- | ------------------------------- | ------------------------------------- |
 | onChange | switch 状态发生变化时的回调函数 | { `checked`, dataset, currentTarget } |
+
+### Slot
+
+| name          | 说明                     |
+| ------------- | ------------------------ |
+| checkedText   | 自定义开启时显示的 label |
+| unCheckedText | 自定义关闭时显示的 label |
