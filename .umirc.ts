@@ -1,7 +1,6 @@
 export default {
   title: '邻商商品',
   mode: 'site',
-  // more config: https://d.umijs.org/config
 
   resolve: {
     includes: ['docs', 'packages'],
@@ -9,8 +8,8 @@ export default {
 
   navs: [
     null,
-    { title: 'GitHub', path: 'https://github.com/alibaba/hooks' },
-    { title: '更新日志', path: 'https://github.com/alibaba/hooks/releases' },
+    { title: 'GitHub', path: 'https://github.com/atomjaylee/lensung_element' },
+    { title: '更新日志', path: 'https://github.com/atomjaylee/lensung_element/releases' },
   ],
 
   base: "/lensung_element/",
