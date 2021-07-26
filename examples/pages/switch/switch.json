@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "开关",
+  "usingComponents": {
+    "ls-switch": "/components/switch/switch"
+  }
+}

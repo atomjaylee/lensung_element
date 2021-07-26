@@ -1,0 +1,58 @@
+@import '../_style/color.less';
+
+.ls_switch {
+  position: relative;
+}
+
+.generateSizeSwitch(@sizeName, @width, @height, @handleWidth, @handleHeight, ) {
+  .ls_switch-@{sizeName} {
+    width: @width;
+    height: @height;
+    border-radius: @height;
+
+    .ls_switch_handle {
+      position: absolute;
+      top: ((@height - @handleHeight) / 2);
+      left: 4rpx;
+      width: @handleWidth;
+      height: @handleHeight;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+    }
+
+    ._handleActive {
+      transform: translateX(@width - @handleWidth - (4rpx * 2));
+      box-shadow: none;
+    }
+
+    .ls_switch_inner {
+      height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 26rpx;
+      color: #fff;
+      padding: 0 8rpx;
+
+      > view {
+        width: 50%;
+        text-align: center;
+      }
+    }
+
+    ._innerActive {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.generateSizeSwitch(large, 104rpx, 54rpx, 44rpx, 44rpx);
+.generateSizeSwitch(medium, 92rpx, 48rpx, 40rpx, 40rpx);
+.generateSizeSwitch(small, 82rpx, 42rpx, 36rpx, 36rpx);
+
+.ls_switch-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}

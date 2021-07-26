@@ -21,8 +21,8 @@ const defaultProps: BaseButtonProps = {
   disabled: false,
   block: false,
   icon: undefined,
-  className: undefined,
-  style: undefined,
+  className: '',
+  style: '',
 };
 
 Component({

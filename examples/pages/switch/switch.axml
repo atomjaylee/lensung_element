@@ -1,0 +1,9 @@
+<view class="preview-title">开关尺寸</view>
+<view class="preview-content">
+  <ls-switch size="large" checked="{{ checked }}" onChange="onChangeHandler">
+    <text slot="checkedText">启</text>>
+  </ls-switch>
+  <ls-switch checked="{{ checked }}" checkedText="开" unCheckedText="关" size="medium"></ls-switch>
+  <ls-switch checked="{{ checked }}" size="small" unCheckedColor="red"></ls-switch>
+  <ls-switch checked="{{ checked }}" size="small" checkedText="开" unCheckedText="关" disabled></ls-switch>
+</view>

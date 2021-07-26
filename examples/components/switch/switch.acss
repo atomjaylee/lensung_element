@@ -1,0 +1,115 @@
+.ls_switch {
+  position: relative;
+}
+.ls_switch-large {
+  width: 104rpx;
+  height: 54rpx;
+  border-radius: 54rpx;
+}
+.ls_switch-large .ls_switch_handle {
+  position: absolute;
+  top: 5rpx;
+  left: 4rpx;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+}
+.ls_switch-large ._handleActive {
+  transform: translateX(52rpx);
+  box-shadow: none;
+}
+.ls_switch-large .ls_switch_inner {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 0 8rpx;
+}
+.ls_switch-large .ls_switch_inner > view {
+  width: 50%;
+  text-align: center;
+}
+.ls_switch-large ._innerActive {
+  justify-content: flex-start;
+}
+.ls_switch-medium {
+  width: 92rpx;
+  height: 48rpx;
+  border-radius: 48rpx;
+}
+.ls_switch-medium .ls_switch_handle {
+  position: absolute;
+  top: 4rpx;
+  left: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+}
+.ls_switch-medium ._handleActive {
+  transform: translateX(44rpx);
+  box-shadow: none;
+}
+.ls_switch-medium .ls_switch_inner {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 0 8rpx;
+}
+.ls_switch-medium .ls_switch_inner > view {
+  width: 50%;
+  text-align: center;
+}
+.ls_switch-medium ._innerActive {
+  justify-content: flex-start;
+}
+.ls_switch-small {
+  width: 82rpx;
+  height: 42rpx;
+  border-radius: 42rpx;
+}
+.ls_switch-small .ls_switch_handle {
+  position: absolute;
+  top: 3rpx;
+  left: 4rpx;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+}
+.ls_switch-small ._handleActive {
+  transform: translateX(38rpx);
+  box-shadow: none;
+}
+.ls_switch-small .ls_switch_inner {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 0 8rpx;
+}
+.ls_switch-small .ls_switch_inner > view {
+  width: 50%;
+  text-align: center;
+}
+.ls_switch-small ._innerActive {
+  justify-content: flex-start;
+}
+.ls_switch-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
