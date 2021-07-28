@@ -1,0 +1,13 @@
+<import-sjs name="sjs" from="./tabBar.sjs" />
+
+<view class="ls_tabs {{ class }}" style="{{ style }}" hidden="{{ hidden }}">
+  <view a:for="{{ schema }}" key="{{ item.key }}" class="ls_tabs_item" style="width: {{ sjs.calcItemWidth(schema) }}; color: {{ activeKey === item.key ? activeColor : unActiveColor }}" onTap="onTapHandler" data-key="{{ item.key }}">
+    <slot name="{{ item.key }}">
+      <text>{{ item.label }}</text>
+      <text a:if="{{ source[item.key] }}">({{ source[item.key] }})</text>
+    </slot>
+  </view>
+  <view class="ls_tabs_line" style="width: {{ sjs.calcItemWidth(schema) }}; left: {{ sjs.distance(activeKey, schema) }}" a:if="{{ showLine }}">
+    <view class="line-inner" style="background-color: {{ activeColor }}"></view>
+  </view>
+</view>

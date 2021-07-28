@@ -1,0 +1,6 @@
+<view class="preview-title">普通用法</view>
+<view class="preview-content">
+  <ls-tabbar schema="{{ tabSchema }}" activeKey="{{ activeKey }}" source="{{ source }}" onChange="onChangeHandler">
+    <text slot="soldOut">自定义已售完</text>
+  </ls-tabbar>
+</view>

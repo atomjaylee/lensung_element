@@ -11,7 +11,7 @@ group:
 
 # Switch 开关
 
-按钮组件，可配置多种不同的按钮样式
+开关组件，用于表示开关状态/两种状态之间的切换
 
 ## 引入
 
@@ -57,6 +57,7 @@ group:
 | unCheckedColor | 开关关闭后的颜色   | `string`                        | `#e9e9ea` | -    |
 | unCheckedText  | 开关关闭后显示文字 | `string`                        | -         | -    |
 | unCheckedValue | 开关关闭时的值     | `boolean` \| `string`\|`number` | `false`   | -    |
+| hidden         | 是否隐藏           | `boolean`                       | `false`   | -    |
 | style          | 自定义按钮样式     | `string`                        | -         | -    |
 | class          | 自定义按钮样式类   | `string`                        | -         | -    |
 
@@ -64,7 +65,7 @@ group:
 
 | 事件名称 | 说明                            | 回调参数                              |
 | -------- | ------------------------------- | ------------------------------------- |
-| onChange | switch 状态发生变化时的回调函数 | { `checked`, dataset, currentTarget } |
+| onChange | switch 状态发生变化时的回调函数 | `checked`(最新的开关状态) |
 
 ### Slot
 

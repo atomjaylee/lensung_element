@@ -1,4 +1,3 @@
-import fmtEvent from '../_utils/fmtEvent';
 import fmtClass from '../_utils/fmtClass';
 const defaultProps = {
   checked: false,
@@ -10,6 +9,7 @@ const defaultProps = {
   unCheckedColor: '#e9e9ea',
   unCheckedText: undefined,
   unCheckedValue: false,
+  hidden: false,
   className: '',
   style: ''
 };
@@ -38,11 +38,8 @@ Component({
       });
     },
 
-    onChangeHandler(evt) {
-      const event = fmtEvent(this.props, { ...evt,
-        checked: !this.props.checked
-      });
-      this.props.onChange && this.props.onChange(event);
+    onChangeHandler() {
+      this.props.onChange && this.props.onChange(!this.props.checked);
     }
 
   }

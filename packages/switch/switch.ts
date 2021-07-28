@@ -14,8 +14,9 @@ export interface BaseSwitchProps {
   unCheckedText?: String;
   unCheckedValue?: Boolean | String | Number;
   className?: String;
+  hidden?: Boolean;
   style?: String;
-  onChange?: (e: tinyapp.IBaseEvent) => void;
+  onChange?: (checked: Boolean | String | Number) => void;
 }
 
 const defaultProps: BaseSwitchProps = {
@@ -28,6 +29,7 @@ const defaultProps: BaseSwitchProps = {
   unCheckedColor: '#e9e9ea',
   unCheckedText: undefined,
   unCheckedValue: false,
+  hidden: false,
   className: '',
   style: '',
 };
@@ -50,9 +52,8 @@ Component({
       });
     },
 
-    onChangeHandler(evt) {
-      const event = fmtEvent(this.props, { ...evt, checked: !this.props.checked });
-      this.props.onChange && this.props.onChange(event);
+    onChangeHandler() {
+      this.props.onChange && this.props.onChange(!this.props.checked);
     },
   },
 });

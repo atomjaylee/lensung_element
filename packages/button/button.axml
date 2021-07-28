@@ -1,4 +1,4 @@
-<view class="ls_button {{ baseClasses }} {{ className }}" style="{{ style || '' }}" catchTap="onClickHandler">
+<view class="ls_button {{ baseClasses }} {{ className }}" style="{{ style || '' }}" hidden="{{ hidden }}" catchTap="onClickHandler">
   <text a:if="{{ icon }}" class="iconfont {{ icon }}"></text>
   <slot></slot>
 </view>

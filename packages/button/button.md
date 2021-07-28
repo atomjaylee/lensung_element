@@ -44,6 +44,7 @@ group:
 | disabled | 按钮失效状态                   | `boolean`                                       | `false`   | -                                       |
 | block    | 将按钮宽度调整为其父宽度的选项 | `boolean`                                       | `false`   | -                                       |
 | icon     | 设置按钮的图标组件             | `string`                                        | -         | 需为项目中导入的 iconfont.acss 中的类名 |
+| hidden   | 是否隐藏                       | `boolean`                                       | `false`   | -                                       |
 | class    | 自定义按钮样式类               | `string`                                        | -         | -                                       |
 | style    | 自定义按钮样式                 | `string`                                        | -         | -                                       |
 

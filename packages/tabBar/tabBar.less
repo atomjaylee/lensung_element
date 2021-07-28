@@ -1,0 +1,39 @@
+@TAB_HEIGHT: 80rpx;
+
+.ls_tabs {
+  position: relative;
+  display: flex;
+  height: @TAB_HEIGHT;
+  background-color: #fff;
+
+  &_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+
+    text:first-child {
+      font-size: 28rpx;
+    }
+    text:nth-child(2) {
+      font-size: 24rpx;
+    }
+  }
+
+  &_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 16rpx;
+    border-radius: 4rpx;
+    display: flex;
+    justify-content: center;
+    transition: left 250ms ease-in-out;
+
+    .line-inner {
+      width: 40rpx;
+      height: 4rpx;
+      border-radius: 4rpx;
+    }
+  }
+}

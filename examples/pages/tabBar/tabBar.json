@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "标签栏",
+  "usingComponents": {
+    "ls-tabbar": "/components/tabBar/tabBar"
+  }
+}

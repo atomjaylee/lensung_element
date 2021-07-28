@@ -6,6 +6,7 @@ const defaultProps = {
   disabled: false,
   block: false,
   icon: undefined,
+  hidden: false,
   className: '',
   style: ''
 };

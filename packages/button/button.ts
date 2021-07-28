@@ -10,6 +10,7 @@ export interface BaseButtonProps {
   disabled: Boolean;
   block: Boolean;
   icon?: String;
+  hidden?: Boolean;
   className?: String;
   style?: String;
   onTap?: (e: tinyapp.IBaseEvent) => void;
@@ -21,6 +22,7 @@ const defaultProps: BaseButtonProps = {
   disabled: false,
   block: false,
   icon: undefined,
+  hidden: false,
   className: '',
   style: '',
 };
