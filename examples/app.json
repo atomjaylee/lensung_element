@@ -4,7 +4,8 @@
     "pages/button/button",
     "pages/switch/switch",
     "pages/tabBar/tabBar",
-    "pages/toast/toast"
+    "pages/toast/toast",
+    "pages/dialog/dialog"
   ],
   "window": {
     "defaultTitle": "邻商商品组件库"

@@ -1,0 +1,15 @@
+.ls_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.ls_dialog-content {
+  width: 610rpx;
+  min-height: 256rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+}

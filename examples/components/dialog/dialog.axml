@@ -1,0 +1,3 @@
+<ls-flex class="ls_dialog" justify="center">
+  <view class="ls_dialog-content"></view>
+</ls-flex>

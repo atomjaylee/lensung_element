@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "对话框",
+  "usingComponents": {
+    "ls-dialog": "/components/dialog/dialog",
+    "ls-button": "/components/button/button"
+  }
+}

@@ -1,0 +1,3 @@
+<view class="ls_flex {{ baseClass }} {{ className }}" onTap="onTapHandler" catchTap="onCatchTapHandler" hidden="{{ hidden }}" style="{{ style }}">
+  <slot></slot>
+</view>
