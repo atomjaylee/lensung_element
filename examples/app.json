@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/button/button",
     "pages/switch/switch",
-    "pages/tabBar/tabBar"
+    "pages/tabBar/tabBar",
+    "pages/toast/toast"
   ],
   "window": {
     "defaultTitle": "邻商商品组件库"

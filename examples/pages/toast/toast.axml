@@ -1,0 +1,3 @@
+<ls-toast ref="toastInstance" />
+
+<ls-button onTap="openToastHandler">轻提示</ls-button>

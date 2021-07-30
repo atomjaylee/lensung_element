@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "轻提示",
+  "usingComponents": {
+    "ls-toast": "/components/toast/toast",
+    "ls-button": "/components/button/button"
+  }
+}

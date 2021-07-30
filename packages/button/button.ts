@@ -7,12 +7,12 @@ export type ButtonSizeType = 'mini' | 'small' | 'medium' | 'large';
 export interface BaseButtonProps {
   type: ButtonTypes;
   size: ButtonSizeType;
-  disabled: Boolean;
-  block: Boolean;
-  icon?: String;
-  hidden?: Boolean;
-  className?: String;
-  style?: String;
+  disabled: boolean;
+  block: boolean;
+  icon?: string;
+  hidden?: boolean;
+  className?: string;
+  style?: string;
   onTap?: (e: tinyapp.IBaseEvent) => void;
 }
 

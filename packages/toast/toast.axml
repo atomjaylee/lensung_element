@@ -1,0 +1,9 @@
+<import-sjs from="./toast.sjs" name="sjs" />
+<view class="ls_toast {{ suppressOperate && 'ls_toast-operate' }}" a:if="{{ show }}" style="z-index: {{ zIndex }}" onAppear="onAppearHandler">
+  <view class="ls_toast-inner {{ 'ls_toast-position_' + position }} {{ innerVisible && 'ls_toast-innerActive' }} {{ class }}" style="max-width: {{ maxWidth }}rpx;{{ style }}" onTransitionEnd="onTransitionEndHandler">
+    <slot>
+      <text class="toast_iconfont iconfont {{ sjs.fmtIcon(icon) }}" a:if="{{ icon }}"></text>
+      <text number-of-lines="{{ maxLine }}">{{ content }}</text>
+    </slot>
+  </view>
+</view>

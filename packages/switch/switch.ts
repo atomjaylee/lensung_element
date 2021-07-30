@@ -1,22 +1,21 @@
-import fmtEvent from '../_utils/fmtEvent';
 import fmtClass from '../_utils/fmtClass';
 
 export type SwitchSizeType = 'small' | 'medium' | 'large';
 
 export interface BaseSwitchProps {
-  checked: Boolean | String | Number;
+  checked: boolean | string | number;
   size: SwitchSizeType;
-  disabled: Boolean;
-  checkedColor?: String;
-  checkedText?: String;
-  checkedValue?: Boolean | String | Number;
-  unCheckedColor?: String;
-  unCheckedText?: String;
-  unCheckedValue?: Boolean | String | Number;
-  className?: String;
-  hidden?: Boolean;
-  style?: String;
-  onChange?: (checked: Boolean | String | Number) => void;
+  disabled: boolean;
+  checkedColor?: string;
+  checkedText?: string;
+  checkedValue?: boolean | string | number;
+  unCheckedColor?: string;
+  unCheckedText?: string;
+  unCheckedValue?: boolean | string | number;
+  className?: string;
+  hidden?: boolean;
+  style?: string;
+  onChange?: (checked: boolean | string | number) => void;
 }
 
 const defaultProps: BaseSwitchProps = {

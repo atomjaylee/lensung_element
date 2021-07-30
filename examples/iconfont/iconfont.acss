@@ -11,6 +11,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-shibai:before {
+  content: "\e6b2";
+}
+
+.icon-chenggong:before {
+  content: "\e6b1";
+}
+
+.icon-shizhong:before {
+  content: "\e6b0";
+}
+
 .icon-erweima:before {
   content: "\e69e";
 }

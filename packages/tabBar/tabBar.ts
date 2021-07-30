@@ -1,17 +1,14 @@
-import fmtEvent from '../_utils/fmtEvent';
-import fmtClass from '../_utils/fmtClass';
-
 export interface BaseTabBarProps {
-  activeKey: String | Number;
-  hidden?: Boolean;
+  activeKey: string | number;
+  hidden?: boolean;
   activeColor?: String;
-  unActiveColor?: String;
-  showLine?: Boolean;
+  unActiveColor?: string;
+  showLine?: boolean;
   schema: SchemaType[];
-  source?: Record<any, Number>;
-  immediate?: Boolean;
-  style?: String;
-  className?: String;
+  source?: Record<any, number>;
+  immediate?: boolean;
+  style?: string;
+  className?: string;
   onChange?: (evt: tinyapp.IBaseEvent) => void;
 }
 
