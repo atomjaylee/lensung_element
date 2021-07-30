@@ -1,11 +1,14 @@
-import fmtEvent from '../_utils/fmtEvent';
 import fmtClass from '../_utils/fmtClass';
 const defaultProps = {
-  type: 'default',
+  checked: false,
   size: 'medium',
   disabled: false,
-  block: false,
-  icon: undefined,
+  checkedColor: '#1dc11d',
+  checkedText: undefined,
+  checkedValue: true,
+  unCheckedColor: '#e9e9ea',
+  unCheckedText: undefined,
+  unCheckedValue: false,
   hidden: false,
   className: '',
   style: ''
@@ -25,24 +28,18 @@ Component({
   methods: {
     wrapClasses() {
       const {
-        type,
         size,
-        disabled,
-        block
+        disabled
       } = this.props;
-      const prefixCls = 'ls_button';
+      const prefixCls = 'ls_switch';
       return fmtClass({
-        [`${prefixCls}-block`]: block,
-        [`${prefixCls}-inline`]: !block,
-        [`${prefixCls}-${type}`]: type,
         [`${prefixCls}-${size}`]: size,
         [`${prefixCls}-disabled`]: disabled
       });
     },
 
-    onClickHandler(evt) {
-      const event = fmtEvent(this.props, evt);
-      this.props.onTap && this.props.onTap(event);
+    onChangeHandler() {
+      this.props.onChange && this.props.onChange(!this.props.checked);
     }
 
   }

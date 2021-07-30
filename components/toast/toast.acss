@@ -1,0 +1,49 @@
+.ls_toast {
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+.ls_toast-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  min-width: 270rpx;
+  min-height: 112rpx;
+  padding: 40rpx;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 24rpx;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 6rpx 24rpx 0 rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.ls_toast-inner .toast_iconfont {
+  font-size: 78rpx;
+  margin-bottom: 24rpx;
+}
+.ls_toast-innerActive {
+  opacity: 1;
+}
+.ls_toast-operate {
+  pointer-events: initial;
+}
+.ls_toast-position_top {
+  top: 90rpx;
+}
+.ls_toast-position_center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ls_toast-position_bottom {
+  bottom: 90rpx;
+}

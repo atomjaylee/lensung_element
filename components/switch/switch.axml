@@ -1,0 +1,11 @@
+<view class="ls_switch {{ baseClasses }} {{ className }}" style="{{ `background-color: ${ checked === checkedValue ?  checkedColor : unCheckedColor };` + style }}" hidden="{{ hidden }}" catchTap="onChangeHandler">
+  <view class="ls_switch_handle {{ checked === checkedValue && '_handleActive' }}"></view>
+  <view class="ls_switch_inner {{ checked === checkedValue && '_innerActive' }}">
+    <view a:if="{{ checked === checkedValue }}">
+      <slot name="checkedText">{{ checkedText }}</slot>
+    </view>
+    <view a:if="{{ checked === unCheckedValue }}">
+      <slot name="unCheckedText">{{ unCheckedText }}</slot>
+    </view>
+  </view>
+</view>
