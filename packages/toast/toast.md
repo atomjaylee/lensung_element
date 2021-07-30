@@ -26,7 +26,22 @@ group:
 ## 基础用法
 
 ```html
-<ls-toast ref="toast"></ls-toast>
+<ls-toast ref="toast" maxLine="2" duration="2500"></ls-toast>
+```
+
+```js
+methods: {
+  // 注册
+  toast(ref) {
+    this.$toast = ref;
+  },
+
+  // 调用
+  openToastHandler() {
+    this.$toast.show({ content: "提示信息", icon: 'success'}); // 基础模式
+    this.$toast.show('提示信息'); // 快捷方式
+  }
+}
 ```
 
 ## API
