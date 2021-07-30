@@ -40,9 +40,15 @@ group:
 | duration        | toast 消失时间               | `number`                       | `2000`   | -                     |
 | suppressOperate | toast 出现时禁止操作底部页面 | `boolean`                      | `false`  | -                     |
 | position        | 弹窗出现的问题               | `top` \| `center`\|`bottom`    | `center` | -                     |
-| zIndex          | z-index 的值                 | `number`                       | `999`   | -                     |
+| zIndex          | z-index 的值                 | `number`                       | `999`    | -                     |
 | maxLine         | 文本最大行数                 | `number`                       | `3`      | -                     |
 | maxWidth        | toast 最大宽度               | `number`                       | `560`    | `0 < maxWidth <= 750` |
+
+### Methods
+
+| 事件名称 | 说明            | 回调参数  |
+| -------- | --------------- | --------- |
+| show     | 开启 toast 显示 | `options` |
 
 ### Events
 
