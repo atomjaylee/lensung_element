@@ -1,2 +1,4 @@
-<ls-dialog ref="dialog"></ls-dialog>
+<ls-dialog>
+
+</ls-dialog>
 <ls-button type="primary" onTap="onOpenDialogHandler">打开对话框</ls-button>

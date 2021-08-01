@@ -1,3 +1,5 @@
+@import '../_style/color.less';
+
 .ls_dialog {
   position: fixed;
   top: 0;
@@ -12,5 +14,45 @@
     border-radius: 24rpx;
     box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.12);
     background-color: #fff;
+    box-sizing: border-box;
+    font-size: 28rpx;
+
+    &_title {
+      font-size: 32rpx;
+      color: #333;
+      line-height: 1.38;
+      padding: 40rpx 40rpx 0 40rpx;
+    }
+
+    &_text {
+      color: #333;
+      line-height: 1.57;
+      padding: 40rpx;
+    }
+
+    &_buttons {
+      display: flex;
+      height: 82rpx;
+      border-top: 1rpx solid #e6e9ed;
+    }
+
+    .button-item {
+      flex: 1;
+      height: inherit;
+      color: #333;
+    }
+
+    .cancel-button {
+      border-right: 1rpx solid #e6e9ed;
+    }
+
+    .confirm-button {
+      color: @brand-color-main;
+    }
+  }
+
+  &-contentActive {
+    transform: scale(1);
+    opacity: 1;
   }
 }

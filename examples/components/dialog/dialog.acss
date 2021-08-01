@@ -12,4 +12,37 @@
   border-radius: 24rpx;
   box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.12);
   background-color: #fff;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.ls_dialog-content_title {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.38;
+  padding: 40rpx 40rpx 0 40rpx;
+}
+.ls_dialog-content_text {
+  color: #333;
+  line-height: 1.57;
+  padding: 40rpx;
+}
+.ls_dialog-content_buttons {
+  display: flex;
+  height: 82rpx;
+  border-top: 1rpx solid #e6e9ed;
+}
+.ls_dialog-content .button-item {
+  flex: 1;
+  height: inherit;
+  color: #333;
+}
+.ls_dialog-content .cancel-button {
+  border-right: 1rpx solid #e6e9ed;
+}
+.ls_dialog-content .confirm-button {
+  color: #ff5001;
+}
+.ls_dialog-contentActive {
+  transform: scale(1);
+  opacity: 1;
 }
