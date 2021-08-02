@@ -1,18 +1,21 @@
 import fmtClass from '../_utils/fmtClass';
 import fmtEvent from '../_utils/fmtEvent';
 
+export type justifyType = 'start' | 'end' | 'center' | 'between' | 'around';
+export type alignType = 'start' | 'center' | 'end' | 'baseline' | 'stretch';
+
 export interface BaseFlexProps {
   type?: 'flex' | 'inline-flex';
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-  justify?: 'start' | 'end' | 'center' | 'between' | 'around';
-  align?: 'start' | 'center' | 'end' | 'baseline' | 'stretch';
+  justify?: justifyType;
+  align?: alignType;
   alignContent?: 'start' | 'end' | 'center' | 'between' | 'around' | 'stretch';
   hidden?: boolean;
   className?: string;
   style?: string;
   onTap?: (e: tinyapp.IBaseEvent) => void;
-  catchTap?: (e: tinyapp.IBaseEvent) => void;
+  onAppear?: (e: tinyapp.IBaseEvent) => void;
 }
 
 const defaultProps: BaseFlexProps = {
@@ -56,9 +59,9 @@ Component({
       this.props.onTap && this.props.onTap(event);
     },
 
-    onCatchTapHandler(evt) {
+    onAppearHandler(evt) {
       const event = fmtEvent(this.props, evt);
-      this.props.catchTap && this.props.catchTap(event);
+      this.props.onAppear && this.props.onAppear(event);
     },
   },
 });

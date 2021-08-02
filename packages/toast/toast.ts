@@ -27,10 +27,6 @@ const defaultProps: BaseToastOptions = {
 Component({
   props: defaultProps,
 
-  onInit() {
-    this.setData({ ...this.props });
-  },
-
   data: {
     show: false,
     innerVisible: false,

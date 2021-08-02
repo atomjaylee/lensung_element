@@ -42,10 +42,12 @@ Flex 是 CSS flex 布局的一个封装。
 | align        | 子元素在交叉轴上的对齐方式 | `start` \| `center`\|`end` \|`baseline` \|`stretch`           | `center` | -    |
 | alignContent | 有多根轴线时的对齐方式     | `start` \| `center`\|`end` \|`between` \|`around` \|`stretch` | `start`  | -    |
 | hidden       | 是否隐藏                   | `boolean`                                                     | `false`  | -    |
+| class        | 自定义样式类               | `string`                                                      | -        | -    |
+| style        | 自定义样式                 | `string`                                                      | -        | -    |
 
 ### Events
 
-| 事件名称 | 说明             | 回调参数 |
-| -------- | ---------------- | -------- |
-| onTap    | 点击按钮时的回调 | -        |
-| catchTap | 点击按钮时的回调 | -        |
+| 事件名称 | 说明                           | 回调参数 |
+| -------- | ------------------------------ | -------- |
+| onTap    | 点击按钮时的回调               | -        |
+| onAppear | 当前元素可见面积超过 50%时触发 | -        |

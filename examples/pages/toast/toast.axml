@@ -1,3 +1,5 @@
-<ls-toast ref="toastInstance" />
+<ls-toast ref="toastInstance">
+  <view>test</view>
+</ls-toast>
 
 <ls-button onTap="openToastHandler">轻提示</ls-button>

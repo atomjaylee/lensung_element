@@ -1,17 +1,23 @@
-<ls-flex class="ls_dialog {{ className }}" style="z-index: {{ zIndex }}; {{ style }}" justify="center" a:if="{{ visible }}" onAppear="onAppearHandler">
-  <view class="ls_dialog-content {{ contentVisible ? 'ls_dialog-contentActive' : '' }}">
-    <view class="ls_dialog-content_title" a:if="{{ title }}">{{ title }}</view>
-    <text class="ls_dialog-content_icon" a:if="{{ icon }}">{{ title }}</text>
-    <view class="ls_dialog-content_text {{ contentClass }}" style="text-align: {{ contentAlign }}">
-      <slot>
-        <text number-of-lines="{{ maxLine }}">{{ content }}</text>
-      </slot>
+<import-sjs from="./dialog.sjs" name="sjs" />
+<view class="ls_dialog {{ contentVisible ? 'ls_dialog-active' : '' }} {{ className }}" style="z-index: {{ zIndex }}; {{ style }}" a:if="{{ visible }}" onAppear="onAppearHandler" onTap="onMaskTapHandler" data-nodeName="mask">
+  <view class="ls_dialog-content {{ contentVisible ? 'ls_dialog-contentActive' : '' }}" onTransitionEnd="onTransitionEndHandler">
+    <view class="ls_dialog-content_body">
+      <text class="content_close iconfont icon--close" a:if="{{ closable }}"></text>
+      <view class="content_title" a:if="{{ title }}">{{ title }}</view>
+      <view class="content_icon" a:if="{{ icon }}">
+        <text class="iconfont {{ sjs.fmtIcon(icon) }}"></text>
+      </view>
+      <ls-flex class="content_text {{ contentClass }}" justify="{{ contentJustify }}" align="{{ contentAlign }}">
+        <slot>
+          <text number-of-lines="{{ maxLine }}">{{ content }}</text>
+        </slot>
+      </ls-flex>
     </view>
     <view class="ls_dialog-content_buttons">
       <slot name="buttons">
-        <ls-flex justify="center" class="button-item cancel-button">{{ cancelText }}</ls-flex>
-        <ls-flex justify="center" class="button-item confirm-button">{{ confirmText }}</ls-flex>
+        <ls-flex justify="center" class="button-item cancel-button" hidden="{{ isAlert }}" onTap="onCancelHandler">{{ cancelText }}</ls-flex>
+        <ls-flex justify="center" class="button-item confirm-button" onTap="onConfirmHandler">{{ confirmText }}</ls-flex>
       </slot>
     </view>
   </view>
-</ls-flex>
+</view>

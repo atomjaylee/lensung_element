@@ -47,9 +47,9 @@ Component({
       this.props.onTap && this.props.onTap(event);
     },
 
-    onCatchTapHandler(evt) {
+    onAppearHandler(evt) {
       const event = fmtEvent(this.props, evt);
-      this.props.catchTap && this.props.catchTap(event);
+      this.props.onAppear && this.props.onAppear(event);
     }
 
   }
