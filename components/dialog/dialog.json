@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ls-flex": "../flex/flex"
+  }
+}

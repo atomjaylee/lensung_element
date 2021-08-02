@@ -1,0 +1,73 @@
+.ls_dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+  transition: background 150ms ease-in-out;
+}
+.ls_dialog-content {
+  width: 610rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  font-size: 28rpx;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 150ms ease-in-out;
+}
+.ls_dialog-content_body .content_icon {
+  color: #ff5001;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.ls_dialog-content_body .content_icon .iconfont {
+  font-size: 62rpx;
+}
+.ls_dialog-content_body .content_close {
+  position: absolute;
+  font-size: 32rpx;
+  color: #666;
+  top: 30rpx;
+  right: 26rpx;
+}
+.ls_dialog-content_body .content_title {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.38;
+  padding: 40rpx 40rpx 0 40rpx;
+}
+.ls_dialog-content_body .content_text {
+  color: #333;
+  line-height: 1.57;
+  padding: 40rpx;
+  min-height: 172rpx;
+  box-sizing: border-box;
+}
+.ls_dialog-content_buttons {
+  display: flex;
+  height: 82rpx;
+  border-top: 1rpx solid #e6e9ed;
+}
+.ls_dialog-content_buttons .button-item {
+  flex: 1;
+  height: inherit;
+  color: #333;
+}
+.ls_dialog-content_buttons .cancel-button {
+  border-right: 1rpx solid #e6e9ed;
+}
+.ls_dialog-content_buttons .confirm-button {
+  color: #ff5001;
+}
+.ls_dialog-contentActive {
+  transform: scale(1);
+  opacity: 1;
+}
+.ls_dialog-active {
+  background: rgba(0, 0, 0, 0.5);
+}

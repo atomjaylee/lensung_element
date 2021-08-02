@@ -1,0 +1,3 @@
+<view class="ls_flex {{ baseClass }} {{ className }}" onTap="onTapHandler" onAppear="onAppearHandler" hidden="{{ hidden }}" style="{{ style }}">
+  <slot></slot>
+</view>
