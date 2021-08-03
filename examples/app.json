@@ -6,7 +6,8 @@
     "pages/tabBar/tabBar",
     "pages/toast/toast",
     "pages/dialog/dialog",
-    "pages/popup/popup"
+    "pages/popup/popup",
+    "pages/actionSheet/actionSheet"
   ],
   "window": {
     "defaultTitle": "邻商商品组件库"

@@ -1,3 +1,4 @@
+import { getComponentAttr } from '../_utils/tool';
 const defaultProps = {
   zIndex: 999,
   maxLine: 3,
@@ -45,7 +46,6 @@ Component({
     close() {
       this.__promise_resolve__ = undefined;
       this.setData({ ...defaultProps,
-        ...this.props,
         contentVisible: false
       });
     },
@@ -55,17 +55,18 @@ Component({
       this.setData({
         visible: false
       });
-      this.data.onAfterClose && this.data.onAfterClose();
+      const onAfterClose = getComponentAttr(this, 'onAfterClose');
+      onAfterClose && onAfterClose();
     },
 
     async onConfirmHandler() {
-      const isPass = this.data.onBeforeClose ? await this.data.onBeforeClose() : true;
-      console.log(isPass);
+      const onBeforeClose = getComponentAttr(this, 'onBeforeClose');
+      const isPass = onBeforeClose ? await onBeforeClose() : true;
 
       if (isPass) {
         this.__promise_resolve__(true);
 
-        this.data.onConfirm && this.data.onConfirm();
+        getComponentAttr(this, 'onConfirm') && getComponentAttr(this, 'onConfirm')();
         this.close();
       }
     },
@@ -73,7 +74,7 @@ Component({
     onCancelHandler() {
       this.__promise_resolve__(false);
 
-      this.data.onCancel && this.data.onCancel();
+      getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
       this.close();
     },
 
@@ -84,11 +85,10 @@ Component({
     }) {
       const nodeName = targetDataset.nodeName;
 
-      if (nodeName === 'mask' && this.data.maskClosable) {
+      if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
         this.onCancelHandler();
       }
     }
 
   }
 });
-export {};

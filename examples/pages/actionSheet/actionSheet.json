@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "动作面板",
+  "usingComponents": {
+    "ls-action-sheet": "/components/actionSheet/actionSheet",
+    "ls-button": "/components/button/button"
+  }
+}

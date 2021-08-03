@@ -1,0 +1,2 @@
+<ls-action-sheet ref="actionSheet"></ls-action-sheet>
+<ls-button type="primary" onTap="onOpenActionSheetHandler">打开动作面板</ls-button>

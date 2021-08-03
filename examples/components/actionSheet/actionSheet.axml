@@ -1,0 +1,12 @@
+<popup ref="popup" maskClosable="{{ maskClosable }}" zIndex="{{ zIndex}}" onAfterClose="onAfterCloseHandler">
+  <view class="ls_actionSheet-wrap {{ space ? 'ls_actionSheet-space' : '' }}">
+    <ls-flex justify="center" class="ls_actionSheet_tip" a:if="{{ tip }}">{{ tip }}</ls-flex>
+    <view class="ls_actionSheet_options">
+      <ls-flex direction="column" justify="center" a:for="{{ schema }}" key="{{ item.key }}" class="option-item" onTap="onSelectItemHandler" data-item="{{ item }}">
+        <text class="item-label">{{ item.label }}</text>
+        <text a:if="{{ item.desc }}" class="item-desc">{{ item.desc }}</text>
+      </ls-flex>
+    </view>
+    <ls-flex justify="center" class="ls_actionSheet_cancel" onTap="onCancelHandler">取消</ls-flex>
+  </view>
+</popup>

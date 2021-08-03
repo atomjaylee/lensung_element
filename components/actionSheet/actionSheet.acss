@@ -1,0 +1,57 @@
+.ls_actionSheet_tip {
+  padding: 16rpx 24rpx 18rpx 24rpx;
+  font-size: 24rpx;
+  color: #666;
+  border-radius: 24rpx 24rpx 0 0;
+  background-color: #f7f7f7;
+  transform: translateY(6rpx);
+}
+.ls_actionSheet_options .option-item {
+  height: 112rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #f7f7f7;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.ls_actionSheet_options .option-item:active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.ls_actionSheet_options .item-label {
+  font-size: 32rpx;
+  color: #333;
+}
+.ls_actionSheet_options .item-desc {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.33;
+  margin-top: 8rpx;
+}
+.ls_actionSheet_cancel {
+  height: 114rpx;
+  font-size: 32rpx;
+  background-color: #fff;
+  color: #ff5001;
+}
+.ls_actionSheet_cancel:active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.ls_actionSheet-space {
+  width: 710rpx;
+  margin: 0 auto;
+}
+.ls_actionSheet-space .ls_actionSheet_options {
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+}
+.ls_actionSheet-space .ls_actionSheet_options .option-item {
+  border-bottom: 1rpx solid #dcdee3;
+}
+.ls_actionSheet-space .ls_actionSheet_options .option-item:last-child {
+  border-bottom: none;
+}
+.ls_actionSheet-space .ls_actionSheet_cancel {
+  margin-bottom: 16rpx;
+  border-radius: 10rpx;
+}
