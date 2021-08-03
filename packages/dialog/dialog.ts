@@ -1,4 +1,5 @@
 import { justifyType, alignType } from '../flex/flex';
+import { getComponentAttr } from '../_utils/tool';
 
 interface BaseDialogProps {
   title?: string;
@@ -65,7 +66,6 @@ Component({
       this.__promise_resolve__ = undefined;
       this.setData({
         ...defaultProps,
-        ...this.props,
         contentVisible: false,
       });
     },
@@ -73,28 +73,29 @@ Component({
     onTransitionEndHandler() {
       if (this.data.visible && this.data.contentVisible) return;
       this.setData({ visible: false });
-      this.data.onAfterClose && this.data.onAfterClose();
+      const onAfterClose = getComponentAttr(this, 'onAfterClose');
+      onAfterClose && onAfterClose();
     },
 
     async onConfirmHandler() {
-      const isPass = this.data.onBeforeClose ? await this.data.onBeforeClose() : true;
-      console.log(isPass);
+      const onBeforeClose = getComponentAttr(this, 'onBeforeClose');
+      const isPass = onBeforeClose ? await onBeforeClose() : true;
       if (isPass) {
         this.__promise_resolve__(true);
-        this.data.onConfirm && this.data.onConfirm();
+        getComponentAttr(this, 'onConfirm') && getComponentAttr(this, 'onConfirm')();
         this.close();
       }
     },
 
     onCancelHandler() {
       this.__promise_resolve__(false);
-      this.data.onCancel && this.data.onCancel();
+      getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
       this.close();
     },
 
     onMaskTapHandler({ target: { targetDataset } }) {
       const nodeName = targetDataset.nodeName;
-      if (nodeName === 'mask' && this.data.maskClosable) {
+      if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
         this.onCancelHandler();
       }
     },

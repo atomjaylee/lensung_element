@@ -1,0 +1,5 @@
+<ls-popup ref="popup">
+  <view style="height: 300rpx; background: #fff"></view>
+</ls-popup>
+
+<ls-button type="primary" onTap="openPopupHandler">点击打开</ls-button>

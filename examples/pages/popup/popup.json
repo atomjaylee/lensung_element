@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "弹出层",
+  "usingComponents": {
+    "ls-popup": "/components/popup/popup",
+    "ls-button": "/components/button/button"
+  }
+}
