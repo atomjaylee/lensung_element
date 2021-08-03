@@ -1,3 +1,4 @@
+import { getComponentAttr } from '../_utils/tool';
 export interface BaseToastOptions {
   content?: string;
   icon?: string;
@@ -46,12 +47,13 @@ Component({
       this.setData({ show: true, ...userOptions });
       this._timeInstance = setTimeout(() => {
         this.setData({ innerVisible: false });
-      }, this.data.duration);
+      }, getComponentAttr(this, 'duration'));
     },
 
     onTransitionEndHandler() {
       if (this.data.show && this.data.innerVisible) return;
-      this.props.onClosed && this.props.onClosed();
+      const onClosed = getComponentAttr(this, 'onClosed');
+      onClosed && onClosed();
       this.resetInitialStatus();
     },
 
@@ -60,7 +62,6 @@ Component({
       this.setData({
         show: false,
         ...defaultProps,
-        ...this.props,
       });
       this._timeInstance = null;
     },

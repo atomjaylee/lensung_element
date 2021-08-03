@@ -1,3 +1,4 @@
+import { getComponentAttr } from '../_utils/tool';
 const defaultProps = {
   content: '',
   icon: '',
@@ -39,12 +40,13 @@ Component({
         this.setData({
           innerVisible: false
         });
-      }, this.data.duration);
+      }, getComponentAttr(this, 'duration'));
     },
 
     onTransitionEndHandler() {
       if (this.data.show && this.data.innerVisible) return;
-      this.props.onClosed && this.props.onClosed();
+      const onClosed = getComponentAttr(this, 'onClosed');
+      onClosed && onClosed();
       this.resetInitialStatus();
     },
 
@@ -52,12 +54,10 @@ Component({
     resetInitialStatus() {
       this.setData({
         show: false,
-        ...defaultProps,
-        ...this.props
+        ...defaultProps
       });
       this._timeInstance = null;
     }
 
   }
 });
-export {};
