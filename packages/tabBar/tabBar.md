@@ -30,7 +30,7 @@ group:
 <ls-tab-bar
   schema="{{ schema }}"
   activeKey="{{ activeKey }}"
-  source="{ onSale: 2 }"
+  source="{{ onSale: 2 }}"
   immediate
 ></ls-tab-bar>
 
