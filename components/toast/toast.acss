@@ -17,7 +17,7 @@
   min-width: 270rpx;
   min-height: 112rpx;
   padding: 40rpx;
-  font-size: 32rpx;
+  font-size: 28rpx;
   color: #fff;
   border-radius: 24rpx;
   box-sizing: border-box;
@@ -27,8 +27,12 @@
   transition: all 200ms ease-in-out;
 }
 .ls_toast-inner .toast_iconfont {
-  font-size: 78rpx;
-  margin-bottom: 24rpx;
+  font-size: 58rpx;
+  margin-bottom: 26rpx;
+}
+.ls_toast-innerHasIcon {
+  width: 270rpx;
+  min-height: 270rpx;
 }
 .ls_toast-innerActive {
   opacity: 1;

@@ -7,7 +7,6 @@ Page({
   },
 
   openToastHandler() {
-    console.log(111111111)
-    this.$toast.show('文案内容')
+    this.$toast.show({ content: "这是文案这是文案这是文案这是文案这是文案这是文案这是文案这是文案", duration: 5000000 })
   }
 });

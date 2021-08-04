@@ -1,6 +1,6 @@
 <import-sjs from="./toast.sjs" name="sjs" />
 <view class="ls_toast {{ suppressOperate && 'ls_toast-operate' }} {{ className }}" a:if="{{ show }}" style="z-index: {{ zIndex }}; {{ style }}" onAppear="onAppearHandler">
-  <view class="ls_toast-inner {{ 'ls_toast-position_' + position }} {{ innerVisible && 'ls_toast-innerActive' }} {{ class }}" style="max-width: {{ maxWidth }}rpx;{{ style }}" onTransitionEnd="onTransitionEndHandler">
+  <view class="ls_toast-inner {{ icon ? 'ls_toast-innerHasIcon' : '' }} {{ 'ls_toast-position_' + position }} {{ innerVisible && 'ls_toast-innerActive' }} {{ class }}" style="max-width: {{ maxWidth }}rpx;{{ style }}" onTransitionEnd="onTransitionEndHandler">
     <slot>
       <text class="toast_iconfont iconfont {{ sjs.fmtIcon(icon) }}" a:if="{{ icon }}"></text>
       <text number-of-lines="{{ maxLine }}">{{ content }}</text>
