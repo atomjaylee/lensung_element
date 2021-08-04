@@ -44,18 +44,18 @@ group:
 
 ### Attributes
 
-| 参数          | 说明                             | 类型                 | 默认值    | 备注                                  |
-| ------------- | -------------------------------- | -------------------- | --------- | ------------------------------------- |
-| activeKey     | 激活的值                         | `string` \| `number` | -         | -                                     |
-| schema        | 用于显示的结构                   | `array`              | `[]`      | `[{ label: '出售中', key: "onSale"}]` |
-| source        | 标题数字源                       | `object`             | `{}`      | `{ onSale: 10 }`                      |
-| hidden        | 是否隐藏                         | `boolean`            | `false`   | -                                     |
-| activeColor   | 激活时的颜色                     | `string`             | `#ff5001` | -                                     |
-| unActiveColor | 非激活时的颜色                   | `string`             | `#333333` | -                                     |
-| showLine      | 是否显示底部下划线               | `boolean`            | `true`    | -                                     |
-| immediate     | 初始化是否触发一次 onChange 时间 | `boolean`            | `false`   | -                                     |
-| style         | 自定义按钮样式                   | `string`             | -         | -                                     |
-| class         | 自定义按钮样式类                 | `string`             | -         | -                                     |
+| 参数          | 说明                             | 类型                 | 默认值    | 备注                                                          |
+| ------------- | -------------------------------- | -------------------- | --------- | ------------------------------------------------------------- |
+| activeKey     | 激活的值                         | `string` \| `number` | -         | -                                                             |
+| schema        | 用于显示的结构                   | `array`              | `[]`      | `[{ label: '出售中', key: "onSale", statistic: '埋点标记' }]` |
+| source        | 标题数字源                       | `object`             | `{}`      | `{ onSale: 10 }`                                              |
+| hidden        | 是否隐藏                         | `boolean`            | `false`   | -                                                             |
+| activeColor   | 激活时的颜色                     | `string`             | `#ff5001` | -                                                             |
+| unActiveColor | 非激活时的颜色                   | `string`             | `#333333` | -                                                             |
+| showLine      | 是否显示底部下划线               | `boolean`            | `true`    | -                                                             |
+| immediate     | 初始化是否触发一次 onChange 时间 | `boolean`            | `false`   | -                                                             |
+| style         | 自定义按钮样式                   | `string`             | -         | -                                                             |
+| class         | 自定义按钮样式类                 | `string`             | -         | -                                                             |
 
 ### Events
 

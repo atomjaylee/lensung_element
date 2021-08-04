@@ -15,6 +15,7 @@ export interface BaseTabBarProps {
 type SchemaType = {
   label: String;
   key: String | Number;
+  statistic?: string;
 };
 
 const defaultProps: BaseTabBarProps = {

@@ -6,6 +6,7 @@ export interface BasePopupProps {
   maskClosable?: boolean;
   position?: positionType;
   zIndex?: number;
+  statisticCancel?: string;
   onAfterClose?: () => void;
 }
 

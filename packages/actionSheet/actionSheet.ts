@@ -4,6 +4,7 @@ type SchemaType = {
   label: string;
   key: string | number;
   desc?: string;
+  statistic?: string;
 };
 
 export interface BaseActionSheetProps {
@@ -13,6 +14,7 @@ export interface BaseActionSheetProps {
   maskClosable?: boolean;
   zIndex?: number;
   cancelText?: string;
+  statisticCancel?: string;
   onBeforeClose?: () => boolean;
   onAfterClose?: () => void;
 }

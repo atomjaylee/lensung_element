@@ -1,4 +1,5 @@
 import fmtClass from '../_utils/fmtClass';
+import fmtEvent from '../_utils/fmtEvent';
 const defaultProps = {
   checked: false,
   size: 'medium',
@@ -38,8 +39,11 @@ Component({
       });
     },
 
-    onChangeHandler() {
-      this.props.onChange && this.props.onChange(!this.props.checked);
+    onChangeHandler(evt) {
+      const event = fmtEvent(this.props, { ...evt,
+        checked: !this.props.checked
+      });
+      this.props.onChange && this.props.onChange(event);
     }
 
   }

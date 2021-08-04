@@ -50,11 +50,12 @@ methods: {
 
 ### options
 
-| 参数         | 说明             | 类型                               | 默认值   | 备注 |
-| ------------ | ---------------- | ---------------------------------- | -------- | ---- |
-| position     | 弹出位置         | `top` \| `right`\|`bottom`\|`left` | `bottom` | -    |
-| zIndex       | 弹出层 z-index   | `number`                           | `999`    | -    |
-| maskClosable | 点击遮罩是否关闭 | `boolean`                          | `false`  | -    |
+| 参数            | 说明             | 类型                               | 默认值   | 备注 |
+| --------------- | ---------------- | ---------------------------------- | -------- | ---- |
+| position        | 弹出位置         | `top` \| `right`\|`bottom`\|`left` | `bottom` | -    |
+| zIndex          | 弹出层 z-index   | `number`                           | `999`    | -    |
+| maskClosable    | 点击遮罩是否关闭 | `boolean`                          | `false`  | -    |
+| statisticCancel | 点击取消埋点标记 | `string`                           | -        | -    |
 
 ### Methods
 

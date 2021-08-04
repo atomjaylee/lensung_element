@@ -4,7 +4,7 @@ Page({
   },
   onLoad() { },
 
-  onChangeHandler(checked) {
+  onChangeHandler({ checked }) {
     this.setData({ checked })
   }
 });

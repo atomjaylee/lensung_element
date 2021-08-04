@@ -1,4 +1,5 @@
 import fmtClass from '../_utils/fmtClass';
+import fmtEvent from '../_utils/fmtEvent';
 
 export type SwitchSizeType = 'small' | 'medium' | 'large';
 
@@ -15,7 +16,7 @@ export interface BaseSwitchProps {
   className?: string;
   hidden?: boolean;
   style?: string;
-  onChange?: (checked: boolean | string | number) => void;
+  onChange?: (e: tinyapp.IBaseEvent) => void;
 }
 
 const defaultProps: BaseSwitchProps = {
@@ -51,8 +52,9 @@ Component({
       });
     },
 
-    onChangeHandler() {
-      this.props.onChange && this.props.onChange(!this.props.checked);
+    onChangeHandler(evt) {
+      const event = fmtEvent(this.props, { ...evt, checked: !this.props.checked });
+      this.props.onChange && this.props.onChange(event);
     },
   },
 });
