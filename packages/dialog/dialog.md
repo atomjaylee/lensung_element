@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-dialog": "/components/dialog/dialog"
+    "ls-dialog": "/lensung/dialog/dialog"
   }
 }
 ```

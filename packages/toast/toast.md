@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-toast": "/components/toast/toast"
+    "ls-toast": "/lensung/toast/toast"
   }
 }
 ```

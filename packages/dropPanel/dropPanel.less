@@ -1,0 +1,34 @@
+@import '../_style/color.less';
+
+.ls_dropPanel {
+  position: relative;
+
+  .panel-header {
+    position: relative;
+    z-index: 2;
+  }
+
+  .panel-body {
+    position: fixed;
+    width: 750rpx;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 200ms ease-out;
+
+    .panel-body-content {
+      max-height: calc(100% - 60rpx);
+      overflow-y: auto;
+      transform: translateY(-100%);
+      transition: transform 200ms ease-out;
+      z-index: 1;
+    }
+
+    .panel-body-active {
+      transform: translateY(0);
+    }
+  }
+
+  .panel-bodyActive {
+    background: @mask-color-3;
+  }
+}

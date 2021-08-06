@@ -1,0 +1,14 @@
+.drop-wrap {
+  height: 100vh;
+  overflow: hidden
+}
+
+.drop-header {
+  height: 80rpx;
+  background-color: red;
+}
+
+.drop-body {
+  height: 500rpx;
+  background: #fff;
+}

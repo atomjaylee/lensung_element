@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-tab-bar": "/components/tabBar/tabBar"
+    "ls-tab-bar": "/lensung/tabBar/tabBar"
   }
 }
 ```

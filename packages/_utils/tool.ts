@@ -7,3 +7,19 @@
 export const getComponentAttr = (component: tinyapp.ComponentOptions, attrName: string): any => {
   return component.data[attrName] ? component.data[attrName] : component.props[attrName];
 };
+
+/**
+ * 通过元素id获取位置和尺寸信息
+ * @param elementId - 元素id
+ * @returns - { left, right, top, bottom, width, height }
+ */
+export const getElementRectById = (elementId: string): Promise<my.IBoundingClientRect> => {
+  return new Promise((resolve) => {
+    my.createSelectorQuery()
+      .select(`#${elementId}`)
+      .boundingClientRect()
+      .exec(([elementInfo]) => {
+        resolve(elementInfo as my.IBoundingClientRect);
+      });
+  });
+};

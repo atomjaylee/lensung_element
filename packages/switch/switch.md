@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-switch": "/components/switch/switch"
+    "ls-switch": "/lensung/switch/switch"
   }
 }
 ```

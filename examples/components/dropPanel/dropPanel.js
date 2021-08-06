@@ -1,0 +1,65 @@
+import { getElementRectById } from '../_utils/tool';
+const defaultProps = {
+  maskClosable: true,
+  coverHeader: false
+};
+Component({
+  props: defaultProps,
+  data: {
+    visible: false,
+    bodyVisible: false,
+    panelBodyPositionTop: 0
+  },
+  methods: {
+    onAppearHandler() {
+      this.setData({
+        bodyVisible: true
+      });
+    },
+
+    onTransitionEndHandler() {
+      if (this.data.visible && this.data.bodyVisible) return;
+      this.setData({
+        visible: false
+      });
+    },
+
+    onHeaderClickHandler() {
+      this.data.visible ? this.close() : this.show();
+    },
+
+    async show() {
+      const {
+        windowWidth
+      } = my.getSystemInfoSync();
+      const convertUnit = 750 / windowWidth;
+      const {
+        top,
+        height
+      } = await getElementRectById('dropPanelHeader');
+      this.setData({
+        panelBodyPositionTop: (top + height) * convertUnit,
+        visible: true
+      });
+    },
+
+    close() {
+      this.setData({ ...defaultProps,
+        bodyVisible: false
+      });
+    },
+
+    onMaskTapHandler({
+      target: {
+        targetDataset
+      }
+    }) {
+      const nodeName = targetDataset.nodeName;
+
+      if (nodeName === 'mask' && this.props.maskClosable) {
+        this.close();
+      }
+    }
+
+  }
+});

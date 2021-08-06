@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-action-sheet": "/components/actionSheet/actionSheet"
+    "ls-action-sheet": "/lensung/actionSheet/actionSheet"
   }
 }
 ```

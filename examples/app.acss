@@ -1,8 +1,7 @@
 @import "./iconfont/iconfont.acss";
 
 page {
-  background: #fff;
-  padding: 20rpx 12rpx;
+  background: #f2f2f2;
 }
 
 .preview-title {

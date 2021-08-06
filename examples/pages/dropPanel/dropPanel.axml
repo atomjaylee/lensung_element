@@ -1,0 +1,8 @@
+<view class="drop-wrap">
+  <ls-drop-panel>
+    <ls-flex class="drop-header">头部内容</ls-flex>
+    <view slot="body" class="drop-body">
+      <view a:for="{{ 10 }}">{{ index }}</view>
+    </view>
+  </ls-drop-panel>
+</view>

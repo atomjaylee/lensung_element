@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-popup": "/components/popup/popup"
+    "ls-popup": "/lensung/popup/popup"
   }
 }
 ```

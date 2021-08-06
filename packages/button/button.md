@@ -18,7 +18,7 @@ group:
 ```json
 {
   "usingComponent": {
-    "ls-button": "/components/button/button"
+    "ls-button": "/lensung/button/button"
   }
 }
 ```

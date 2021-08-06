@@ -1,0 +1,10 @@
+<view class="ls_dropPanel">
+  <view class="panel-header" onTap="onHeaderClickHandler" id="dropPanelHeader">
+    <slot></slot>
+  </view>
+  <view class="panel-body {{ bodyVisible ? 'panel-bodyActive' : '' }}" style="top: {{ panelBodyPositionTop }}rpx; height: calc(100% - {{ panelBodyPositionTop }}rpx)" a:if="{{ visible }}" onAppear="onAppearHandler" onTap="onMaskTapHandler" data-nodeName="mask">
+    <view class="panel-body-content {{ bodyVisible ? 'panel-body-active' : '' }}" onTransitionEnd="onTransitionEndHandler">
+      <slot name="body"></slot>
+    </view>
+  </view>
+</view>

@@ -18,7 +18,7 @@ Flex 是 CSS flex 布局的一个封装。
 ```json
 {
   "usingComponent": {
-    "ls-flex": "/components/flex/flex"
+    "ls-flex": "/lensung/flex/flex"
   }
 }
 ```
