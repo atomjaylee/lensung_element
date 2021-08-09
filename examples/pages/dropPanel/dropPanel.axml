@@ -1,8 +1,14 @@
 <view class="drop-wrap">
-  <ls-drop-panel>
-    <ls-flex class="drop-header">头部内容</ls-flex>
+  <ls-drop-panel id="filter">
+    <ls-flex class="drop-header" slot-scope="scope">筛选 {{ scope.visible ? 'open' : 'close' }}</ls-flex>
     <view slot="body" class="drop-body">
       <view a:for="{{ 10 }}">{{ index }}</view>
+    </view>
+  </ls-drop-panel>
+  <ls-drop-panel id="sort">
+    <ls-flex class="drop-header">排序</ls-flex>
+    <view slot="body" class="drop-body">
+      <view a:for="{{ 5 }}">{{ index + 20 }}</view>
     </view>
   </ls-drop-panel>
 </view>

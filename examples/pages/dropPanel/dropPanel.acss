@@ -1,14 +1,14 @@
 .drop-wrap {
-  height: 100vh;
-  overflow: hidden
+  display: flex;
+  width: 750rpx;
 }
 
 .drop-header {
+  width: 375rpx;
   height: 80rpx;
   background-color: red;
 }
 
 .drop-body {
-  height: 500rpx;
   background: #fff;
 }

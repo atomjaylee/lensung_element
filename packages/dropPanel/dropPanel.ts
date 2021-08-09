@@ -1,6 +1,10 @@
 import { getElementRectById } from '../_utils/tool';
 
+const GLOBAL_NAME = '__dropPanelInstanceMap__';
+const dropPanelInstanceMap = (getApp() as any)[GLOBAL_NAME] || new Map();
+
 interface BaseDropPanelProps {
+  id?: string;
   maskClosable?: boolean;
   coverHeader?: boolean;
   zIndex?: number;
@@ -9,7 +13,7 @@ interface BaseDropPanelProps {
 const defaultProps: BaseDropPanelProps = {
   maskClosable: true,
   coverHeader: false,
-  zIndex: 2
+  zIndex: 2,
 };
 
 Component({
@@ -40,6 +44,16 @@ Component({
       const convertUnit = 750 / windowWidth;
       const { top, height } = await getElementRectById('dropPanelHeader');
       this.setData({ panelBodyPositionTop: (top + height) * convertUnit, visible: true });
+
+      dropPanelInstanceMap.forEach((instance) => instance.close());
+
+      if (this.props.id) {
+        dropPanelInstanceMap.set(this.props.id, this);
+      }
+
+      Object.defineProperty(getApp(), GLOBAL_NAME, {
+        get: () => dropPanelInstanceMap,
+      });
     },
 
     close() {

@@ -1,4 +1,5 @@
 App({
+  globalData: {},
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}
