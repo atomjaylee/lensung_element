@@ -3,7 +3,6 @@
 }
 .ls_dropPanel .panel-header {
   position: relative;
-  z-index: 2;
 }
 .ls_dropPanel .panel-body {
   position: fixed;
@@ -17,7 +16,6 @@
   overflow-y: auto;
   transform: translateY(-100%);
   transition: transform 200ms ease-out;
-  z-index: 1;
 }
 .ls_dropPanel .panel-body .panel-body-active {
   transform: translateY(0);
