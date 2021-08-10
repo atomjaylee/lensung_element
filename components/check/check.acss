@@ -1,0 +1,35 @@
+.ls_check {
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1rpx solid #c4c6cf;
+  background-color: #fff;
+}
+.ls_check-medium {
+  width: 48rpx;
+  height: 48rpx;
+}
+.ls_check-small {
+  width: 36rpx;
+  height: 36rpx;
+}
+.ls_check-checked {
+  position: relative;
+  border: none;
+  background-color: #ff5001;
+}
+.ls_check-checked:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%) rotate(-45deg);
+  content: "";
+  display: block;
+  width: 50%;
+  height: 21%;
+  border-bottom: 4rpx solid #fff;
+  border-left: 4rpx solid #fff;
+}
+.ls_check-disabled {
+  border: none;
+  background-color: #f2f2f2;
+}

@@ -7,3 +7,35 @@
 export const getComponentAttr = (component, attrName) => {
   return component.data[attrName] ? component.data[attrName] : component.props[attrName];
 };
+/**
+ * 通过元素id获取位置和尺寸信息
+ * @param elementId - 元素id
+ * @returns - { left, right, top, bottom, width, height }
+ */
+
+export const getElementRectById = elementId => {
+  return new Promise(resolve => {
+    my.createSelectorQuery().select(`#${elementId}`).boundingClientRect().exec(([elementInfo]) => {
+      resolve(elementInfo);
+    });
+  });
+};
+/**
+ * 深拷贝
+ * @param obj - 需要拷贝的目标
+ * @returns - 不可变的拷贝信息
+ */
+
+export const deepClone = obj => {
+  if (typeof obj !== 'object' || obj === null) return obj;
+
+  const _clone = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      _clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key];
+    }
+  }
+
+  return _clone;
+};

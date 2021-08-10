@@ -16,7 +16,8 @@
   position: absolute;
   min-width: 270rpx;
   min-height: 112rpx;
-  padding: 40rpx;
+  line-height: 1.38;
+  padding: 34rpx 40rpx;
   font-size: 28rpx;
   color: #fff;
   border-radius: 24rpx;
@@ -31,8 +32,9 @@
   margin-bottom: 26rpx;
 }
 .ls_toast-innerHasIcon {
-  width: 270rpx;
-  min-height: 270rpx;
+  width: 220rpx;
+  min-height: 220rpx;
+  line-height: 1.14;
 }
 .ls_toast-innerActive {
   opacity: 1;

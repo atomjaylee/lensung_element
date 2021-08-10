@@ -6,7 +6,7 @@ const defaultProps = {
   suppressOperate: false,
   position: 'center',
   maxLine: 3,
-  maxWidth: 560,
+  maxWidth: 400,
   zIndex: 999
 };
 Component({

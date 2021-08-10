@@ -1,0 +1,1 @@
+<view class="ls_check {{ baseClass }} {{ localChecked ? 'ls_check-checked' : '' }}" onTap="onCheckTapHandler"></view>
