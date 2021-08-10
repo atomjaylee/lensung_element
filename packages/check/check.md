@@ -1,5 +1,5 @@
 ---
-title: Check 复选框(20%)
+title: Check 复选框
 nav:
   title: 组件
   path: /components

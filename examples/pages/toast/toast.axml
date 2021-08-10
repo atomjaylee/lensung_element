@@ -1,3 +1,4 @@
 <ls-toast ref="toastInstance"></ls-toast>
 
-<ls-button onTap="openToastHandler">轻提示</ls-button>
+<ls-button onTap="notIconToastHandler">轻提示(不带图标)</ls-button>
+<ls-button onTap="iconToastHandler">轻提示(带图标)</ls-button>
