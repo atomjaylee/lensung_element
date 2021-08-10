@@ -3,6 +3,7 @@
   "usingComponents": {
     "ls-check": "/components/check/check",
     "ls-check-box": "/components/check/checkBox/checkBox",
-    "ls-check-group": "/components/check/checkGroup/checkGroup"
+    "ls-check-group": "/components/check/checkGroup/checkGroup",
+    "ls-flex": "/components/flex/flex"
   }
 }

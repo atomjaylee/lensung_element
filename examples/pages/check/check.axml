@@ -5,13 +5,26 @@
   <ls-check size="small" checked="{{ checked }}"></ls-check>
   -----------------------------
   <ls-check-group checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler">
-    <ls-check value="1"></ls-check>
-    <ls-check value="2"></ls-check>
-    <ls-check value="3"></ls-check>
-    <ls-check value="4"></ls-check>
-    <view>
+    <ls-check a:for="{{ list }}" value="{{ item }}" key="{{ item }}"></ls-check>
+    <ls-flex>
       <ls-check value="5"></ls-check>
       <text>嘿嘿</text>
-    </view>
+    </ls-flex>
   </ls-check-group>
+  -----------------------------
+  <view>
+    <ls-check-box>618大促</ls-check-box>
+    <ls-check-box disabled>造物节</ls-check-box>
+    <ls-check-box checked>双十一大促</ls-check-box>
+  </view>
+  -----------------------------
+  <view>
+    <ls-check-group checkedList="{{ checkBoxList }}" onChange="onCheckBoxChangeHandler">
+      <ls-check-box value="618">618大促</ls-check-box>
+      <ls-check-box disabled value="造物节">造物节</ls-check-box>
+      <ls-check-box checked value="双十一">双十一大促</ls-check-box>
+    </ls-check-group>
+  </view>
+
+  <view onTap="switchData">change data</view>
 </view>

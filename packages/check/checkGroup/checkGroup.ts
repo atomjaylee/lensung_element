@@ -11,13 +11,13 @@ const defaultProps: BaseCheckGroupProps = {
   max: Infinity,
 };
 
-const observerList = new Map();
-
 Component({
   props: defaultProps,
 
   onInit() {
-    this.childRegister();
+    this.__observerList__ = new Map();
+    const defaultSlotList = this.props.$slots.$default || [];
+    this.childRegister(defaultSlotList);
     Promise.resolve().then(() => this.notify(this.props.checkedList));
   },
 
@@ -25,30 +25,33 @@ Component({
     if (nextProps.checkedList.length !== this.props.checkedList.length) {
       this.notify(nextProps.checkedList);
     }
+    const slotList = this.props.$slots.$default || [];
+    const nextSlotList = nextProps.$slots.$default || [];
+    if (slotList.length !== nextSlotList.length) {
+      this.__observerList__.clear();
+      this.childRegister(nextSlotList);
+      Promise.resolve().then(() => this.notify(nextProps.checkedList));
+    }
   },
 
   methods: {
-    childRegister() {
-      const defaultSlotList = this.props.$slots.$default || [];
-      const addChildrenProps = (children: any[]) => {
-        children.forEach((child) => {
-          if (child.props._isLenSungChecked) {
-            child.props.$groupId = this.$id;
-            child.props.$groupRegister = this.observerAdd;
-            child.props.$groupUpdate = this.observerUpdate.bind(this);
-          } else {
-            const children = child.props.children || [];
-            const childrenList = Array.isArray(children) ? children : [children];
-            const filterChildrenList = childrenList.filter((x) => typeof x === 'object');
-            filterChildrenList.length && addChildrenProps(filterChildrenList);
-          }
-        });
-      };
-      addChildrenProps(defaultSlotList);
+    childRegister(children) {
+      children.forEach((child) => {
+        if (child.props._isLenSungChecked) {
+          child.props.$groupId = this.$id;
+          child.props.$groupRegister = this.observerAdd.bind(this);
+          child.props.$groupUpdate = this.observerUpdate.bind(this);
+        } else {
+          const children = child.props.children || [];
+          const childrenList = Array.isArray(children) ? children : [children];
+          const filterChildrenList = childrenList.filter((x) => typeof x === 'object');
+          filterChildrenList.length && this.childRegister(filterChildrenList);
+        }
+      });
     },
 
     observerAdd(id: number, updateFunc: Function) {
-      observerList.set(id, updateFunc);
+      this.__observerList__.set(id, updateFunc);
     },
 
     observerUpdate(value: number | string | boolean) {
@@ -59,7 +62,7 @@ Component({
     },
 
     notify(newestCheckedList) {
-      observerList.forEach((updateFunc) => updateFunc(newestCheckedList));
+      this.__observerList__.forEach((updateFunc) => updateFunc(newestCheckedList));
     },
   },
 });

@@ -39,7 +39,10 @@ Component({
   },
 
   onInit() {
-    this.setData({ baseClass: this.wrapClasses() });
+    this.setData({
+      baseClass: this.wrapClasses(),
+      localChecked: this.props.checked === this.props.value,
+    });
     this.$groupId = this.props.$groupId;
     this.$groupUpdate = this.props.$groupUpdate;
     this.$groupId && this.props.$groupRegister(this.$id, this.groupUpdate.bind(this));
@@ -64,7 +67,6 @@ Component({
     },
 
     groupUpdate(checkedList) {
-      console.log(checkedList);
       this.setData({ localChecked: !!checkedList.find((x) => x === this.props.value) });
     },
   },

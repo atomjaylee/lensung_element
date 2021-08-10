@@ -1,0 +1,26 @@
+@import '../../_style/color.less';
+
+.ls_check_box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2rpx solid #f2f3f5;
+  background-color: #f2f3f5;
+  font-size: 28rpx;
+  color: #333;
+  height: 56rpx;
+  border-radius: 56rpx;
+  padding: 0 24rpx;
+  margin-right: 16rpx;
+
+  &:last-child {
+    margin-right: none;
+  }
+
+  &-disabled {
+    color: rgba(#333, 0.5);
+    border: 2rpx solid #f2f3f5;
+    background-color: #f2f3f5;
+  }
+}

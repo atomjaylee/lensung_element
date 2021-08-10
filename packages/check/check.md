@@ -26,31 +26,83 @@ group:
 ## 基础用法
 
 ```html
-<ls-check"></ls-check>
+<ls-check checked></ls-check>
 
-<ls-check-box></ls-check-box>
+<ls-check-box checked="{{ false }}"></ls-check-box>
 
-<ls-check-group>
-  <ls-check />
-  <ls-check />
+<ls-check-group checkedList="{{ ['1','2'] }}">
+  <ls-check value="1" />
+  <ls-check value="2" />
+  <ls-check value="3" />
+  <ls-check value="4" />
+  <ls-check value="5" />
 </ls-check-group>
 
-<ls-check-group>
-  <ls-check-box />
-  <ls-check-box />
+<ls-check-group checkedList="{{ checkedList }}" onChange="onCheckGroupChangeHandler">
+  <ls-check-box value="1" />
+  <ls-check-box value="2" />
+  <ls-check-box value="3" />
+  <ls-check-box value="4" />
 </ls-check-group>
+```
+
+```js
+data: {
+  checkedList: ["2"]
+},
+
+onCheckGroupChangeHandler(checkedList) {
+  this.setData({ checkedList })
+}
 ```
 
 ## API
 
 ### Check Attributes
 
-| 参数    | 说明     | 类型      | 默认值  | 备注 |
-| ------- | -------- | --------- | ------- | ---- |
-| checked | 是否选中 | `boolean` | `false` | -    |
+| 参数     | 说明              | 类型                          | 默认值   | 备注                                   |
+| -------- | ----------------- | ----------------------------- | -------- | -------------------------------------- |
+| checked  | 当前选中的值      | `boolean`\|`string`\|`number` | `false`  | -                                      |
+| disabled | 禁用该 check      | `boolean`                     | `false`  | -                                      |
+| size     | 尺寸              | `medium`\|`small`             | `medium` | -                                      |
+| value    | 该 check 绑定的值 | `boolean`\|`string`\|`number` | `true`   | 当`checked === value`时，该 check 勾选 |
 
-### Events
+### Check Events
 
 | 事件名称 | 说明             | 回调参数 |
 | -------- | ---------------- | -------- |
 | onChange | 状态变更回调函数 | -        |
+
+### CheckBox Attributes
+
+| 参数     | 说明              | 类型                          | 默认值   | 备注                                   |
+| -------- | ----------------- | ----------------------------- | -------- | -------------------------------------- |
+| checked  | 当前选中的值      | `boolean`\|`string`\|`number` | `false`  | -                                      |
+| disabled | 禁用该 check      | `boolean`                     | `false`  | -                                      |
+| size     | 尺寸              | `medium`\|`small`             | `medium` | -                                      |
+| value    | 该 check 绑定的值 | `boolean`\|`string`\|`number` | `true`   | 当`checked === value`时，该 check 勾选 |
+
+### CheckBox Events
+
+| 事件名称 | 说明             | 回调参数 |
+| -------- | ---------------- | -------- |
+| onChange | 状态变更回调函数 | -        |
+
+
+### CheckGroup Attributes
+
+| 参数        | 说明               | 类型 | 默认值 | 备注                                       |
+| ----------- | ------------------ | ---- | ------ | ------------------------------------------ |
+| checkedList | 当前选中的值的集合 | `[]` | `[]`   | 插槽内 check 或 checkBox 组件 value 的集合 |
+
+### CheckGroup Events
+
+| 事件名称 | 说明             | 回调参数    |
+| -------- | ---------------- | ----------- |
+| onChange | 状态变更回调函数 | checkedList |
+
+### CheckGroup Slot
+
+| name    | 说明                                            |
+| ------- | ----------------------------------------------- |
+| default | 自定义内容，内容包含 check 组件或 checkBox 组件 |

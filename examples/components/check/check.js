@@ -32,7 +32,8 @@ Component({
 
   onInit() {
     this.setData({
-      baseClass: this.wrapClasses()
+      baseClass: this.wrapClasses(),
+      localChecked: this.props.checked === this.props.value
     });
     this.$groupId = this.props.$groupId;
     this.$groupUpdate = this.props.$groupUpdate;
@@ -62,7 +63,6 @@ Component({
     },
 
     groupUpdate(checkedList) {
-      console.log(checkedList);
       this.setData({
         localChecked: !!checkedList.find(x => x === this.props.value)
       });
