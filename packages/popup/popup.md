@@ -32,7 +32,7 @@ group:
 ```js
 methods: {
   // 注册
-  dialog(ref) {
+  popup(ref) {
     this.$popup = ref;
   },
 

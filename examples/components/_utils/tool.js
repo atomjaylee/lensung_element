@@ -20,3 +20,22 @@ export const getElementRectById = elementId => {
     });
   });
 };
+/**
+ * 深拷贝
+ * @param obj - 需要拷贝的目标
+ * @returns - 不可变的拷贝信息
+ */
+
+export const deepClone = obj => {
+  if (typeof obj !== 'object' || obj === null) return obj;
+
+  const _clone = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      _clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key];
+    }
+  }
+
+  return _clone;
+};

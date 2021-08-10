@@ -1,3 +1,17 @@
-<view>
-  <ls-check></ls-check>
+<view class="check-page">
+  -----------------------------
+  <ls-check checked="{{ checked }}" onChange="onCheckChangeHandler"></ls-check>
+  <ls-check disabled checked="{{ checked }}"></ls-check>
+  <ls-check size="small" checked="{{ checked }}"></ls-check>
+  -----------------------------
+  <ls-check-group checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler">
+    <ls-check value="1"></ls-check>
+    <ls-check value="2"></ls-check>
+    <ls-check value="3"></ls-check>
+    <ls-check value="4"></ls-check>
+    <view>
+      <ls-check value="5"></ls-check>
+      <text>嘿嘿</text>
+    </view>
+  </ls-check-group>
 </view>
