@@ -8,7 +8,8 @@
     "pages/dialog/dialog",
     "pages/popup/popup",
     "pages/actionSheet/actionSheet",
-    "pages/dropPanel/dropPanel"
+    "pages/dropPanel/dropPanel",
+    "pages/check/check"
   ],
   "window": {
     "defaultTitle": "邻商商品组件库"

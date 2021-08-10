@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "Check",
+  "usingComponents": {
+    "ls-check": "/components/check/check",
+    "ls-check-box": "/components/check/checkBox/checkBox",
+    "ls-check-group": "/components/check/checkGroup/checkGroup"
+  }
+}

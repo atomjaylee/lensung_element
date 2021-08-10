@@ -1,0 +1,5 @@
+.ls_check {
+  position: relative;
+  box-sizing: border-box;
+  border: 1rpx solid #c4c6cf;
+}
