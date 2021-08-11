@@ -4,10 +4,10 @@
   <ls-check disabled checked="{{ checked }}"></ls-check>
   <ls-check size="small" checked="{{ checked }}"></ls-check>
   -----------------------------
-  <ls-check-group checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler">
-    <ls-check a:for="{{ list }}" value="{{ item }}" key="{{ item }}"></ls-check>
+  <ls-check-group id="top" checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler">
+    <ls-check groupId="top" a:for="{{ list }}" value="{{ item }}" key="{{ item }}"></ls-check>
     <ls-flex>
-      <ls-check value="5"></ls-check>
+      <ls-check value="5" groupId="top"></ls-check>
       <text>嘿嘿</text>
     </ls-flex>
   </ls-check-group>
@@ -19,10 +19,10 @@
   </view>
   -----------------------------
   <view>
-    <ls-check-group checkedList="{{ checkBoxList }}" onChange="onCheckBoxChangeHandler">
-      <ls-check-box value="618">618大促</ls-check-box>
-      <ls-check-box disabled value="造物节">造物节</ls-check-box>
-      <ls-check-box checked value="双十一">双十一大促</ls-check-box>
+    <ls-check-group id="bottom" checkedList="{{ checkBoxList }}" onChange="onCheckBoxChangeHandler">
+      <ls-check-box groupId="bottom" value="618">618大促</ls-check-box>
+      <ls-check-box groupId="bottom" disabled value="造物节">造物节</ls-check-box>
+      <ls-check-box groupId="bottom" checked value="双十一">双十一大促</ls-check-box>
     </ls-check-group>
   </view>
 

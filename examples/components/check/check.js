@@ -1,12 +1,11 @@
 import fmtEvent from '../_utils/fmtEvent';
 import fmtClass from '../_utils/fmtClass';
+import { PAGE_CONTEXT_NAME } from './checkGroup/checkGroup';
 const defaultProps = {
   checked: false,
   disabled: false,
   value: true,
-  size: 'medium',
-  _isLenSungChecked: true // NOTE: 作为check组件标识，用于group组件递归时的标识符
-
+  size: 'medium'
 };
 Component({
   props: defaultProps,
@@ -35,9 +34,21 @@ Component({
       baseClass: this.wrapClasses(),
       localChecked: this.props.checked === this.props.value
     });
-    this.$groupId = this.props.$groupId;
-    this.$groupUpdate = this.props.$groupUpdate;
-    this.$groupId && this.props.$groupRegister(this.$id, this.groupUpdate.bind(this));
+
+    if (this.props.groupId !== undefined) {
+      const dependGroup = this.$page[`${PAGE_CONTEXT_NAME}${this.props.groupId}`];
+
+      if (dependGroup) {
+        dependGroup.link(this.$id, this.localUpdate.bind(this));
+        this.$groupUpdate = dependGroup.update;
+        this.$refresh = dependGroup.refresh;
+        this.$unLink = dependGroup.unLink;
+      }
+    }
+  },
+
+  didUnmount() {
+    this.$unLink && this.$unLink(this.$id);
   },
 
   methods: {
@@ -55,17 +66,26 @@ Component({
 
     onCheckTapHandler(evt) {
       if (this.props.disabled) return;
-      const event = fmtEvent(this.props, { ...evt,
-        checked: this.props.value
-      });
-      this.props.onChange && this.props.onChange(event);
-      this.$groupId && this.$groupUpdate(this.props.value);
+
+      if (this.props.groupId !== undefined) {
+        this.$groupUpdate && this.$groupUpdate(this.props.value);
+      } else {
+        const event = fmtEvent(this.props, { ...evt,
+          checked: this.props.value
+        });
+        this.props.onChange && this.props.onChange(event);
+      }
     },
 
-    groupUpdate(checkedList) {
-      this.setData({
-        localChecked: !!checkedList.find(x => x === this.props.value)
-      });
+    // 更新本地勾选状态回调
+    localUpdate(checkedList) {
+      const isChecked = checkedList.some(x => x === this.props.value);
+
+      if (this.data.localChecked !== isChecked) {
+        this.setData({
+          localChecked: isChecked
+        });
+      }
     }
 
   }

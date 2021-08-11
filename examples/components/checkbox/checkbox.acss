@@ -1,0 +1,9 @@
+.py-checkbox-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.py-check-label{
+  font-size: 44rpx;
+}

@@ -50,6 +50,7 @@ Component({
     },
 
     onClickHandler(evt) {
+      if (this.props.disabled) return;
       const event = fmtEvent(this.props, evt);
       this.props.onTap && this.props.onTap(event);
     },

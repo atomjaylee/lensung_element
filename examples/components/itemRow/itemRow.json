@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ls-check": "../check/check",
+    "ls-dialog": "../dialog/dialog",
+    "ls-flex": "../flex/flex"
+  }
+}

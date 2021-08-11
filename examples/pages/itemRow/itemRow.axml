@@ -1,0 +1,15 @@
+<view>
+  <ls-check-group id="test" checkedList="{{ checkedList }}" onChange="onCheckedChangeHandler">
+    <ls-item-row a:for="{{ flag ? source1 : source2  }}" key="{{ item }}" source="{{ item }}"></ls-item-row>
+  </ls-check-group>
+
+  <ls-button type="primary" block onTap="fetchSourceData">请求数据</ls-button>
+</view>
+
+<view>
+  <a-check-group id="test2" checkedList="{{ checkedList }}" onChange="onCheckedChangeHandler">
+    <a-check parent="test2" a:for="{{ flag ? source1 : source2  }}" key="{{ item }}" value="{{ item.num_iid }}">123123123</a-check>
+  </a-check-group>
+
+  <ls-button type="primary" block onTap="switchCheckedList">手动切换数据</ls-button>
+</view>

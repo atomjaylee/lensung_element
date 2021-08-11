@@ -1,4 +1,4 @@
 <import-sjs from="./checkBox.sjs" name="sjs" />
-<view class="ls_check_box {{ disabled ? 'ls_check_box-disabled' : '' }}" style="{{ sjs.fmtStyle(checkedBackground,checkedBorderColor,checkedColor,disabled,localChecked) }}" onTap="onCheckTapHandler">
+<view class="ls_check_box {{ disabled ? 'ls_check_box-disabled' : '' }} {{ className }}" style="{{ sjs.fmtStyle(checkedBackground,checkedBorderColor,checkedColor,disabled,localChecked) + `${ style ? style : '' }` }}" onTap="onCheckTapHandler">
   <slot></slot>
 </view>

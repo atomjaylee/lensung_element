@@ -1,0 +1,3 @@
+<view class="ls_itemRow">
+  <ls-check />
+</view>

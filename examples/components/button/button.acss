@@ -6,6 +6,7 @@
   background-image: none;
   background-color: #fff;
   touch-action: manipulation;
+  box-sizing: border-box;
 }
 .ls_button .iconfont {
   font-size: 32rpx;
