@@ -1,3 +1,6 @@
+@image_size_medium: 168rpx;
+@image_size_large: 200rpx;
+
 .ls_itemRow {
   background-color: #fff;
   padding: 16rpx 24rpx;
@@ -9,20 +12,47 @@
     margin-right: 24rpx;
   }
 
+  .info-image-medium {
+    width: @image_size_medium;
+    height: @image_size_medium;
+    margin-right: 16rpx;
+  }
+
+  .info-image-large {
+    width: @image_size_large;
+    height: @image_size_large;
+    margin-right: 24rpx;
+  }
+
   .info-image {
-    width: 168rpx;
-    height: 168rpx;
+    position: relative;
     border-radius: 12rpx;
+    overflow: hidden;
+
+    image {
+      width: inherit;
+      height: inherit;
+    }
+
+    .info-tag {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 40rpx;
+      font-size: 28rpx;
+      color: #ff5001;
+      background-color: rgba(#fae7e7, 0.95);
+    }
   }
 
   .info-content {
     flex: 1;
     align-self: flex-start;
-    margin-left: 16rpx;
+    font-size: 28rpx;
+    color: #333;
 
     .content-title {
-      font-size: 28rpx;
-      color: #333;
       line-height: 40rpx;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -31,19 +61,67 @@
       -webkit-box-orient: vertical;
     }
 
-    .tag-xianYu {
+    .tag-module {
       width: 52rpx;
       height: 32rpx;
       display: inline-flex;
       justify-content: center;
       align-items: center;
       align-content: center;
-      line-height: 32rpx;
       font-size: 20rpx;
       margin-right: 6rpx;
       border-radius: 4rpx;
       box-sizing: border-box;
+      transform: translateY(-2rpx);
+    }
+
+    .tag-xianYu {
       background-color: #ffda44;
     }
+
+    .tag-xinPin {
+      background-color: #0891fb;
+      color: #fff;
+    }
+
+    .tag-paiMai {
+      background-color: #f23c3c;
+      color: #fff;
+    }
   }
+
+  // 错误提示
+  .error-tip {
+    height: 56rpx;
+    background: #fff6f5;
+    border-radius: 12rpx;
+    font-size: 24rpx;
+    color: #f54531;
+    padding-left: 10rpx;
+    padding-right: 20rpx;
+    margin-top: 16rpx;
+
+    box-sizing: border-box;
+
+    .tip-text {
+      line-height: 1;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .arrow-right {
+      flex-shrink: 0;
+      width: 12rpx;
+      height: 12rpx;
+      border-right: 2rpx solid currentColor;
+      border-bottom: 2rpx solid currentColor;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.ls_itemRowActive {
+  background-color: rgba(255, 80, 1, 0.08);
 }

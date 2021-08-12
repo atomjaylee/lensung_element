@@ -1,14 +1,24 @@
-<view class="ls_itemRow">
+<view class="ls_itemRow {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}">
   <ls-flex class="ls_itemRow-info">
-    <ls-check size="small" a:if="{{ showCheck }}" value="{{ source }}" groupId="{{ checkGroupId }}" identify="{{ checkIdentify }}"></ls-check>
-    <image class="info-image" src="{{ source.pic_url }}" mode="aspectFill" default-source="https://img.alicdn.com/imgextra/i2/479769835/O1CN01th3vGv2MWTsRuzgkC_!!479769835.png" />
-    <view class="info-content">
-      <view class="content-title">
-        <text class="tag-xianYu">闲鱼</text>
-        <text class="tag-xinPin">新品</text>
-        <text class="tag-paiMai">拍卖</text>
-        <text>{{ source.title }}</text>
-      </view>
+    <ls-check class="info-check" size="small" a:if="{{ showCheck }}" value="{{ source }}" groupId="{{ checkGroupId }}" identify="{{ checkIdentify }}" onChangeByGroup="onCheckChangeByGroup" ref="checkInstance"></ls-check>
+    <view class="info-image {{ `info-image-${imageSize}`}}" onTap="checkItemRowByContentHandler">
+      <image src="{{ source.pic_url }}" mode="aspectFill" default-source="https://img.alicdn.com/imgextra/i2/479769835/O1CN01th3vGv2MWTsRuzgkC_!!479769835.png" />
+      <ls-flex justify="center" class="info-tag {{ tagClass }}" a:if="{{ source.tag }}">{{ source.tag }}</ls-flex>
     </view>
+    <view class="info-content" onTap="checkItemRowByContentHandler">
+      <view class="content-title">
+        <slot name="title">
+          <view class="tag-module tag-xianYu" a:if="{{ source.is_xianyu }}">闲鱼</view>
+          <view class="tag-module tag-xinPin" a:if="{{ source.is_xinpin }}">新品</view>
+          <view class="tag-module tag-paiMai" a:if="{{ source.type === 'auction' }}">拍卖</view>
+          <text checked="{{ checked }}">{{ source.title }}</text>
+        </slot>
+      </view>
+      <slot checked="{{ checked }}"></slot>
+    </view>
+  </ls-flex>
+  <ls-flex class="error-tip" justify="between" onTap="onErrorTipClickHandler" a:if="{{ source.error }}">
+    <view class="tip-text">失败原因: 错误原因sjhdhhkf异常，一行展示不开一行展示一行展示不开一行展示</view>
+    <view class="arrow-right"></view>
   </ls-flex>
 </view>

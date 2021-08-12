@@ -13,6 +13,7 @@ interface BaseCheckProps {
   groupId?: string;
   identify?: string;
   onChange?: (e: tinyapp.IBaseEvent) => void;
+  onChangeByGroup?: (checked: boolean) => void;
 }
 
 const defaultProps: BaseCheckProps = {
@@ -85,7 +86,7 @@ Component({
     // 更新本地勾选状态回调
     localUpdate(checkedList: []) {
       let isChecked = false;
-      const { identify, value } = this.props;
+      const { identify, value, onChangeByGroup } = this.props;
       if (isObject(this.props.value)) {
         isChecked = checkedList.some((x) => x[identify] === value[identify]);
       } else {
@@ -93,6 +94,7 @@ Component({
       }
       if (this.data.localChecked !== isChecked) {
         this.setData({ localChecked: isChecked });
+        onChangeByGroup && onChangeByGroup(isChecked);
       }
     },
   },

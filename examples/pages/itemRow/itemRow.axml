@@ -1,11 +1,10 @@
 <view class="page">
   <ls-check-group id="test" checkedList="{{ checkedList }}" onChange="onCheckedChangeHandler">
-    <ls-item-row a:for="{{ flag ? source1 : source2  }}" key="{{ item }}" source="{{ item }}"></ls-item-row>
+    <ls-item-row showCheck checkByContent checkGroupId="test" a:for="{{ source  }}" key="{{ item }}" source="{{ item }}">
+      <view slot-scope="scoped">
+        <text>库存: 900 {{ scoped.checked ? 'yes' : 'no'}}</text>
+        <text>价格: 1900</text>
+      </view>
+    </ls-item-row>
   </ls-check-group>
-
-  <ls-button type="primary" block onTap="fetchSourceData">请求数据</ls-button>
-</view>
-
-<view>
-  <ls-button type="primary" block onTap="switchCheckedList">手动切换数据</ls-button>
 </view>
