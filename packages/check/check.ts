@@ -25,20 +25,14 @@ const defaultProps: BaseCheckProps = {
 Component({
   props: defaultProps,
 
-  deriveDataFromProps(nextProps: BaseCheckProps) {
-    const { value, checked, size, disabled, identify } = nextProps;
-    const { checked: preChecked, size: preSize, disabled: preDisabled } = this.props;
-
+  deriveDataFromProps({ value, identify, checked, groupId }) {
+    if (groupId !== undefined) return;
     if (isObject(value)) {
-      if (checked[identify] !== preChecked[identify]) {
-        this.setData({ localChecked: checked[identify] === value[identify] });
-      }
+      this.setData({ localChecked: checked[identify] === value[identify] });
     } else {
-      checked !== preChecked && this.setData({ localChecked: checked === value });
+      this.setData({ localChecked: checked === value });
     }
-    if (disabled !== preDisabled || size !== preSize) {
-      this.setData({ baseClass: this.wrapClasses() });
-    }
+    this.setData({ baseClass: this.wrapClasses() });
   },
 
   data: {

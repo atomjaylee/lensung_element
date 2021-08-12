@@ -29,8 +29,16 @@
   -webkit-box-orient: vertical;
 }
 .ls_itemRow .info-content .tag-xianYu {
-  width: 56rpx;
+  width: 52rpx;
   height: 32rpx;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  line-height: 32rpx;
   font-size: 20rpx;
+  margin-right: 6rpx;
+  border-radius: 4rpx;
+  box-sizing: border-box;
   background-color: #ffda44;
 }

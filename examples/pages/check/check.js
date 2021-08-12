@@ -8,6 +8,7 @@ Page({
     checkSchema2: [11, 12, 13, 14, 15, 16, 17],
 
     checkBoxList: ["造物节"],
+    checkBoxKey: ""
   },
   onLoad() {
 
@@ -32,4 +33,8 @@ Page({
       this.setData({ list: this.data.checkSchema2 })
     }
   },
+
+  onSingleCheckBoxChange({ checked }) {
+    this.setData({ checkBoxKey: checked })
+  }
 });

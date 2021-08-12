@@ -13,9 +13,7 @@
   </ls-check-group>
   -----------------------------
   <view>
-    <ls-check-box>618大促</ls-check-box>
-    <ls-check-box disabled>造物节</ls-check-box>
-    <ls-check-box checked>双十一大促</ls-check-box>
+    <ls-check checked="{{ checkBoxKey }}" a:for="{{ list }}" value="{{ item }}" onChange="onSingleCheckBoxChange">{{ item }}</ls-check>
   </view>
   -----------------------------
   <view>
