@@ -1,8 +1,0 @@
-<view data-statistic="{{dataStatistic||''}}" class="py-checkbox-container {{className||''}}" style="{{style}}" onTap="tapHandler">
-  <slot a:if="{{type==='custom'}}" item="{{value}}" checked="{{checked}}"/> <!-- 自定义模式-->
-  <block a:if="{{type!=='custom'}}"> <!-- 标准模式 -->
-    <!-- <py-icon type="{{disabled?'check-disabled':checked?'checked':'unchecked'}}" style="margin-right:24rpx;{{iconStyle||''}}" className="py-check-label {{iconClass||''}}"/> -->
-    <text class="iconfont {{ checked ? 'icon-icon_success' : 'icon-icon-test' }}"></text>
-    <slot checked="{{checked}}" />
-  </block>
-</view>    

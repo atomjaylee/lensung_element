@@ -3,9 +3,6 @@
   "usingComponents": {
     "ls-item-row": "/components/itemRow/itemRow",
     "ls-check-group": "/components/check/checkGroup/checkGroup",
-    "ls-button": "/components/button/button",
-    "ls-check": "/components/check/check",
-    "a-check": "/components/checkbox/checkbox",
-    "a-check-group": "/components/checkbox/checkboxGroup/checkboxGroup"
+    "ls-button": "/components/button/button"
   }
 }

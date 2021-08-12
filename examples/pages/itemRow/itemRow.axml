@@ -7,9 +7,5 @@
 </view>
 
 <view>
-  <a-check-group id="test2" checkedValue="{{ checkedList }}" onChange="onCheckedChangeHandler">
-    <a-check parent="test2" a:for="{{ flag ? source1 : source2  }}" key="{{ item }}" value="{{ item.num_iid }}">123123123</a-check>
-  </a-check-group>
-
   <ls-button type="primary" block onTap="switchCheckedList">手动切换数据</ls-button>
 </view>
