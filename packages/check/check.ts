@@ -1,15 +1,17 @@
 import fmtEvent from '../_utils/fmtEvent';
 import fmtClass from '../_utils/fmtClass';
 import { PAGE_CONTEXT_NAME } from './checkGroup/checkGroup';
+import { isObject } from '../_utils/tool';
 
 interface BaseCheckProps {
-  checked: boolean | string | number;
+  checked: boolean | string | number | Record<string, any>;
   disabled?: boolean;
   size?: 'small' | 'medium';
-  value?: boolean | string | number;
+  value?: boolean | string | number | Record<string, any>;
   className?: string;
   style?: string;
   groupId?: string;
+  identify?: string;
   onChange?: (e: tinyapp.IBaseEvent) => void;
 }
 
@@ -24,10 +26,17 @@ Component({
   props: defaultProps,
 
   deriveDataFromProps(nextProps: BaseCheckProps) {
-    if (nextProps.checked !== this.props.checked) {
-      this.setData({ localChecked: nextProps.checked === this.props.value });
+    const { value, checked, size, disabled, identify } = nextProps;
+    const { checked: preChecked, size: preSize, disabled: preDisabled } = this.props;
+
+    if (isObject(value)) {
+      if (checked[identify] !== preChecked[identify]) {
+        this.setData({ localChecked: checked[identify] === value[identify] });
+      }
+    } else {
+      checked !== preChecked && this.setData({ localChecked: checked === value });
     }
-    if (nextProps.disabled !== this.props.disabled) {
+    if (disabled !== preDisabled || size !== preSize) {
       this.setData({ baseClass: this.wrapClasses() });
     }
   },
@@ -38,12 +47,13 @@ Component({
   },
 
   onInit() {
+    const { value, identify, checked = {}, groupId } = this.props;
     this.setData({
       baseClass: this.wrapClasses(),
-      localChecked: this.props.checked === this.props.value,
+      localChecked: isObject(value) ? checked[identify] === value[identify] : checked === value,
     });
-    if (this.props.groupId !== undefined) {
-      const dependGroup = this.$page[`${PAGE_CONTEXT_NAME}${this.props.groupId}`];
+    if (groupId !== undefined) {
+      const dependGroup = this.$page[`${PAGE_CONTEXT_NAME}${groupId}`];
       if (dependGroup) {
         dependGroup.link(this.$id, this.localUpdate.bind(this));
         this.$groupUpdate = dependGroup.update;
@@ -71,7 +81,7 @@ Component({
     onCheckTapHandler(evt) {
       if (this.props.disabled) return;
       if (this.props.groupId !== undefined) {
-        this.$groupUpdate && this.$groupUpdate(this.props.value);
+        this.$groupUpdate && this.$groupUpdate(this.props.value, this.props.identify);
       } else {
         const event = fmtEvent(this.props, { ...evt, checked: this.props.value });
         this.props.onChange && this.props.onChange(event);
@@ -79,8 +89,14 @@ Component({
     },
 
     // 更新本地勾选状态回调
-    localUpdate(checkedList) {
-      const isChecked = checkedList.some((x) => x === this.props.value);
+    localUpdate(checkedList: []) {
+      let isChecked = false;
+      const { identify, value } = this.props;
+      if (isObject(this.props.value)) {
+        isChecked = checkedList.some((x) => x[identify] === value[identify]);
+      } else {
+        isChecked = checkedList.some((x) => x === value);
+      }
       if (this.data.localChecked !== isChecked) {
         this.setData({ localChecked: isChecked });
       }

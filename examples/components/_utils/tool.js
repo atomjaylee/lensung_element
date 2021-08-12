@@ -38,4 +38,8 @@ export const deepClone = obj => {
   }
 
   return _clone;
+}; // 目标是否为对象
+
+export const isObject = target => {
+  return Object.prototype.toString.call(target) === '[object Object]';
 };

@@ -9,7 +9,7 @@ Page({
       { num_iid: "5", pic_url: "https://img.alicdn.com/bao/uploaded/i3/O1CN01I1N5n61ucc3u4EgY9_!!0-fleamarket.jpg_240x240", title: "自用的小米11闲置了，想要的可以私聊，配置很强大，支持5g，" },
       { num_iid: "6", pic_url: "https://img.alicdn.com/bao/uploaded/i3/O1CN01I1N5n61ucc3u4EgY9_!!0-fleamarket.jpg_240x240", title: "自用的小米11闲置了，想要的可以私聊，配置很强大，支持5g，" },
     ],
-    checkedList: ['4']
+    checkedList: []
   },
   onLoad() { },
 
@@ -18,7 +18,12 @@ Page({
   },
 
   switchCheckedList() {
-    this.setData({ checkedList: ["4", "5"] })
+    this.setData({
+      checkedList: [
+        { num_iid: "5", pic_url: "https://img.alicdn.com/bao/uploaded/i3/O1CN01I1N5n61ucc3u4EgY9_!!0-fleamarket.jpg_240x240", title: "自用的小米11闲置了，想要的可以私聊，配置很强大，支持5g，" },
+        { num_iid: "6", pic_url: "https://img.alicdn.com/bao/uploaded/i3/O1CN01I1N5n61ucc3u4EgY9_!!0-fleamarket.jpg_240x240", title: "自用的小米11闲置了，想要的可以私聊，配置很强大，支持5g，" },
+      ]
+    })
   },
 
   fetchSourceData() {

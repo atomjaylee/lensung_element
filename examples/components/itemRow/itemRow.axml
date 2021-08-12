@@ -1,6 +1,6 @@
 <view class="ls_itemRow">
   <ls-flex class="ls_itemRow-info">
-    <ls-check value="{{ source.num_iid }}" groupId="test"></ls-check>
+    <ls-check value="{{ source }}" groupId="test" identify="num_iid"></ls-check>
     <image class="info-image" src="{{ source.pic_url }}" />
   </ls-flex>
 </view>

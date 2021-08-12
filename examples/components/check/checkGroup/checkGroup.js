@@ -1,4 +1,4 @@
-import { deepClone } from '../../_utils/tool';
+import { deepClone, isObject } from '../../_utils/tool';
 const defaultProps = {
   checkedList: [],
   max: Infinity
@@ -46,10 +46,10 @@ Component({
       this.__observerList__.delete(id);
     },
 
-    observerUpdate(value) {
+    observerUpdate(value, identify) {
       const _checkedList = deepClone(this.props.checkedList);
 
-      const targetIndex = _checkedList.findIndex(item => item === value);
+      const targetIndex = _checkedList.findIndex(item => isObject(item) ? item[identify] === value[identify] : item === value);
 
       if (targetIndex === -1) {
         _checkedList.length < +this.props.max && _checkedList.push(value);

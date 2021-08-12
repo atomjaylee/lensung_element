@@ -27,4 +27,5 @@
   </view>
 
   <view onTap="switchData">change data</view>
+  
 </view>
