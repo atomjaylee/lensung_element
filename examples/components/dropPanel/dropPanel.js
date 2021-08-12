@@ -3,6 +3,7 @@ const GLOBAL_NAME = '__dropPanelInstanceMap__';
 const dropPanelInstanceMap = getApp()[GLOBAL_NAME] || new Map();
 const defaultProps = {
   maskClosable: true,
+  bodyClosable: false,
   coverHeader: false,
   zIndex: 2
 };
@@ -31,6 +32,10 @@ Component({
       this.data.visible ? this.close() : this.show();
     },
 
+    onContentClickHandler() {
+      this.props.bodyClosable && this.close();
+    },
+
     async show() {
       const {
         windowWidth
@@ -40,8 +45,9 @@ Component({
         top,
         height
       } = await getElementRectById('dropPanelHeader');
+      const distanceTop = this.props.coverHeader ? top * convertUnit : (top + height) * convertUnit;
       this.setData({
-        panelBodyPositionTop: (top + height) * convertUnit,
+        panelBodyPositionTop: distanceTop,
         visible: true
       });
       dropPanelInstanceMap.forEach(instance => instance.close());

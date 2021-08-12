@@ -7,10 +7,15 @@ interface ItemServerRequest {
 
 interface BaseItemRowProps {
   source: ItemServerRequest;
+  showCheck?: boolean;
+  checkGroupId?: string;
+  checkIdentify?: string;
 }
 
 const defaultProps: BaseItemRowProps = {
   source: {},
+  showCheck: false,
+  checkIdentify: 'num_iid',
 };
 
 Component({

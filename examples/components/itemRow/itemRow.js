@@ -1,5 +1,7 @@
 const defaultProps = {
-  source: {}
+  source: {},
+  showCheck: false,
+  checkIdentify: 'num_iid'
 };
 Component({
   props: defaultProps

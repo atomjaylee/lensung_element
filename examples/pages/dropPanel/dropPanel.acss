@@ -1,12 +1,20 @@
 .drop-wrap {
   display: flex;
   width: 750rpx;
+  padding-top: 200rpx;
+  background: blue
 }
 
 .drop-header {
   width: 375rpx;
   height: 80rpx;
   background-color: red;
+  transition: all 200ms ease-out;
+  opacity: 1;
+}
+
+.header-active {
+  opacity: 0;
 }
 
 .drop-body {

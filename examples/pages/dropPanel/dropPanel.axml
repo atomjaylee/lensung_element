@@ -1,6 +1,6 @@
 <view class="drop-wrap">
-  <ls-drop-panel id="filter">
-    <ls-flex class="drop-header" slot-scope="scope">筛选 {{ scope.visible ? 'open' : 'close' }}</ls-flex>
+  <ls-drop-panel id="filter" coverHeader bodyClosable>
+    <ls-flex class="drop-header {{ scope.visible && 'header-active'}}" slot-scope="scope">筛选 {{ scope.visible ? 'open' : 'close' }}</ls-flex>
     <view slot="body" class="drop-body">
       <view a:for="{{ 10 }}">{{ index }}</view>
     </view>

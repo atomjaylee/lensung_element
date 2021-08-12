@@ -1,4 +1,4 @@
-<view>
+<view class="page">
   <ls-check-group id="test" checkedList="{{ checkedList }}" onChange="onCheckedChangeHandler">
     <ls-item-row a:for="{{ flag ? source1 : source2  }}" key="{{ item }}" source="{{ item }}"></ls-item-row>
   </ls-check-group>

@@ -45,12 +45,19 @@ methods: {
 
 ### Attributes
 
-| 参数         | 说明                         | 类型      | 默认值  | 备注                             |
-| ------------ | ---------------------------- | --------- | ------- | -------------------------------- |
-| id           | dropPanel 唯一标识           | `string`  | -       | 可以使用此标识手动关闭 dropPanel |
-| coverHeader  | 展开面板是否盖住 Header 部分 | `boolean` | `false` | -                                |
-| maskClosable | 点击遮罩关闭弹窗             | `boolean` | `false` | -                                |
-| zIndex       | z-index 的值                 | `number`  | `2`     | -                                |
+| 参数         | 说明                             | 类型      | 默认值  | 备注                             |
+| ------------ | -------------------------------- | --------- | ------- | -------------------------------- |
+| id           | dropPanel 唯一标识               | `string`  | -       | 可以使用此标识手动关闭 dropPanel |
+| coverHeader  | 展开面板是否从 Header 的顶部开始 | `boolean` | `false` | -                                |
+| maskClosable | 点击遮罩关闭弹窗                 | `boolean` | `false` | -                                |
+| bodyClosable | 点击遮罩关闭弹窗                 | `boolean` | `false` | -                                |
+| zIndex       | z-index 的值                     | `number`  | `2`     | -                                |
+
+### Methods
+
+| 事件名称 | 说明     | 回调参数 |
+| -------- | -------- | -------- |
+| close    | 关闭显示 | -        |
 
 ### Scoped Slot
 
