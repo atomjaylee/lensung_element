@@ -3,7 +3,7 @@
     <slot visible="{{ visible }}"></slot>
   </view>
   <view class="panel-body {{ bodyVisible ? 'panel-bodyActive' : '' }}" style="top: {{ panelBodyPositionTop }}rpx; height: calc(100% - {{ panelBodyPositionTop }}rpx); z-index: {{ zIndex - 1 }}" a:if="{{ visible }}" onAppear="onAppearHandler" onTap="onMaskTapHandler" data-nodeName="mask">
-    <view class="panel-body-content {{ bodyVisible ? 'panel-body-active' : '' }}" onTransitionEnd="onTransitionEndHandler">
+    <view class="panel-body-content {{ bodyVisible ? 'panel-body-active' : '' }}" onTransitionEnd="onTransitionEndHandler" onTap="onContentClickHandler">
       <slot name="body" visible="{{ visible }}"></slot>
     </view>
   </view>

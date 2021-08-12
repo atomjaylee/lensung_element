@@ -1,22 +1,36 @@
 import fmtEvent from '../../_utils/fmtEvent';
+import { PAGE_CONTEXT_NAME } from '../checkGroup/checkGroup';
+import { isObject } from '../../_utils/tool';
 const defaultProps = {
   checked: false,
   checkedBackground: '#fff7f1',
   checkedBorderColor: '#ff5001',
   checkedColor: '#ff5001',
   disabled: false,
-  value: true,
-  size: 'medium',
-  _isLenSungChecked: true // NOTE: 作为check组件标识，用于group组件递归时的标识符
-
+  value: true
 };
 Component({
   props: defaultProps,
 
   deriveDataFromProps(nextProps) {
-    if (nextProps.checked !== this.props.checked) {
-      this.setData({
-        localChecked: nextProps.checked === this.props.value
+    const {
+      value,
+      checked,
+      identify
+    } = nextProps;
+    const {
+      checked: preChecked
+    } = this.props;
+
+    if (isObject(value)) {
+      if (checked[identify] !== preChecked[identify]) {
+        this.setData({
+          localChecked: checked[identify] === value[identify]
+        });
+      }
+    } else {
+      checked !== preChecked && this.setData({
+        localChecked: checked === value
       });
     }
   },
@@ -26,28 +40,65 @@ Component({
   },
 
   onInit() {
+    const {
+      value,
+      identify,
+      checked = {},
+      groupId
+    } = this.props;
     this.setData({
-      localChecked: this.props.checked === this.props.value
+      localChecked: isObject(value) ? checked[identify] === value[identify] : checked === value
     });
-    this.$groupId = this.props.$groupId;
-    this.$groupUpdate = this.props.$groupUpdate;
-    this.$groupId && this.props.$groupRegister(this.$id, this.groupUpdate.bind(this));
+
+    if (groupId !== undefined) {
+      const dependGroup = this.$page[`${PAGE_CONTEXT_NAME}${groupId}`];
+
+      if (dependGroup) {
+        dependGroup.link(this.$id, this.localUpdate.bind(this));
+        this.$groupUpdate = dependGroup.update;
+        this.$refresh = dependGroup.refresh;
+        this.$unLink = dependGroup.unLink;
+      }
+    }
+  },
+
+  didUnmount() {
+    this.$unLink && this.$unLink(this.$id);
   },
 
   methods: {
     onCheckTapHandler(evt) {
       if (this.props.disabled) return;
-      const event = fmtEvent(this.props, { ...evt,
-        checked: this.props.value
-      });
-      this.props.onChange && this.props.onChange(event);
-      this.$groupId && this.$groupUpdate(this.props.value);
+
+      if (this.props.groupId !== undefined) {
+        this.$groupUpdate && this.$groupUpdate(this.props.value, this.props.identify);
+      } else {
+        const event = fmtEvent(this.props, { ...evt,
+          checked: this.props.value
+        });
+        this.props.onChange && this.props.onChange(event);
+      }
     },
 
-    groupUpdate(checkedList) {
-      this.setData({
-        localChecked: !!checkedList.find(x => x === this.props.value)
-      });
+    // 更新本地勾选状态回调
+    localUpdate(checkedList) {
+      let isChecked = false;
+      const {
+        identify,
+        value
+      } = this.props;
+
+      if (isObject(this.props.value)) {
+        isChecked = checkedList.some(x => x[identify] === value[identify]);
+      } else {
+        isChecked = checkedList.some(x => x === value);
+      }
+
+      if (this.data.localChecked !== isChecked) {
+        this.setData({
+          localChecked: isChecked
+        });
+      }
     }
 
   }

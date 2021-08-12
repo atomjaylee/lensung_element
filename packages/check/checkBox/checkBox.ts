@@ -29,8 +29,8 @@ Component({
   props: defaultProps,
 
   deriveDataFromProps(nextProps: BaseCheckProps) {
-    const { value, checked, disabled, identify } = nextProps;
-    const { checked: preChecked, disabled: preDisabled } = this.props;
+    const { value, checked, identify } = nextProps;
+    const { checked: preChecked } = this.props;
     if (isObject(value)) {
       if (checked[identify] !== preChecked[identify]) {
         this.setData({ localChecked: checked[identify] === value[identify] });

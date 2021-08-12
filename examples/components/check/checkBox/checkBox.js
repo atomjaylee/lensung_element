@@ -16,12 +16,10 @@ Component({
     const {
       value,
       checked,
-      disabled,
       identify
     } = nextProps;
     const {
-      checked: preChecked,
-      disabled: preDisabled
+      checked: preChecked
     } = this.props;
 
     if (isObject(value)) {

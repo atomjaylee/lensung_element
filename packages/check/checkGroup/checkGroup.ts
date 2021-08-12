@@ -18,11 +18,13 @@ Component({
 
   onInit() {
     if (this.props.id === undefined) {
+      // eslint-disable-next-line no-console
       console.error('checkGroup组件未传入id属性');
       return;
     }
     const groupId = `${PAGE_CONTEXT_NAME}${this.props.id}`;
     if (this.$page[groupId]) {
+      // eslint-disable-next-line no-console
       console.error('页面中存在重复的groupID,请重新配置id');
       return;
     }
