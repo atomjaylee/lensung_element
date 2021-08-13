@@ -14,6 +14,13 @@ Component({
     bodyVisible: false,
     panelBodyPositionTop: 0
   },
+
+  didUnmount() {
+    if (this.props.id) {
+      dropPanelInstanceMap.delete(this.props.id);
+    }
+  },
+
   methods: {
     onAppearHandler() {
       this.setData({
