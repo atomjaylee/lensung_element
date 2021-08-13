@@ -9,7 +9,7 @@ group:
   order: 1
 ---
 
-# ItemRow 单个商品
+# Selector 列表选择器
 
 用于弹出列表中选择一项
 
