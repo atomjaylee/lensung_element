@@ -7,14 +7,14 @@
     </view>
     <view class="info-content" onTap="checkItemRowByContentHandler">
       <view class="content-title {{ fillTitleHeight ? 'title-fill' : '' }}">
-        <slot name="title">
+        <slot name="title" checked="{{ checked }}" item="{{ source }}">
           <view class="tag-module tag-xianYu" a:if="{{ source.is_xianyu }}">闲鱼</view>
           <view class="tag-module tag-xinPin" a:if="{{ source.is_xinpin }}">新品</view>
           <view class="tag-module tag-paiMai" a:if="{{ source.type === 'auction' }}">拍卖</view>
           <text checked="{{ checked }}">{{ source.title }}</text>
         </slot>
       </view>
-      <slot checked="{{ checked }}"></slot>
+      <slot checked="{{ checked }}" item="{{ source }}"></slot>
     </view>
   </ls-flex>
   <ls-flex class="error-tip" justify="between" onTap="onErrorTipClickHandler" a:if="{{ source.error }}">
