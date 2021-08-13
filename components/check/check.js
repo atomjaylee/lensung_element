@@ -98,7 +98,8 @@ Component({
       let isChecked = false;
       const {
         identify,
-        value
+        value,
+        onChangeByGroup
       } = this.props;
 
       if (isObject(this.props.value)) {
@@ -111,6 +112,7 @@ Component({
         this.setData({
           localChecked: isChecked
         });
+        onChangeByGroup && onChangeByGroup(isChecked);
       }
     }
 
