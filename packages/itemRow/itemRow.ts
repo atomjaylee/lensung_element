@@ -10,7 +10,7 @@ interface ItemServerRequest {
   [propName: string]: any;
 }
 
-interface BaseItemRowProps {
+export interface BaseItemRowProps {
   source: ItemServerRequest;
   showCheck?: boolean;
   checkGroupId?: string;

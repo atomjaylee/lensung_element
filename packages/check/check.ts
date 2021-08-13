@@ -3,7 +3,7 @@ import fmtClass from '../_utils/fmtClass';
 import { PAGE_CONTEXT_NAME } from './checkGroup/checkGroup';
 import { isObject } from '../_utils/tool';
 
-interface BaseCheckProps {
+export interface BaseCheckProps {
   checked: boolean | string | number | Record<string, any>;
   disabled?: boolean;
   size?: 'small' | 'medium';

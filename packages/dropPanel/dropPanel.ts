@@ -3,7 +3,7 @@ import { getElementRectById } from '../_utils/tool';
 const GLOBAL_NAME = '__dropPanelInstanceMap__';
 const dropPanelInstanceMap = (getApp() as any)[GLOBAL_NAME] || new Map();
 
-interface BaseDropPanelProps {
+export interface BaseDropPanelProps {
   id?: string;
   maskClosable?: boolean;
   bodyClosable?: boolean;

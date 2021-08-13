@@ -1,3 +1,6 @@
 {
-  "component": true
+  "component": true,
+  "usingComponents": {
+    "ls-popup": "../components/popup/popup"
+  }
 }
