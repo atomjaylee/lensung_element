@@ -1,6 +1,7 @@
 <view class="page">
   <ls-check-group id="test" checkedList="{{ checkedList }}" onChange="onCheckedChangeHandler">
-    <ls-item-row showCheck checkByContent checkGroupId="test" a:for="{{ source  }}" key="{{ item }}" source="{{ item }}">
+    <ls-item-row showCheck checkByContent fillTitleHeight checkGroupId="test" a:for="{{ source  }}" key="{{ item }}" source="{{ item }}">
+      <!-- <view slot="title">测试标题</view> -->
       <view slot-scope="scoped">
         <text>库存: 900 {{ scoped.checked ? 'yes' : 'no'}}</text>
         <text>价格: 1900</text>

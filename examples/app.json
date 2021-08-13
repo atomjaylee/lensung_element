@@ -10,7 +10,8 @@
     "pages/actionSheet/actionSheet",
     "pages/dropPanel/dropPanel",
     "pages/check/check",
-    "pages/itemRow/itemRow"
+    "pages/itemRow/itemRow",
+    "pages/selector/selector"
   ],
   "window": {
     "defaultTitle": "邻商商品组件库"

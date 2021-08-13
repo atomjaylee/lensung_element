@@ -18,6 +18,7 @@ interface BaseItemRowProps {
   checkByContent?: boolean;
   className?: string;
   tagClass?: string;
+  fillTitleHeight?: boolean;
   imageSize?: 'medium' | 'large';
   style?: string;
 }
@@ -28,6 +29,7 @@ const defaultProps: BaseItemRowProps = {
   checkIdentify: 'num_iid',
   checkByContent: false,
   imageSize: 'medium',
+  fillTitleHeight: false,
 };
 
 Component({

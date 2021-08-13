@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "列表选择项",
+  "usingComponents": {
+    "ls-selector": "/components/selector/selector",
+    "ls-button": "/components/button/button"
+  }
+}

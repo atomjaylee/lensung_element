@@ -6,7 +6,7 @@
       <ls-flex justify="center" class="info-tag {{ tagClass }}" a:if="{{ source.tag }}">{{ source.tag }}</ls-flex>
     </view>
     <view class="info-content" onTap="checkItemRowByContentHandler">
-      <view class="content-title">
+      <view class="content-title {{ fillTitleHeight ? 'title-fill' : '' }}">
         <slot name="title">
           <view class="tag-module tag-xianYu" a:if="{{ source.is_xianyu }}">闲鱼</view>
           <view class="tag-module tag-xinPin" a:if="{{ source.is_xinpin }}">新品</view>
@@ -18,7 +18,7 @@
     </view>
   </ls-flex>
   <ls-flex class="error-tip" justify="between" onTap="onErrorTipClickHandler" a:if="{{ source.error }}">
-    <view class="tip-text">失败原因: 错误原因sjhdhhkf异常，一行展示不开一行展示一行展示不开一行展示</view>
+    <view class="tip-text">失败原因: {{ source.error }}</view>
     <view class="arrow-right"></view>
   </ls-flex>
 </view>

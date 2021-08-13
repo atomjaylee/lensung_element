@@ -1,0 +1,3 @@
+<view>
+  <ls-button type="primary">选择主图</ls-button>
+</view>

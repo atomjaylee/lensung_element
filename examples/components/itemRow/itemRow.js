@@ -3,7 +3,8 @@ const defaultProps = {
   showCheck: false,
   checkIdentify: 'num_iid',
   checkByContent: false,
-  imageSize: 'medium'
+  imageSize: 'medium',
+  fillTitleHeight: false
 };
 Component({
   props: defaultProps,

@@ -83,17 +83,18 @@ methods: {
 
 ### Attributes
 
-| 参数           | 说明                                | 类型            | 默认值    | 备注                                |
-| -------------- | ----------------------------------- | --------------- | --------- | ----------------------------------- |
-| source         | 数据源                              | `{}`            | -         | -                                   |
-| showCheck      | 是否进入勾选状态                    | `boolean`       | `false`   | -                                   |
-| checkGroupId   | check 组件使用的 groupId            | `string`        | -         | -                                   |
-| checkIdentify  | 用于判定 check 组件勾选状态的标识符 | `string`        | `num_iid` | -                                   |
-| checkByContent | 是否点击内容区也触发 check 勾选变更 | `boolean`       | `false`   | -                                   |
-| tagClass       | 自定义标签样式                      | `string`        | -         | -                                   |
-| imageSize      | 图片显示尺寸                        | `medium\|large` | `medium`  | `medium`为 168rpx; `large`为 200rpx |
-| style          | 自定义样式                          | `string`        | -         | -                                   |
-| class          | 自定义样式类                        | `string`        | -         | -                                   |
+| 参数            | 说明                                               | 类型            | 默认值    | 备注                                |
+| --------------- | -------------------------------------------------- | --------------- | --------- | ----------------------------------- |
+| source          | 数据源                                             | `{}`            | -         | -                                   |
+| showCheck       | 是否进入勾选状态                                   | `boolean`       | `false`   | -                                   |
+| checkGroupId    | check 组件使用的 groupId                           | `string`        | -         | -                                   |
+| checkIdentify   | 用于判定 check 组件勾选状态的标识符                | `string`        | `num_iid` | -                                   |
+| checkByContent  | 是否点击内容区也触发 check 勾选变更                | `boolean`       | `false`   | -                                   |
+| tagClass        | 自定义标签样式                                     | `string`        | -         | -                                   |
+| fillTitleHeight | 当标题内容仅一行内容时，是否高度默认填充为两行高度 | `boolean`       | `false`   | -                                   |
+| imageSize       | 图片显示尺寸                                       | `medium\|large` | `medium`  | `medium`为 168rpx; `large`为 200rpx |
+| style           | 自定义样式                                         | `string`        | -         | -                                   |
+| class           | 自定义样式类                                       | `string`        | -         | -                                   |
 
 #### source
 
