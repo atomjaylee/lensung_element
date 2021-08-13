@@ -1,4 +1,4 @@
-import { justifyType, alignType } from '../flex/flex';
+import { justifyType } from '../flex/flex';
 import { getComponentAttr } from '../_utils/tool';
 
 interface BaseDialogProps {
@@ -16,7 +16,6 @@ interface BaseDialogProps {
   style?: string;
   contentClass?: string;
   contentJustify?: justifyType;
-  contentAlign?: alignType;
   maxLine?: number;
   closable?: boolean;
   maskClosable?: boolean;
@@ -27,7 +26,6 @@ const defaultProps: BaseDialogProps = {
   zIndex: 999,
   maxLine: 3,
   contentJustify: 'start',
-  contentAlign: 'start',
   confirmText: '确定',
   cancelText: '取消',
   closable: false,
@@ -58,7 +56,12 @@ Component({
     alert(options: BaseDialogProps) {
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
-        this.setData({ ...options, visible: true, isAlert: true });
+        this.setData({
+          ...options,
+          visible: true,
+          isAlert: true,
+          contentJustify: options.contentJustify || 'center',
+        });
       });
     },
 

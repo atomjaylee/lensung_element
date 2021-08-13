@@ -7,7 +7,7 @@
       <view class="content_icon" a:if="{{ icon }}">
         <text class="iconfont {{ sjs.fmtIcon(icon) }}"></text>
       </view>
-      <ls-flex class="content_text {{ contentClass }}" justify="{{ contentJustify }}" align="{{ contentAlign }}">
+      <ls-flex class="content_text {{ title ? '' : 'content_minHeight' }} {{ contentClass }}" justify="{{ contentJustify }}">
         <slot>
           <text number-of-lines="{{ maxLine }}">{{ content }}</text>
         </slot>
@@ -15,8 +15,8 @@
     </view>
     <view class="ls_dialog-content_buttons">
       <slot name="buttons">
-        <ls-flex justify="center" class="button-item cancel-button" hidden="{{ isAlert }}" onTap="onCancelHandler">{{ cancelText }}</ls-flex>
-        <ls-flex justify="center" class="button-item confirm-button" onTap="onConfirmHandler">{{ confirmText }}</ls-flex>
+        <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_cancel" hidden="{{ isAlert }}" onTap="onCancelHandler">{{ cancelText }}</ls-flex>
+        <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_confirm" onTap="onConfirmHandler">{{ confirmText }}</ls-flex>
       </slot>
     </view>
   </view>

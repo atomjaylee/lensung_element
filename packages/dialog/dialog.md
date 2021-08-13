@@ -75,7 +75,6 @@ methods: {
 | maxLine        | 文本最大行数         | `number`                                            | `3`     | -                    |
 | contentClass   | 内容区自定义 class   | `string`                                            | -       | -                    |
 | contentJustify | 内容区子元素横轴排列 | `start` \| `center`\|`end` \|`between` \|`around`   | `start` | -                    |
-| contentAlign   | 内容区子元素竖轴排列 | `start` \| `center`\|`end` \|`baseline` \|`stretch` | `start` | -                    |
 | closable       | 是否显示关闭按钮     | `boolean`                                           | `false` | -                    |
 | maskClosable   | 点击遮罩关闭弹窗     | `boolean`                                           | `false` | -                    |
 | class          | 自定义样式类         | `string`                                            | -       | -                    |

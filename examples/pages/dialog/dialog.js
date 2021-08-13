@@ -7,8 +7,8 @@ Page({
   },
 
   async onOpenDialogHandler() {
-    const flag = await this.$dialog.confirm({
-      content: "显示内容",
+    const flag = await this.$dialog.alert({
+      content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
       confirmText: "知道了",
       // title: "测试标题",
       onBeforeClose: () => {

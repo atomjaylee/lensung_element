@@ -45,23 +45,25 @@
   color: #333;
   line-height: 1.57;
   padding: 40rpx;
-  min-height: 172rpx;
   box-sizing: border-box;
+}
+.ls_dialog-content_body .content_minHeight {
+  min-height: 172rpx;
 }
 .ls_dialog-content_buttons {
   display: flex;
   height: 82rpx;
   border-top: 1rpx solid #e6e9ed;
 }
-.ls_dialog-content_buttons .button-item {
+.ls_dialog-content_buttons .ls_dialog-button-item {
   flex: 1;
   height: inherit;
   color: #333;
 }
-.ls_dialog-content_buttons .cancel-button {
+.ls_dialog-content_buttons .ls_dialog-button_cancel {
   border-right: 1rpx solid #e6e9ed;
 }
-.ls_dialog-content_buttons .confirm-button {
+.ls_dialog-content_buttons .ls_dialog-button_confirm {
   color: #ff5001;
 }
 .ls_dialog-contentActive {

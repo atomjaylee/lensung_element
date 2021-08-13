@@ -3,7 +3,6 @@ const defaultProps = {
   zIndex: 999,
   maxLine: 3,
   contentJustify: 'start',
-  contentAlign: 'start',
   confirmText: '确定',
   cancelText: '取消',
   closable: false,
@@ -38,7 +37,8 @@ Component({
         this.__promise_resolve__ = resolve;
         this.setData({ ...options,
           visible: true,
-          isAlert: true
+          isAlert: true,
+          contentJustify: options.contentJustify || 'center'
         });
       });
     },

@@ -1,6 +1,2 @@
-<ls-dialog ref="dialog"  title="测试标题axml">
-  <view>
-    sdf
-  </view>
-</ls-dialog>
+<ls-dialog ref="dialog"></ls-dialog>
 <ls-button type="primary" onTap="onOpenDialogHandler">打开对话框</ls-button>
