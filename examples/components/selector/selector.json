@@ -1,6 +1,9 @@
 {
   "component": true,
   "usingComponents": {
-    "ls-popup": "../components/popup/popup"
+    "ls-popup": "../popup/popup",
+    "ls-flex": "../flex/flex",
+    "ls-button": "../button/button",
+    "ls-check": "../check/check"
   }
 }

@@ -1,3 +1,4 @@
+import fmtEvent from '../_utils/fmtEvent';
 const defaultProps = {
   source: {},
   showCheck: false,
@@ -39,8 +40,14 @@ Component({
           content: this.props.source.error
         });
       }
+    },
+
+    // 整个宝贝点击事件
+    onItemRowTapHandler(evt) {
+      if (this.props.checkByContent) return;
+      const event = fmtEvent(this.props, evt);
+      this.props.onTap && this.props.onTap(event);
     }
 
   }
 });
-export {};

@@ -1,3 +1,5 @@
+import fmtEvent from '../_utils/fmtEvent';
+
 interface ItemServerRequest {
   num_iid?: number;
   title?: string;
@@ -21,6 +23,7 @@ export interface BaseItemRowProps {
   fillTitleHeight?: boolean;
   imageSize?: 'medium' | 'large';
   style?: string;
+  onTap?: (e: tinyapp.IBaseEvent) => void;
 }
 
 const defaultProps: BaseItemRowProps = {
@@ -61,6 +64,13 @@ Component({
       if (this.$alert) {
         this.$alert({ isNew: true, title: '失败原因', content: this.props.source.error });
       }
+    },
+
+    // 整个宝贝点击事件
+    onItemRowTapHandler(evt) {
+      if (this.props.checkByContent) return;
+      const event = fmtEvent(this.props, evt);
+      this.props.onTap && this.props.onTap(event);
     },
   },
 });

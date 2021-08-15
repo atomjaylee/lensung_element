@@ -15,23 +15,21 @@
   .info-image-medium {
     width: @image_size_medium;
     height: @image_size_medium;
-    margin-right: 16rpx;
   }
 
   .info-image-large {
     width: @image_size_large;
     height: @image_size_large;
-    margin-right: 24rpx;
   }
 
   .info-image {
     position: relative;
     border-radius: 12rpx;
     overflow: hidden;
+    margin-right: 16rpx;
 
     image {
-      width: inherit;
-      height: inherit;
+      display: block;
     }
 
     .info-tag {

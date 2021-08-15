@@ -50,10 +50,18 @@ methods: {
     });
 
     // 方式二：
-    const isConfirm = await this.$dialog.confirm({ content: "confirm弹窗" });
-    if(isConfirm) {
-      // 点击确认按钮
-    }
+    await this.$dialog.confirm({ content: "confirm弹窗" });
+    console.log("点击了确认按钮");
+
+    // 方式三
+    this.$dialog.confirm({
+      content: "confirm弹窗"
+    }).then(() => {
+      // 点击了确认
+    }).catch(() => {
+      // 点击了取消
+    })
+    
 
     this.$dialog.alert({ confirmText: "知道了" })
   }

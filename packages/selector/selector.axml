@@ -1,3 +1,11 @@
-<popup ref="popupInstance">
-
-</popup>
+<ls-popup ref="popup">
+  <view class="ls_selector">
+    <ls-flex class="ls_selector-title" justify="center">
+      <text>原宝贝链接</text>
+      <view class="ls_selector-closeIcon"></view>
+    </ls-flex>
+    <view class="ls_selector-content">
+      
+    </view>
+  </view>
+</ls-popup>

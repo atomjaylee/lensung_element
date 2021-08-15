@@ -2,8 +2,12 @@ const defaultProps = {};
 Component({
   props: defaultProps,
   methods: {
-    popupInstance(ref) {
-      this.$popupInstance = ref;
+    popup(ref) {
+      this.$popup = ref;
+    },
+
+    show() {
+      this.$popup.show();
     }
 
   }

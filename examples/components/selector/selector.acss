@@ -1,0 +1,37 @@
+.ls_selector {
+  background-color: #fff;
+  border-radius: 24rpx 24rpx 0 0;
+}
+.ls_selector-title {
+  position: relative;
+  height: 92rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.ls_selector-closeIcon {
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24rpx;
+  height: 24rpx;
+}
+.ls_selector-closeIcon:before,
+.ls_selector-closeIcon:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26rpx;
+  height: 2rpx;
+  background-color: #666;
+}
+.ls_selector-closeIcon:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ls_selector-closeIcon:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.ls_selector-content {
+  min-height: 300rpx;
+}

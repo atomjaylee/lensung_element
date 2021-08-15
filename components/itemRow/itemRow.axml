@@ -1,10 +1,14 @@
-<view class="ls_itemRow {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}">
+<view class="ls_itemRow {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}" onTap="onItemRowTapHandler">
   <ls-flex class="ls_itemRow-info">
     <ls-check class="info-check" size="small" a:if="{{ showCheck }}" value="{{ source }}" groupId="{{ checkGroupId }}" identify="{{ checkIdentify }}" onChangeByGroup="onCheckChangeByGroup" ref="checkInstance"></ls-check>
-    <view class="info-image {{ `info-image-${imageSize}`}}" onTap="checkItemRowByContentHandler">
-      <image src="{{ source.pic_url }}" mode="aspectFill" default-source="https://img.alicdn.com/imgextra/i2/479769835/O1CN01th3vGv2MWTsRuzgkC_!!479769835.png" />
+
+    <view class="info-image" onTap="checkItemRowByContentHandler">
+      <slot name="image" checked="{{ checked }}" item="{{ source }}">
+        <image class="{{ `info-image-${imageSize}`}}" src="{{ source.pic_url }}" mode="aspectFill" default-source="https://img.alicdn.com/imgextra/i2/479769835/O1CN01th3vGv2MWTsRuzgkC_!!479769835.png" />
+      </slot>
       <ls-flex justify="center" class="info-tag {{ tagClass }}" a:if="{{ source.tag }}">{{ source.tag }}</ls-flex>
     </view>
+
     <view class="info-content" onTap="checkItemRowByContentHandler">
       <view class="content-title {{ fillTitleHeight ? 'title-fill' : '' }}">
         <slot name="title" checked="{{ checked }}" item="{{ source }}">
@@ -16,9 +20,13 @@
       </view>
       <slot checked="{{ checked }}" item="{{ source }}"></slot>
     </view>
+
   </ls-flex>
+
   <ls-flex class="error-tip" justify="between" onTap="onErrorTipClickHandler" a:if="{{ source.error }}">
     <view class="tip-text">失败原因: {{ source.error }}</view>
     <view class="arrow-right"></view>
   </ls-flex>
+
+  <slot name="extend" checked="{{ checked }}" item="{{ source }}"></slot>
 </view>

@@ -7,10 +7,9 @@ Page({
   },
 
   async onOpenDialogHandler() {
-    const flag = await this.$dialog.alert({
+    this.$dialog.confirm({
       content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
-      confirmText: "知道了",
-      // title: "测试标题",
+      title: "测试标题",
       onBeforeClose: () => {
         return new Promise(resolve => {
           setTimeout(() => {
@@ -18,6 +17,19 @@ Page({
           }, 0)
         })
       }
+    }).catch(() => {
+      console.log("catch")
     })
   },
+
+  sleep(ms) {
+    return new Promise(reslove => setTimeout(reslove, ms))
+  },
+
+  // 二次调用
+  onDialogSecondOpenHandler() {
+    this.$dialog.confirm({ content: "是否二次调用" }).then(res => {
+      this.$dialog.confirm({ content: "您点击了确定" })
+    })
+  }
 });

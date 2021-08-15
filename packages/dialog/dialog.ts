@@ -46,16 +46,29 @@ Component({
       this.setData({ contentVisible: true });
     },
 
-    confirm(options: BaseDialogProps) {
-      return new Promise((resolve) => {
+    sleep(ms = 0) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    },
+
+    async confirm(options: BaseDialogProps) {
+      while (this.__instance_closed__) {
+        await this.__instance_closed__;
+        await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
+      }
+      this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
+      return new Promise((resolve, reject) => {
         this.__promise_resolve__ = resolve;
+        this.__promise_reject__ = reject;
         this.setData({ ...options, visible: true, isAlert: false });
       });
     },
 
-    alert(options: BaseDialogProps) {
-      return new Promise((resolve) => {
+    async alert(options: BaseDialogProps) {
+      while (this.__instance_closed__) await this.__instance_closed__;
+      this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
+      return new Promise((resolve, reject) => {
         this.__promise_resolve__ = resolve;
+        this.__promise_reject__ = reject;
         this.setData({
           ...options,
           visible: true,
@@ -66,7 +79,6 @@ Component({
     },
 
     close() {
-      this.__promise_resolve__ = undefined;
       this.setData({
         ...defaultProps,
         contentVisible: false,
@@ -78,20 +90,25 @@ Component({
       this.setData({ visible: false });
       const onAfterClose = getComponentAttr(this, 'onAfterClose');
       onAfterClose && onAfterClose();
+
+      this.$instanceClose();
+      this.__promise_resolve__ = undefined;
+      this.__promise_reject__ = undefined;
+      this.__instance_closed__ = undefined;
     },
 
     async onConfirmHandler() {
       const onBeforeClose = getComponentAttr(this, 'onBeforeClose');
       const isPass = onBeforeClose ? await onBeforeClose() : true;
       if (isPass) {
-        this.__promise_resolve__(true);
+        this.__promise_resolve__();
         getComponentAttr(this, 'onConfirm') && getComponentAttr(this, 'onConfirm')();
         this.close();
       }
     },
 
     onCancelHandler() {
-      this.__promise_resolve__(false);
+      this.__promise_reject__();
       getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
       this.close();
     },

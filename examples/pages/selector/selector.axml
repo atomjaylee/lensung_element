@@ -1,3 +1,5 @@
 <view>
-  <ls-button type="primary">选择主图</ls-button>
+  <ls-button type="primary" onTap="selectMainImageHandler">选择主图</ls-button>
 </view>
+
+<ls-selector ref="selector"></ls-selector>
