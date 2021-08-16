@@ -2,6 +2,7 @@
   "defaultTitle": "下拉面板",
   "usingComponents": {
     "ls-drop-panel": "/components/dropPanel/dropPanel",
-    "ls-flex": "/components/flex/flex"
+    "ls-flex": "/components/flex/flex",
+    "ls-button": "/components/button/button"
   }
 }

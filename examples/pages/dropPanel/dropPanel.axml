@@ -1,3 +1,4 @@
+<ls-button type="primary" onTap="handleClosePanel">手动关闭页面所有开启的dropPanel</ls-button>
 <view class="drop-wrap">
   <ls-drop-panel id="filter" coverHeader bodyClosable>
     <ls-flex class="drop-header {{ scope.visible && 'header-active'}}" slot-scope="scope">筛选 {{ scope.visible ? 'open' : 'close' }}</ls-flex>

@@ -1,0 +1,8 @@
+<view class="ls_filter">
+  <drop-panel id="panel_1">
+    <view>上架时间由近到远</view>
+    <view slot="body">
+      <view a:for="{{ 20 }}">{{ item }}</view>
+    </view>
+  </drop-panel>
+</view>

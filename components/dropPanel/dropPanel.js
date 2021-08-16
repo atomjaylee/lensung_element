@@ -1,6 +1,5 @@
 import { getElementRectById } from '../_utils/tool';
-const GLOBAL_NAME = '__dropPanelInstanceMap__';
-const dropPanelInstanceMap = getApp()[GLOBAL_NAME] || new Map();
+const SCOPED_NAME = '__dropPanelInstanceMap__';
 const defaultProps = {
   maskClosable: true,
   bodyClosable: false,
@@ -14,13 +13,6 @@ Component({
     bodyVisible: false,
     panelBodyPositionTop: 0
   },
-
-  didUnmount() {
-    if (this.props.id) {
-      dropPanelInstanceMap.delete(this.props.id);
-    }
-  },
-
   methods: {
     onAppearHandler() {
       this.setData({
@@ -57,14 +49,16 @@ Component({
         panelBodyPositionTop: distanceTop,
         visible: true
       });
+      const dropPanelInstanceMap = this.$page[SCOPED_NAME] || new Map();
       dropPanelInstanceMap.forEach(instance => instance.close());
 
       if (this.props.id) {
         dropPanelInstanceMap.set(this.props.id, this);
       }
 
-      Object.defineProperty(getApp(), GLOBAL_NAME, {
-        get: () => dropPanelInstanceMap
+      Object.defineProperty(this.$page, SCOPED_NAME, {
+        get: () => dropPanelInstanceMap,
+        configurable: true
       });
     },
 

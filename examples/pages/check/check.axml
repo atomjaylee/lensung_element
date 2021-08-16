@@ -1,4 +1,4 @@
-<view class="check-page">
+<view class="check-page" a:if="{{ visible }}">
   -----------------------------
   <ls-check checked="{{ checked }}" onChange="onCheckChangeHandler"></ls-check>
   <ls-check disabled checked="{{ checked }}"></ls-check>
@@ -27,3 +27,5 @@
   <view onTap="switchData">change data</view>
   
 </view>
+
+<view onTap="switchVisible">跳转页面</view>

@@ -34,12 +34,25 @@ group:
 
 ```js
 methods: {
+  // 手动关闭单个dropPanel
   closeCurrentDropPanel() {
-    const currentDropPanel = getApp().__dropPanelInstanceMap__.get('itemList_filter');
+    const currentDropPanel = this.$page.__dropPanelInstanceMap__.get('itemList_filter');
     currentDropPanel.close();
+  },
+
+  // NOTE: 特殊场景下，我们需要手动关闭页面开启的dropPanel
+  handleCloseAllDropPanel() {
+    const dropPanelInstanceMap = this.$page.__dropPanelInstanceMap__;
+    if(dropPanelInstanceMap) {
+      dropPanelInstanceMap.forEach(instance => instance.close());
+    }
   }
 }
 ```
+
+<Alert type="info">
+  注意, 如每个dropPanel组件传入id用于标识在页面的唯一性，当页面存在多个dropPanel组件，开启其中一个，程序会自动关闭其他开启状态的dropPanel
+</Alert>
 
 ## API
 

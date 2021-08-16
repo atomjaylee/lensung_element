@@ -8,7 +8,9 @@ Page({
     checkSchema2: [11, 12, 13, 14, 15, 16, 17],
 
     checkBoxList: ["造物节"],
-    checkBoxKey: ""
+    checkBoxKey: "",
+
+    visible: true
   },
   onLoad() {
 
@@ -36,5 +38,9 @@ Page({
 
   onSingleCheckBoxChange({ checked }) {
     this.setData({ checkBoxKey: checked })
+  },
+
+  switchVisible() {
+    this.setData({ visible: !this.data.visible })
   }
 });
