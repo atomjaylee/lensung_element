@@ -1,6 +1,7 @@
 {
   "defaultTitle": "过滤器",
   "usingComponents": {
-    "ls-filter": "/components/filter/filter"
+    "ls-filter": "/components/filter/filter",
+    "ls-flex": "/components/flex/flex"
   }
 }

@@ -1,8 +1,17 @@
-<view class="ls_filter">
-  <drop-panel id="panel_1">
-    <view>上架时间由近到远</view>
-    <view slot="body">
-      <view a:for="{{ 20 }}">{{ item }}</view>
+<import-sjs from="./filter.sjs" name="sjs" />
+
+<drop-panel bodyClosable id="{{ id }}" onVisibleChange="onDropPanelVisibleChange" class="{{ className }}" style="{{ style }}">
+
+  <ls-flex justify="center" class="ls_filter-slot-header {{ scoped.bodyVisible ? 'ls_filter-activeHeader' : '' }}" style="{{ sjs.fmtWidth(width) }}" slot-scope="scoped">
+    <text number-of-lines="1">{{ sjs.fmtLabel(activeKey, schema, labelIdentify, keyIdentify) }}</text>
+    <view class="iconfont icon-jiantou_zhankai ls-icon-arrow {{ scoped.bodyVisible ? 'ls-icon-arrowRotate' : '' }}"></view>
+  </ls-flex>
+
+  <view slot="body" class="ls_filter-slot-body">
+    <ls-flex justify="between" a:for="{{ schema }}" key="{{ item[keyIdentify] }}" class="ls_filter_radio {{ activeKey === item[keyIdentify] ? 'ls_filter_activeRadio' : '' }}" data-statistic="{{ item.statistic }}" onTap="onSelectItemHandler" data-item="{{ item }}">
+      <text class="label-max-width">{{ item[labelIdentify] }}</text>
+      <text class="filter-icon-checked iconfont icon-duigou" a:if="{{ activeKey === item[keyIdentify] }}"></text>
     </view>
-  </drop-panel>
-</view>
+  </view>
+
+</drop-panel>

@@ -1,1 +1,6 @@
-<ls-filter></ls-filter>
+<view style="{{ hasOpen ? 'height: 100vh;overflow:hidden': ''}}; background: red">
+  <view class="filter-bar">
+    <ls-filter id="filter" activeKey="{{ activeKey }}" schema="{{ schema }}" onVisibleChange="onFilterVisibleChange" onChange="onChange"></ls-filter>
+    <view style="flex: 1;background-color: #fff; height: 82rpx; z-index: 3"></view>
+  </view>
+</view>

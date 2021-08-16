@@ -1,0 +1,61 @@
+@import '../_style/color.less';
+
+@filter_header_height: 82rpx;
+@filter_body_height: 80rpx;
+
+// 头部
+.ls_filter-slot-header {
+  display: inline-flex;
+  height: @filter_header_height;
+  background-color: #fff;
+  color: #333;
+
+  .ls-icon-arrow {
+    font-size: 22rpx;
+    margin-left: 12rpx;
+    transform: rotate(0);
+    transition: transform 150ms ease-in;
+  }
+
+  .ls-icon-arrowRotate {
+    transform: rotate(180deg);
+  }
+}
+
+.ls_filter-activeHeader {
+  background-color: #f2f2f2;
+  border-radius: 24rpx 24rpx 0 0;
+}
+
+// 内容区
+.ls_filter-slot-body {
+  background-image: linear-gradient(180deg, #f2f2f2 0%, #fff 19%);
+  border-radius: 0 0 24rpx 24rpx;
+  padding-top: 40rpx;
+
+  .ls_filter_radio {
+    margin-left: 24rpx;
+    width: (750 - 24) rpx;
+    padding-right: 24rpx;
+    height: @filter_body_height;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #333;
+    border-top: 1rpx solid #e6e6e6;
+
+    .label-max-width {
+      max-width: 580rpx;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .filter-icon-checked {
+      font-size: 25rpx;
+    }
+  }
+
+  .ls_filter_activeRadio {
+    color: @brand-color-main;
+  }
+}

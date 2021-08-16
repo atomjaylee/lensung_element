@@ -8,6 +8,7 @@ export interface BaseDropPanelProps {
   bodyClosable?: boolean;
   coverHeader?: boolean;
   zIndex?: number;
+  onVisibleChange?: (visible: boolean) => void;
 }
 
 const defaultProps: BaseDropPanelProps = {
@@ -34,6 +35,7 @@ Component({
     onTransitionEndHandler() {
       if (this.data.visible && this.data.bodyVisible) return;
       this.setData({ visible: false });
+      this.props.onVisibleChange && this.props.onVisibleChange(false);
     },
 
     onHeaderClickHandler() {
@@ -62,6 +64,8 @@ Component({
         get: () => dropPanelInstanceMap,
         configurable: true,
       });
+
+      this.props.onVisibleChange && this.props.onVisibleChange(true);
     },
 
     close() {
