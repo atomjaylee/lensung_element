@@ -1,6 +1,6 @@
 <import-sjs from="./filter.sjs" name="sjs" />
 
-<drop-panel bodyClosable id="{{ id }}" onVisibleChange="onDropPanelVisibleChange" class="{{ className }}" style="{{ style }}">
+<drop-panel class="{{ className }}" style="{{ style }}" bodyClosable id="{{ id }}" onVisibleChange="onDropPanelVisibleChange">
 
   <ls-flex justify="center" class="ls_filter-slot-header {{ scoped.bodyVisible ? 'ls_filter-activeHeader' : '' }}" style="{{ sjs.fmtWidth(width) }}" slot-scope="scoped">
     <text number-of-lines="1">{{ sjs.fmtLabel(activeKey, schema, labelIdentify, keyIdentify) }}</text>
@@ -11,7 +11,7 @@
     <ls-flex justify="between" a:for="{{ schema }}" key="{{ item[keyIdentify] }}" class="ls_filter_radio {{ activeKey === item[keyIdentify] ? 'ls_filter_activeRadio' : '' }}" data-statistic="{{ item.statistic }}" onTap="onSelectItemHandler" data-item="{{ item }}">
       <text class="label-max-width">{{ item[labelIdentify] }}</text>
       <text class="filter-icon-checked iconfont icon-duigou" a:if="{{ activeKey === item[keyIdentify] }}"></text>
-    </view>
+    </ls-flex>
   </view>
 
 </drop-panel>

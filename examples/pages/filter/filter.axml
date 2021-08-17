@@ -1,6 +1,6 @@
-<view style="{{ hasOpen ? 'height: 100vh;overflow:hidden': ''}}; background: red">
+<view style="{{ hasOpen ? 'height: 100vh;overflow:hidden': 'height: 200vh'}}; background-image: linear-gradient(to bottom, red, blue);">
   <view class="filter-bar">
-    <ls-filter id="filter" activeKey="{{ activeKey }}" schema="{{ schema }}" onVisibleChange="onFilterVisibleChange" onChange="onChange"></ls-filter>
-    <view style="flex: 1;background-color: #fff; height: 82rpx; z-index: 3"></view>
+    <ls-filter id="filter" activeKey="{{ activeKey }}" schema="{{ schema }}" onVisibleChange="onFilterVisibleChange" onChange="onChange" style="margin-left: 30rpx"></ls-filter>
   </view>
+
 </view>

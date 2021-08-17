@@ -7,7 +7,8 @@ export interface BaseDropPanelProps {
   maskClosable?: boolean;
   bodyClosable?: boolean;
   coverHeader?: boolean;
-  zIndex?: number;
+  className?: string;
+  style?: string;
   onVisibleChange?: (visible: boolean) => void;
 }
 
@@ -15,7 +16,6 @@ const defaultProps: BaseDropPanelProps = {
   maskClosable: true,
   bodyClosable: false,
   coverHeader: false,
-  zIndex: 2,
 };
 
 Component({
@@ -24,7 +24,7 @@ Component({
   data: {
     visible: false,
     bodyVisible: false,
-    panelBodyPositionTop: 0,
+    transparentHeight: 0,
   },
 
   methods: {
@@ -51,7 +51,7 @@ Component({
       const convertUnit = 750 / windowWidth;
       const { top, height } = await getElementRectById('dropPanelHeader');
       const distanceTop = this.props.coverHeader ? top * convertUnit : (top + height) * convertUnit;
-      this.setData({ panelBodyPositionTop: distanceTop, visible: true });
+      this.setData({ transparentHeight: Math.floor(distanceTop), visible: true });
 
       const dropPanelInstanceMap = this.$page[SCOPED_NAME] || new Map();
       dropPanelInstanceMap.forEach((instance) => instance.close());

@@ -2,11 +2,11 @@
   display: flex;
   width: 750rpx;
   padding-top: 200rpx;
-  background: blue
+  background: blue;
 }
 
 .drop-header {
-  width: 375rpx;
+  width: 250rpx;
   height: 80rpx;
   background-color: red;
   transition: all 200ms ease-out;

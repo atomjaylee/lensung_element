@@ -9,7 +9,7 @@ group:
   order: 1
 ---
 
-# Check 复选框
+# Check 复选框<Badge>受控</Badge>
 
 ## 引入
 

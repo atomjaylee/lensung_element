@@ -3,15 +3,14 @@ const SCOPED_NAME = '__dropPanelInstanceMap__';
 const defaultProps = {
   maskClosable: true,
   bodyClosable: false,
-  coverHeader: false,
-  zIndex: 2
+  coverHeader: false
 };
 Component({
   props: defaultProps,
   data: {
     visible: false,
     bodyVisible: false,
-    panelBodyPositionTop: 0
+    transparentHeight: 0
   },
   methods: {
     onAppearHandler() {
@@ -47,7 +46,7 @@ Component({
       } = await getElementRectById('dropPanelHeader');
       const distanceTop = this.props.coverHeader ? top * convertUnit : (top + height) * convertUnit;
       this.setData({
-        panelBodyPositionTop: distanceTop,
+        transparentHeight: Math.floor(distanceTop),
         visible: true
       });
       const dropPanelInstanceMap = this.$page[SCOPED_NAME] || new Map();

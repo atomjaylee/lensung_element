@@ -12,22 +12,22 @@ Page({
       { label: "选项7", key: 7 },
       { label: "选项8", key: 8 },
       { label: "选项9", key: 9 },
-      { label: "选项10", key: 10 },
-      { label: "选项11", key: 11 },
-      { label: "选项12", key: 12 },
-      { label: "选项13", key: 13 },
-      { label: "选项14", key: 14 },
-      { label: "选项15", key: 15 },
-      { label: "选项16", key: 16 },
-      { label: "选项17", key: 17 },
-      { label: "选项18", key: 18 },
+      // { label: "选项10", key: 10 },
+      // { label: "选项11", key: 11 },
+      // { label: "选项12", key: 12 },
+      // { label: "选项13", key: 13 },
+      // { label: "选项14", key: 14 },
+      // { label: "选项15", key: 15 },
+      // { label: "选项16", key: 16 },
+      // { label: "选项17", key: 17 },
+      // { label: "选项18", key: 18 },
     ]
   },
   onLoad() { },
 
   onFilterVisibleChange(visible) {
-    this.setData({ hasOpen: visible });
-    my.setCanPullDown({ canPullDown: !visible });
+    // this.setData({ hasOpen: visible });
+    // my.setCanPullDown({ canPullDown: !visible });
   },
 
   onChange(key) {

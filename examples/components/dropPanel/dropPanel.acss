@@ -7,20 +7,29 @@
 .ls_dropPanel .panel-body {
   position: fixed;
   width: 750rpx;
+  height: 100vh;
+  top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+.ls_dropPanel .panel-body .panel-body-layer {
+  flex: 1;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0);
   transition: background 200ms ease-out;
+  pointer-events: initial;
+}
+.ls_dropPanel .panel-body .panel-body-layerActive {
+  background: rgba(0, 0, 0, 0.5);
 }
 .ls_dropPanel .panel-body .panel-body-content {
   max-height: calc(100% - 60rpx);
-  overflow-y: auto;
   transform: translateY(-100%);
   transition: transform 200ms ease-out;
   border-radius: 0 0 24rpx 24rpx;
 }
 .ls_dropPanel .panel-body .panel-body-active {
   transform: translateY(0);
-}
-.ls_dropPanel .panel-bodyActive {
-  background: rgba(0, 0, 0, 0.5);
 }

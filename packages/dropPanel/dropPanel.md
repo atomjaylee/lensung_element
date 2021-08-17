@@ -9,7 +9,7 @@ group:
   order: 1
 ---
 
-# DropPanel 下拉面板
+# DropPanel 下拉面板<Badge>非受控</Badge>
 
 下拉菜单可用于列表筛选
 
@@ -64,7 +64,8 @@ methods: {
 | coverHeader  | 展开面板是否从 Header 的顶部开始 | `boolean` | `false` | -                                |
 | maskClosable | 点击遮罩关闭弹窗                 | `boolean` | `false` | -                                |
 | bodyClosable | 点击遮罩关闭弹窗                 | `boolean` | `false` | -                                |
-| zIndex       | z-index 的值                     | `number`  | `2`     | -                                |
+| style        | 自定义样式                       | `string`  | -       | -                                |
+| class        | 自定义样式类                     | `string`  | -       | -                                |
 
 ### Methods
 
