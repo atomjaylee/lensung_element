@@ -5,7 +5,7 @@ nav:
   path: /components
 group:
   title: 基础组件
-  path: /
+  path: /base
   order: 1
 ---
 
@@ -39,7 +39,7 @@ methods: {
   // 调用
   openDialogHandler() {
     // 方式一
-    this.$dialog.confirm({ 
+    this.$dialog.confirm({
       content: "confirm弹窗",
       onBeforeClose: () => {
         const isPass = await request(params);
@@ -61,7 +61,7 @@ methods: {
     }).catch(() => {
       // 点击了取消
     })
-    
+
 
     this.$dialog.alert({ confirmText: "知道了" })
   }
@@ -72,21 +72,21 @@ methods: {
 
 ### options
 
-| 参数           | 说明                 | 类型                                                | 默认值  | 备注                 |
-| -------------- | -------------------- | --------------------------------------------------- | ------- | -------------------- |
-| title          | 显示标题             | `string`                                            | -       | -                    |
-| content        | 显示内容             | `string`                                            | -       | -                    |
-| icon           | 显示图标             | `success` \| `error`\|`warn`\|`string`              | -       | 可传入 iconfont 图标 |
-| confirmText    | 确定按钮文本         | `string`                                            | `确定`  | -                    |
-| cancelText     | 取消按钮文本         | `string`                                            | `取消`  | -                    |
-| zIndex         | z-index 的值         | `number`                                            | `999`   | -                    |
-| maxLine        | 文本最大行数         | `number`                                            | `3`     | -                    |
-| contentClass   | 内容区自定义 class   | `string`                                            | -       | -                    |
-| contentJustify | 内容区子元素横轴排列 | `start` \| `center`\|`end` \|`between` \|`around`   | `start` | -                    |
-| closable       | 是否显示关闭按钮     | `boolean`                                           | `false` | -                    |
-| maskClosable   | 点击遮罩关闭弹窗     | `boolean`                                           | `false` | -                    |
-| class          | 自定义样式类         | `string`                                            | -       | -                    |
-| style          | 自定义样式           | `string`                                            | -       | -                    |
+| 参数           | 说明                 | 类型                                              | 默认值  | 备注                 |
+| -------------- | -------------------- | ------------------------------------------------- | ------- | -------------------- |
+| title          | 显示标题             | `string`                                          | -       | -                    |
+| content        | 显示内容             | `string`                                          | -       | -                    |
+| icon           | 显示图标             | `success` \| `error`\|`warn`\|`string`            | -       | 可传入 iconfont 图标 |
+| confirmText    | 确定按钮文本         | `string`                                          | `确定`  | -                    |
+| cancelText     | 取消按钮文本         | `string`                                          | `取消`  | -                    |
+| zIndex         | z-index 的值         | `number`                                          | `999`   | -                    |
+| maxLine        | 文本最大行数         | `number`                                          | `3`     | -                    |
+| contentClass   | 内容区自定义 class   | `string`                                          | -       | -                    |
+| contentJustify | 内容区子元素横轴排列 | `start` \| `center`\|`end` \|`between` \|`around` | `start` | -                    |
+| closable       | 是否显示关闭按钮     | `boolean`                                         | `false` | -                    |
+| maskClosable   | 点击遮罩关闭弹窗     | `boolean`                                         | `false` | -                    |
+| class          | 自定义样式类         | `string`                                          | -       | -                    |
+| style          | 自定义样式           | `string`                                          | -       | -                    |
 
 ### Methods
 

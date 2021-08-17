@@ -4,9 +4,9 @@ nav:
   title: 组件
   path: /components
 group:
-  title: 基础组件
-  path: /
-  order: 3
+  title: 业务组件
+  path: /functions
+  order: 2
 ---
 
 # TabBar 标签栏

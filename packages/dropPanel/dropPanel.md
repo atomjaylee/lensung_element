@@ -6,7 +6,7 @@ nav:
 group:
   title: 业务组件
   path: /functions
-  order: 1
+  order: 2
 ---
 
 # DropPanel 下拉面板<Badge>非受控</Badge>

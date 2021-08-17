@@ -5,7 +5,7 @@ nav:
   path: /components
 group:
   title: 基础组件
-  path: /
+  path: /base
   order: 2
 ---
 

@@ -5,7 +5,7 @@ nav:
   path: /components
 group:
   title: 基础组件
-  path: /
+  path: /base
   order: 4
 ---
 
@@ -58,8 +58,8 @@ methods: {
 | zIndex          | z-index 的值                 | `number`                       | `999`    | -                     |
 | maxLine         | 文本最大行数                 | `number`                       | `3`      | -                     |
 | maxWidth        | toast 最大宽度               | `number`                       | `560`    | `0 < maxWidth <= 750` |
-| class           | 自定义样式类             | `string`                       | -        | -                     |
-| style           | 自定义样式               | `string`                       | -        | -                     |
+| class           | 自定义样式类                 | `string`                       | -        | -                     |
+| style           | 自定义样式                   | `string`                       | -        | -                     |
 
 ### Methods
 

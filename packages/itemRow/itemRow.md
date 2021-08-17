@@ -6,7 +6,7 @@ nav:
 group:
   title: 业务组件
   path: /functions
-  order: 1
+  order: 2
 ---
 
 # ItemRow 单个商品

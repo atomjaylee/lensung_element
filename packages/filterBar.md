@@ -1,12 +1,12 @@
 ---
-title: Filter 过滤器
+title: FilterBar 过滤器操作栏
 nav:
   title: 组件
   path: /components
 group:
-  title: 业务组件
-  path: /functions
-  order: 2
+  title: 项目组件
+  path: /project
+  order: 3
 ---
 
 # Filter 过滤器<Badge>受控</Badge>
