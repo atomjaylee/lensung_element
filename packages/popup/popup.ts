@@ -41,12 +41,12 @@ Component({
     show(options: BasePopupProps) {
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
-        this.setData({ ...options, visible: true });
+        this.setData({ visible: true, ...options });
       });
     },
 
     close() {
-      this.setData({ contentVisible: false, ...defaultProps });
+      this.setData({ contentVisible: false });
       this.__promise_resolve__ = undefined;
     },
 

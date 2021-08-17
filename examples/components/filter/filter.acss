@@ -1,6 +1,6 @@
 .ls_filter-slot-header {
   display: inline-flex;
-  height: 82rpx;
+  height: 84rpx;
   background-color: #fff;
   color: #333;
 }

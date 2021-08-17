@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ls-filter": "../filter/filter",
+    "ls-popup": "../popup/popup",
+    "ls-check-box": "../check/checkBox/checkBox"
+  }
+}

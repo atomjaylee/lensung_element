@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "过滤器操作栏",
+  "usingComponents": {
+    "ls-filter-bar": "/components/filterBar/filterBar"
+  }
+}

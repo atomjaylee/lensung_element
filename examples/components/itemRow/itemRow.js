@@ -4,6 +4,7 @@ const defaultProps = {
   showCheck: false,
   checkIdentify: 'num_iid',
   checkByContent: false,
+  checkDisabled: false,
   imageSize: 'medium',
   fillTitleHeight: false
 };
@@ -26,7 +27,7 @@ Component({
 
     // 手动触发勾选或取消勾选check
     checkItemRowByContentHandler() {
-      if (this.props.checkByContent && this.props.showCheck) {
+      if (this.props.checkByContent && this.props.showCheck && this.props.checkDisabled === false) {
         this.__checkInstance__.onCheckTapHandler();
       }
     },

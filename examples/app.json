@@ -12,9 +12,17 @@
     "pages/check/check",
     "pages/itemRow/itemRow",
     "pages/selector/selector",
-    "pages/filter/filter"
+    "pages/filter/filter",
+    "pages/filterBar/filterBar"
   ],
   "window": {
-    "defaultTitle": "邻商商品组件库"
+    "defaultTitle": "邻商商品组件库",
+    "enableWK": "YES",
+    "enableDSL": true,
+    "backgroundColor": "#F7F8FA",
+    "pullRefresh": "NO",
+    "allowsBounceVertical": "NO",
+    "titleBarColor": "#000",
+    "navigationBarForceEnable": "true"
   }
 }

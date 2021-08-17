@@ -1,0 +1,19 @@
+<view class="ls_filterBar">
+  <ls-filter a:for="{{ filterSchema }}" schema="{{ item.schema }}" activeKey="{{ item.activeKey }}" id="{{ item.id }}" width="{{ item.width }}"></ls-filter>
+  <view class="ls_filterBar-search" onTap="onSearchClick">
+    <text class="iconfont icon-sousuo-"></text>
+    <text>标题关键词</text>
+  </view>
+  <view class="ls_filterBar-popup" onTap="onFilterPopupClick">
+    <text>筛选</text>
+    <text class="iconfont icon-yuanshaixuan"></text>
+  </view>
+</view>
+
+<ls-popup ref="searchPopup">
+  <view class="ls_filterBar-searchPopup"></view>
+</ls-popup>
+
+<ls-popup ref="filterPopup">
+  <view class="ls_filterBar-filterPopup"></view>
+</ls-popup>

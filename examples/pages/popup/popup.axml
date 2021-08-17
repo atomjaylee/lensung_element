@@ -1,5 +1,17 @@
-<ls-popup ref="popup">
+<ls-popup ref="popupBottom" maskClosable position="bottom">
   <view style="height: 300rpx; background: #fff"></view>
 </ls-popup>
+<ls-popup ref="popupTop" maskClosable position="top">
+  <view style="height: 300rpx; background: #fff"></view>
+</ls-popup>
+<ls-popup ref="popupLeft" maskClosable position="left">
+  <view style="width: 500rpx; height: 100vh; background: #fff"></view>
+</ls-popup>
+<ls-popup ref="popupRight" maskClosable position="right">
+  <view style="width: 500rpx; height: 100vh; background: #fff"></view>
+</ls-popup>
 
-<ls-button type="primary" onTap="openPopupHandler">点击打开</ls-button>
+<ls-button type="primary" onTap="openPopupHandler" data-position="bottom">底部打开</ls-button>
+<ls-button type="primary" onTap="openPopupHandler" data-position="top">顶部打开</ls-button>
+<ls-button type="primary" onTap="openPopupHandler" data-position="left">左侧打开</ls-button>
+<ls-button type="primary" onTap="openPopupHandler" data-position="right">右侧打开</ls-button>

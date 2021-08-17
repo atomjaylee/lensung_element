@@ -1,0 +1,1 @@
+<ls-filter-bar filterSchema="{{ filterSchema }}"></ls-filter-bar>

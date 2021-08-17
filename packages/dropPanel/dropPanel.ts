@@ -51,7 +51,7 @@ Component({
       const convertUnit = 750 / windowWidth;
       const { top, height } = await getElementRectById('dropPanelHeader');
       const distanceTop = this.props.coverHeader ? top * convertUnit : (top + height) * convertUnit;
-      this.setData({ transparentHeight: Math.floor(distanceTop), visible: true });
+      this.setData({ transparentHeight: distanceTop, visible: true });
 
       const dropPanelInstanceMap = this.$page[SCOPED_NAME] || new Map();
       dropPanelInstanceMap.forEach((instance) => instance.close());
