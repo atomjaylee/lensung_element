@@ -29,7 +29,7 @@ Page({
   // 二次调用
   onDialogSecondOpenHandler() {
     this.$dialog.confirm({ content: "是否二次调用" }).then(res => {
-      this.$dialog.confirm({ content: "您点击了确定" })
+      this.$dialog.alert({ content: "您点击了确定" })
     })
   }
 });

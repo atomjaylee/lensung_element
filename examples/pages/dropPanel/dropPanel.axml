@@ -13,3 +13,5 @@
   </view>
 </ls-drop-panel>
 </view>
+
+<view style="width: 200rpx;height: 200rpx; background: yellow; position: absolute; left: 20rpx;top: 400rpx; z-index: 3"></view>

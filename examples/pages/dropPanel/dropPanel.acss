@@ -1,8 +1,12 @@
 .drop-wrap {
+  position: fixed;
+  top: 100rpx;
+  left: 0;
   display: flex;
   width: 750rpx;
   padding-top: 200rpx;
   background: blue;
+  z-index: 4;
 }
 
 .drop-header {

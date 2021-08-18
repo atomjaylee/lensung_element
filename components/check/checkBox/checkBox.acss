@@ -13,7 +13,7 @@
   margin-right: 16rpx;
 }
 .ls_check_box:last-child {
-  margin-right: none;
+  margin-right: 0;
 }
 .ls_check_box-disabled {
   color: rgba(51, 51, 51, 0.5);

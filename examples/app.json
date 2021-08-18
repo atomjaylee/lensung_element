@@ -12,8 +12,7 @@
     "pages/check/check",
     "pages/itemRow/itemRow",
     "pages/selector/selector",
-    "pages/filter/filter",
-    "pages/filterBar/filterBar"
+    "pages/filter/filter"
   ],
   "window": {
     "defaultTitle": "邻商商品组件库",

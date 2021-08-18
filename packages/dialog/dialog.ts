@@ -64,7 +64,10 @@ Component({
     },
 
     async alert(options: BaseDialogProps) {
-      while (this.__instance_closed__) await this.__instance_closed__;
+      while (this.__instance_closed__) {
+        await this.__instance_closed__;
+        await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
+      }
       this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
       return new Promise((resolve, reject) => {
         this.__promise_resolve__ = resolve;
