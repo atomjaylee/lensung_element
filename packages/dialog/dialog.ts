@@ -56,9 +56,8 @@ Component({
         await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
       }
       this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
-        this.__promise_reject__ = reject;
         this.setData({ ...options, visible: true, isAlert: false });
       });
     },
@@ -69,9 +68,9 @@ Component({
         await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
       }
       this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
-        this.__promise_reject__ = reject;
+
         this.setData({
           ...options,
           visible: true,
@@ -96,7 +95,6 @@ Component({
 
       this.$instanceClose();
       this.__promise_resolve__ = undefined;
-      this.__promise_reject__ = undefined;
       this.__instance_closed__ = undefined;
     },
 
@@ -111,7 +109,6 @@ Component({
     },
 
     onCancelHandler() {
-      this.__promise_reject__();
       getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
       this.close();
     },

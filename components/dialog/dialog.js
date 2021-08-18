@@ -33,9 +33,8 @@ Component({
       }
 
       this.__instance_closed__ = new Promise(resolve => this.$instanceClose = resolve);
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         this.__promise_resolve__ = resolve;
-        this.__promise_reject__ = reject;
         this.setData({ ...options,
           visible: true,
           isAlert: false
@@ -50,9 +49,8 @@ Component({
       }
 
       this.__instance_closed__ = new Promise(resolve => this.$instanceClose = resolve);
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         this.__promise_resolve__ = resolve;
-        this.__promise_reject__ = reject;
         this.setData({ ...options,
           visible: true,
           isAlert: true,
@@ -76,7 +74,6 @@ Component({
       onAfterClose && onAfterClose();
       this.$instanceClose();
       this.__promise_resolve__ = undefined;
-      this.__promise_reject__ = undefined;
       this.__instance_closed__ = undefined;
     },
 
@@ -93,8 +90,6 @@ Component({
     },
 
     onCancelHandler() {
-      this.__promise_reject__();
-
       getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
       this.close();
     },

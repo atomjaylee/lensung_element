@@ -55,11 +55,10 @@ methods: {
 
     // 方式三
     this.$dialog.confirm({
-      content: "confirm弹窗"
+      content: "confirm弹窗"，
+      onCancel: () => {}
     }).then(() => {
       // 点击了确认
-    }).catch(() => {
-      // 点击了取消
     })
 
 

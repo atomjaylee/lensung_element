@@ -10,6 +10,10 @@ Page({
     this.$dialog.confirm({
       content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
       title: "测试标题",
+      maskClosable: true,
+      onCancel: () => {
+        console.log("cancel")
+      },
       onBeforeClose: () => {
         return new Promise(resolve => {
           setTimeout(() => {
@@ -17,8 +21,8 @@ Page({
           }, 0)
         })
       }
-    }).catch(() => {
-      console.log("catch")
+    }).then(() => {
+      console.log("confirm")
     })
   },
 
