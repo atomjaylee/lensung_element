@@ -55,6 +55,7 @@ Component({
       const nodeName = targetDataset.nodeName;
 
       if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
+        getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
         this.close();
       }
     }

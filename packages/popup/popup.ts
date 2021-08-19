@@ -8,6 +8,7 @@ export interface BasePopupProps {
   zIndex?: number;
   statisticCancel?: string;
   onAfterClose?: () => void;
+  onCancel?: () => void;
 }
 
 const defaultProps: BasePopupProps = {
@@ -53,6 +54,7 @@ Component({
     onMaskTapHandler({ target: { targetDataset } }) {
       const nodeName = targetDataset.nodeName;
       if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
+        getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
         this.close();
       }
     },
