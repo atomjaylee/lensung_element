@@ -104,7 +104,7 @@ methods: {
 | num_iid           | 商品数字 id          | `number`           | 默认用作 check 组件的 identify       |
 | title             | 标题                 | `string`           | -                                    |
 | pic_url           | 主图片地址           | `string`           | -                                    |
-| is_xianyu         | 是否为闲鱼           | `boolean`          | -                                    |
+| stuff_status      | 判断是否为闲鱼       | `string`           | `unused`为闲鱼                       |
 | is_xinpin         | 是否为新品           | `boolean`          | -                                    |
 | type              | 商品类型             | `fixed \| auction` | fixed:一口价;auction:拍卖            |
 | tag               | 图片底部角标文字内容 | `string`           | 一般用于标识已投放，已指定等         |
