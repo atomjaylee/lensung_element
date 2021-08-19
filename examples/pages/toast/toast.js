@@ -9,8 +9,13 @@ Page({
   notIconToastHandler() {
     this.$toast.show({
       content: "公共组件统一维护，文件保护，其他人有任何组件修改需求",
-      duration: 50000
+      duration:500000,
+      style: "width: 700rpx"
     })
+    // this.$toast.show({
+    //   content: "公共组件统一维护，文件保护，其他人有任何组件修改需求",
+    //   duration: 2000
+    // })
   },
 
   iconToastHandler() {

@@ -12,7 +12,7 @@ Page({
       title: "测试标题",
       maskClosable: true,
       onCancel: () => {
-        console.log("cancel")
+        console.log("11123123")
       },
       onBeforeClose: () => {
         return new Promise(resolve => {
@@ -32,8 +32,15 @@ Page({
 
   // 二次调用
   onDialogSecondOpenHandler() {
-    this.$dialog.confirm({ content: "是否二次调用" }).then(res => {
-      this.$dialog.alert({ content: "您点击了确定" })
+    this.$dialog.confirm({
+      title: "title",
+      content: "是否二次调用",
+      onConfirm: () => {
+        this.$dialog.alert({ content: "您点击了确定" })
+      }
     })
+    // this.$dialog.confirm({ content: "是否二次调用" }).then(() => {
+    //   this.$dialog.alert({ content: "点击了确定" })
+    // })
   }
 });

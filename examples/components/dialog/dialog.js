@@ -1,4 +1,4 @@
-import { getComponentAttr } from '../_utils/tool';
+import { getComponentAttr, deepClone } from '../_utils/tool';
 const defaultProps = {
   zIndex: 999,
   maxLine: 3,
@@ -8,13 +8,14 @@ const defaultProps = {
   closable: false,
   maskClosable: false
 };
+const defaultData = {
+  visible: false,
+  contentVisible: false,
+  isAlert: false
+};
 Component({
   props: defaultProps,
-  data: {
-    visible: false,
-    contentVisible: false,
-    isAlert: false
-  },
+  data: defaultData,
   methods: {
     onAppearHandler() {
       this.setData({
@@ -22,15 +23,8 @@ Component({
       });
     },
 
-    sleep(ms = 0) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    },
-
     async confirm(options) {
-      while (this.__instance_closed__) {
-        await this.__instance_closed__;
-        await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
-      }
+      while (this.__instance_closed__) await this.__instance_closed__;
 
       this.__instance_closed__ = new Promise(resolve => this.$instanceClose = resolve);
       return new Promise(resolve => {
@@ -43,10 +37,7 @@ Component({
     },
 
     async alert(options) {
-      while (this.__instance_closed__) {
-        await this.__instance_closed__;
-        await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
-      }
+      while (this.__instance_closed__) await this.__instance_closed__;
 
       this.__instance_closed__ = new Promise(resolve => this.$instanceClose = resolve);
       return new Promise(resolve => {
@@ -60,21 +51,28 @@ Component({
     },
 
     close() {
-      this.setData({ ...defaultProps,
+      this.setData({
         contentVisible: false
       });
     },
 
     onTransitionEndHandler() {
-      if (this.data.visible && this.data.contentVisible) return;
-      this.setData({
-        visible: false
-      });
-      const onAfterClose = getComponentAttr(this, 'onAfterClose');
-      onAfterClose && onAfterClose();
-      this.$instanceClose();
-      this.__promise_resolve__ = undefined;
-      this.__instance_closed__ = undefined;
+      // 仅处理组件消失的处理逻辑
+      if (this.data.visible && this.data.contentVisible === false) {
+        const _data = deepClone(this.data);
+
+        Object.keys(_data).forEach(x => _data[x] = null);
+        this.setData({ ..._data,
+          ...defaultProps,
+          ...defaultData
+        }, () => {
+          this.$instanceClose();
+          this.__promise_resolve__ = undefined;
+          this.__instance_closed__ = undefined;
+        });
+        const onAfterClose = getComponentAttr(this, 'onAfterClose');
+        onAfterClose && onAfterClose();
+      }
     },
 
     async onConfirmHandler() {

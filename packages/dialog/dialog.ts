@@ -1,5 +1,5 @@
 import { justifyType } from '../flex/flex';
-import { getComponentAttr } from '../_utils/tool';
+import { getComponentAttr, deepClone } from '../_utils/tool';
 
 interface BaseDialogProps {
   title?: string;
@@ -32,29 +32,24 @@ const defaultProps: BaseDialogProps = {
   maskClosable: false,
 };
 
+const defaultData: BaseDialogProps = {
+  visible: false,
+  contentVisible: false,
+  isAlert: false,
+};
+
 Component({
   props: defaultProps,
 
-  data: {
-    visible: false,
-    contentVisible: false,
-    isAlert: false,
-  } as BaseDialogProps,
+  data: defaultData,
 
   methods: {
     onAppearHandler() {
       this.setData({ contentVisible: true });
     },
 
-    sleep(ms = 0) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    },
-
     async confirm(options: BaseDialogProps) {
-      while (this.__instance_closed__) {
-        await this.__instance_closed__;
-        await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
-      }
+      while (this.__instance_closed__) await this.__instance_closed__;
       this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
@@ -63,14 +58,10 @@ Component({
     },
 
     async alert(options: BaseDialogProps) {
-      while (this.__instance_closed__) {
-        await this.__instance_closed__;
-        await this.sleep(); // NOTE: 避免上一步setData和本次setData时间太近，导致visible失效
-      }
+      while (this.__instance_closed__) await this.__instance_closed__;
       this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
-
         this.setData({
           ...options,
           visible: true,
@@ -81,21 +72,29 @@ Component({
     },
 
     close() {
-      this.setData({
-        ...defaultProps,
-        contentVisible: false,
-      });
+      this.setData({ contentVisible: false });
     },
 
     onTransitionEndHandler() {
-      if (this.data.visible && this.data.contentVisible) return;
-      this.setData({ visible: false });
-      const onAfterClose = getComponentAttr(this, 'onAfterClose');
-      onAfterClose && onAfterClose();
-
-      this.$instanceClose();
-      this.__promise_resolve__ = undefined;
-      this.__instance_closed__ = undefined;
+      // 仅处理组件消失的处理逻辑
+      if (this.data.visible && this.data.contentVisible === false) {
+        const _data = deepClone(this.data);
+        Object.keys(_data).forEach((x) => (_data[x] = null));
+        this.setData(
+          {
+            ..._data,
+            ...defaultProps,
+            ...defaultData,
+          },
+          () => {
+            this.$instanceClose();
+            this.__promise_resolve__ = undefined;
+            this.__instance_closed__ = undefined;
+          }
+        );
+        const onAfterClose = getComponentAttr(this, 'onAfterClose');
+        onAfterClose && onAfterClose();
+      }
     },
 
     async onConfirmHandler() {
