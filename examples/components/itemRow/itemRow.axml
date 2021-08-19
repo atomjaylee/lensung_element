@@ -1,4 +1,4 @@
-<view class="ls_itemRow {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}" onTap="onItemRowTapHandler">
+<view class="ls_itemRow {{ checkDisabled ? 'ls_itemRowDisabled': '' }} {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}" onTap="onItemRowTapHandler">
   <ls-flex class="ls_itemRow-info">
     <ls-check class="info-check" disabled="{{ checkDisabled }}" size="small" a:if="{{ showCheck }}" value="{{ source }}" groupId="{{ checkGroupId }}" identify="{{ checkIdentify }}" onChangeByGroup="onCheckChangeByGroup" ref="checkInstance"></ls-check>
 
