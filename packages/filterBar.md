@@ -1,5 +1,5 @@
 ---
-title: FilterBar 过滤器操作栏(10%)
+title: FilterBar 过滤器操作栏
 nav:
   title: 组件
   path: /components
@@ -9,7 +9,7 @@ group:
   order: 3
 ---
 
-# Filter 过滤器<Badge>非受控</Badge>
+# FilterBar 过滤器操作栏<Badge>非受控</Badge>
 
 用于列表数据的筛选
 
@@ -27,13 +27,18 @@ group:
 
 ```html
 <!-- 单个使用 -->
-<filter-bar />
+<filter-bar popupContent="type,category" stateSchema="{{ stateSchema }}" />
 ```
 
 ```js
 data: {
-
+  stateSchema: [{ label: "仓库中", key: 'inventory', isDefault: true }]
 },
+
+onFilterBarChange(params) {
+  const { topParams, customParams } = params;
+  // topParams为接口参数，可直接使用， customParams为一些自定义参数，不可直接使用在top接口参数上
+}
 
 ```
 
@@ -41,6 +46,16 @@ data: {
 
 ### Attributes
 
-| 参数 | 说明 | 类型     | 默认值 | 备注 |
-| ---- | ---- | -------- | ------ | ---- |
-| id   | 标识 | `string` | -      | -    |
+| 参数             | 说明                   | 类型     | 默认值                                                                                                       | 备注                                                                           |
+| ---------------- | ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| showContent      | 配置显示内容           | `string` | `'sort,search,popup'`                                                                                        | `sort`为默认的排序, `search`为搜索栏， `popup`为高级筛选弹窗                   |
+| popupContent     | 配置弹窗内显示内容     | `string` | `'state,type,category'`                                                                                      | `state`为宝贝类型, `type`为宝贝类型, `video`为主图视频 ， `category`为类目选择 |
+| customFilterList | 自定义添加 filter 筛选 | `[]`     | `[]`                                                                                                         | 正在实现，暂不要使用                                                           |
+| stateSchema      | 配置宝贝状态显示       | `[]`     | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                              |
+| typeSchema       | 配置宝贝类型显示       | `[]`     | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                              |
+
+### Events
+
+| 事件名称 | 说明                 | 回调参数                      |
+| -------- | -------------------- | ----------------------------- |
+| onChange | 筛选选择器发生变更时 | `{ topParams, customParams }` |
