@@ -62,17 +62,18 @@ toSelectItem() {
 
 ### Attributes
 
-| 参数               | 说明                       | 类型     | 默认值                                                                                                       | 备注                                                                           |
-| ------------------ | -------------------------- | -------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| showContent        | 配置显示内容               | `string` | `'sort,search,popup'`                                                                                        | `sort`为默认的排序, `search`为搜索栏， `popup`为高级筛选弹窗                   |
-| popupContent       | 配置弹窗内显示内容         | `string` | `'state,type,category'`                                                                                      | `state`为宝贝类型, `type`为宝贝类型, `video`为主图视频 ， `category`为类目选择 |
-| customFilterList   | 自定义添加 filter 筛选     | `[]`     | `[]`                                                                                                         | 正在实现，暂不要使用                                                           |
-| stateSchema        | 配置宝贝状态显示           | `[]`     | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                              |
-| typeSchema         | 配置宝贝类型显示           | `[]`     | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                              |
-| listFields         | 查询列表接口 fields 参数   | `string` | `'num_iid,num,title,price,pic_url,list_time,delist_time,sold_quantity,type,postage_id'`                      | -                                                                              |
-| detailFields       | 查询详情接口 fields 参数   | `string` | `'is_xinpin,stuff_status'`                                                                                   | -                                                                              |
-| defaultCheckedList | 默认选中的宝贝列表         | `[]`     | `[]`                                                                                                         | `用于识别是否勾选的num_iid字段必须存在`                                        |
-| confirmText        | 底部确定选择按钮的显示文本 | `string` | `'确定'`                                                                                                     | -                                                                              |
+| 参数               | 说明                         | 类型     | 默认值                                                                                                       | 备注                                                                           |
+| ------------------ | ---------------------------- | -------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| showContent        | 配置显示内容                 | `string` | `'sort,search,popup'`                                                                                        | `sort`为默认的排序, `search`为搜索栏， `popup`为高级筛选弹窗                   |
+| popupContent       | 配置弹窗内显示内容           | `string` | `'state,type,category'`                                                                                      | `state`为宝贝类型, `type`为宝贝类型, `video`为主图视频 ， `category`为类目选择 |
+| slotContent        | 配置单个宝贝标题底部显示内容 | `string` | `'price,num,quantity'`                                                                                       | `price`为宝贝价格, `num`为宝贝库存, `quantity`为宝贝销量                       |
+| customFilterList   | 自定义添加 filter 筛选       | `[]`     | `[]`                                                                                                         | 正在实现，暂不要使用                                                           |
+| stateSchema        | 配置宝贝状态显示             | `[]`     | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                              |
+| typeSchema         | 配置宝贝类型显示             | `[]`     | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                              |
+| listFields         | 查询列表接口 fields 参数     | `string` | `'num_iid,num,title,price,pic_url,list_time,delist_time,sold_quantity,type,postage_id'`                      | -                                                                              |
+| detailFields       | 查询详情接口 fields 参数     | `string` | `'is_xinpin,stuff_status'`                                                                                   | -                                                                              |
+| defaultCheckedList | 默认选中的宝贝列表           | `[]`     | `[]`                                                                                                         | `用于识别是否勾选的num_iid字段必须存在`                                        |
+| confirmText        | 底部确定选择按钮的显示文本   | `string` | `'确定'`                                                                                                     | -                                                                              |
 
 ### Events
 
