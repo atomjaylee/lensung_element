@@ -12,9 +12,9 @@
     <view class="info-content" onTap="checkItemRowByContentHandler">
       <view class="content-title {{ fillTitleHeight ? 'title-fill' : '' }}">
         <slot name="title" checked="{{ checked }}" item="{{ source }}">
-          <view class="tag-module tag-xianYu" a:if="{{ source.is_xianyu }}">闲鱼</view>
+          <view class="tag-module tag-xianYu" a:if="{{ source.stuff_status === 'unused' }}">闲鱼</view>
           <view class="tag-module tag-xinPin" a:if="{{ source.is_xinpin }}">新品</view>
-          <view class="tag-module tag-paiMai" a:if="{{ source.stuff_status === 'unused' }}">拍卖</view>
+          <view class="tag-module tag-paiMai" a:if="{{ source.auction === 'auction' }}">拍卖</view>
           <text checked="{{ checked }}">{{ source.title }}</text>
         </slot>
       </view>

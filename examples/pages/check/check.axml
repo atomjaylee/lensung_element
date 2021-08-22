@@ -4,11 +4,15 @@
   <ls-check disabled checked="{{ checked }}"></ls-check>
   <ls-check size="small" checked="{{ checked }}"></ls-check>
   -----------------------------
-  <ls-check-group id="top" checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler" max="2">
+  <ls-check-group id="top" checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler" max="1">
     <ls-check groupId="top" a:for="{{ list }}" value="{{ item }}" key="{{ item }}"></ls-check>
     <ls-flex>
       <ls-check value="5" groupId="top"></ls-check>
       <text>嘿嘿</text>
+    </ls-flex>
+    <ls-flex>
+      <ls-check value="6" groupId="top"></ls-check>
+      <text>哈哈</text>
     </ls-flex>
   </ls-check-group>
   -----------------------------
