@@ -53,6 +53,8 @@ onFilterBarChange(params) {
 | customFilterList | 自定义添加 filter 筛选 | `[]`     | `[]`                                                                                                         | 正在实现，暂不要使用                                                           |
 | stateSchema      | 配置宝贝状态显示       | `[]`     | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                              |
 | typeSchema       | 配置宝贝类型显示       | `[]`     | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                              |
+| filterSchema     | 配置宝贝筛选显示       | `[]`     | `[]`                                                                                                         | `{ label: xxx, key: xxx, isDefault: true }`                                    |
+| videoSchema      | 配置宝贝主图视频显示   | `[]`     | `[{label:'有',key:true},{label:'无',key:false}]`                                                             | `{ label: '有', key: true, isDefault: true }`                                  |
 
 ### Events
 
