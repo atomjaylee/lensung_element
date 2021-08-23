@@ -87,4 +87,5 @@
 }
 .ls_button-block {
   display: flex;
+  flex: 1;
 }

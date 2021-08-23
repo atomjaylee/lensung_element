@@ -5,7 +5,11 @@
       <view class="ls_selector-closeIcon"></view>
     </ls-flex>
     <view class="ls_selector-content">
-      
+      <ls-selector-item></ls-selector-item>
+    </view>
+
+    <view class="ls_selector-button">
+      <ls-button block type="primary">确定</ls-button>
     </view>
   </view>
 </ls-popup>
