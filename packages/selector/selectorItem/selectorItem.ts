@@ -1,5 +1,8 @@
 export interface BaseSelectorItemProps {
-  schema: [];
+  schema: Record<string, any>[];
+  activeLabel: 'label';
+  activeKey: 'key';
+  activeChildren: 'children';
 }
 
 Component({});

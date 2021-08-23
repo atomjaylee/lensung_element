@@ -17,7 +17,7 @@
       "page": "pages/toast/toast"
     },
     {
-      "title": "对话框",
+      "title": "Dialog",
       "page": "pages/dialog/dialog"
     },
     {
@@ -29,7 +29,7 @@
       "page": "pages/actionSheet/actionSheet"
     },
     {
-      "title": "下拉面板",
+      "title": "dropPanel",
       "page": "pages/dropPanel/dropPanel"
     },
     {
@@ -37,15 +37,15 @@
       "page": "pages/check/check"
     },
     {
-      "title": "选择宝贝",
+      "title": "itemRow",
       "page": "pages/itemRow/itemRow"
     },
     {
-      "title": "列表选择器",
+      "title": "Selector",
       "page": "pages/selector/selector"
     },
     {
-      "title": "过滤器",
+      "title": "Filter",
       "page": "pages/filter/filter"
     }
   ]
