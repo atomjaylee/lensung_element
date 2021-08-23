@@ -46,15 +46,15 @@ onFilterBarChange(params) {
 
 ### Attributes
 
-| 参数             | 说明                   | 类型     | 默认值                                                                                                       | 备注                                                                           |
-| ---------------- | ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| showContent      | 配置显示内容           | `string` | `'sort,search,popup'`                                                                                        | `sort`为默认的排序, `search`为搜索栏， `popup`为高级筛选弹窗                   |
-| popupContent     | 配置弹窗内显示内容     | `string` | `'state,type,category'`                                                                                      | `state`为宝贝类型, `type`为宝贝类型, `video`为主图视频 ， `category`为类目选择 |
-| customFilterList | 自定义添加 filter 筛选 | `[]`     | `[]`                                                                                                         | 正在实现，暂不要使用                                                           |
-| stateSchema      | 配置宝贝状态显示       | `[]`     | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                              |
-| typeSchema       | 配置宝贝类型显示       | `[]`     | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                              |
-| filterSchema     | 配置宝贝筛选显示       | `[]`     | `[]`                                                                                                         | `{ label: xxx, key: xxx, isDefault: true }`                                    |
-| videoSchema      | 配置宝贝主图视频显示   | `[]`     | `[{label:'有',key:true},{label:'无',key:false}]`                                                             | `{ label: '有', key: true, isDefault: true }`                                  |
+| 参数             | 说明                   | 类型     | 默认值                                                                                                       | 备注                                                                                             |
+| ---------------- | ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| showContent      | 配置显示内容           | `string` | `'sort,search,popup'`                                                                                        | `sort`为默认的排序, `search`为搜索栏， `popup`为高级筛选弹窗                                     |
+| popupContent     | 配置弹窗内显示内容     | `string` | `'state,type,category'`                                                                                      | `state`为宝贝类型, `type`为宝贝类型, `video`为主图视频 ，`filter`为宝贝筛选 `category`为类目选择 |
+| customFilterList | 自定义添加 filter 筛选 | `[]`     | `[]`                                                                                                         | 正在实现，暂不要使用                                                                             |
+| stateSchema      | 配置宝贝状态显示       | `[]`     | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                                                |
+| typeSchema       | 配置宝贝类型显示       | `[]`     | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                                                |
+| filterSchema     | 配置宝贝筛选显示       | `[]`     | `[]`                                                                                                         | `{ label: xxx, key: xxx, isDefault: true }`                                                      |
+| videoSchema      | 配置宝贝主图视频显示   | `[]`     | `[{label:'有',key:true},{label:'无',key:false}]`                                                             | `{ label: '有', key: true, isDefault: true }`                                                    |
 
 ### Events
 
