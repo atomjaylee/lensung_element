@@ -1,0 +1,10 @@
+.ls_selector-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  padding-right: 24rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1rpx solid #f7f7f7;
+}

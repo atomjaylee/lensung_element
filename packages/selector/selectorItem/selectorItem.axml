@@ -1,0 +1,4 @@
+<view class="ls_selector-item">
+  <text>自定义库存</text>
+  <ls-check size="small" />
+</view>
