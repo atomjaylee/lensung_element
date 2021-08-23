@@ -1,0 +1,52 @@
+{
+  "modes": [
+    {
+      "title": "按钮",
+      "page": "pages/button/button"
+    },
+    {
+      "title": "开关",
+      "page": "pages/switch/switch"
+    },
+    {
+      "title": "tabBar",
+      "page": "pages/tabBar/tabBar"
+    },
+    {
+      "title": "toast",
+      "page": "pages/toast/toast"
+    },
+    {
+      "title": "对话框",
+      "page": "pages/dialog/dialog"
+    },
+    {
+      "title": "popup",
+      "page": "pages/popup/popup"
+    },
+    {
+      "title": "actionSheet",
+      "page": "pages/actionSheet/actionSheet"
+    },
+    {
+      "title": "下拉面板",
+      "page": "pages/dropPanel/dropPanel"
+    },
+    {
+      "title": "check",
+      "page": "pages/check/check"
+    },
+    {
+      "title": "选择宝贝",
+      "page": "pages/itemRow/itemRow"
+    },
+    {
+      "title": "列表选择器",
+      "page": "pages/selector/selector"
+    },
+    {
+      "title": "过滤器",
+      "page": "pages/filter/filter"
+    }
+  ]
+}

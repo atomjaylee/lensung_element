@@ -40,7 +40,6 @@ dist
 # Dependency directories
 **/node_modules/
 
-.mini-ide
 yarn.lock
 package-lock.json
 **/package-lock.json
