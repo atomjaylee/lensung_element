@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ls-check": "../../check/check",
+    "ls-selector-item": "./selectorItem"
+  }
+}
