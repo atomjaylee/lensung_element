@@ -18,6 +18,10 @@ Component({
       this.__checkInstance__ = ref;
     },
 
+    toastInstance(ref) {
+      this.__toastInstance__ = ref;
+    },
+
     // 监听组件内check组件group状态下的勾选情况
     onCheckChangeByGroup(checked) {
       this.setData({
@@ -34,8 +38,13 @@ Component({
         disabledAttrName
       } = this.props;
 
-      if (checkByContent && showCheck && source[disabledAttrName] !== true) {
-        this.__checkInstance__.onCheckTapHandler();
+      if (checkByContent && showCheck) {
+        if (source[disabledAttrName] === false) {
+          this.__checkInstance__.onCheckTapHandler();
+        } else {
+          // 禁用并且存在disabledToast时，进行提示
+          source.disabledToast && this.__toastInstance__.show(source.disabledToast);
+        }
       }
     },
 

@@ -98,18 +98,19 @@ methods: {
 
 #### source
 
-| 参数              | 说明                 | 类型               | 备注                                 |
-| ----------------- | -------------------- | ------------------ | ------------------------------------ |
-| num_iid           | 商品数字 id          | `number`           | 默认用作 check 组件的 identify       |
-| title             | 标题                 | `string`           | -                                    |
-| pic_url           | 主图片地址           | `string`           | -                                    |
-| stuff_status      | 判断是否为闲鱼       | `string`           | `unused`为闲鱼                       |
-| is_xinpin         | 是否为新品           | `boolean`          | -                                    |
-| type              | 商品类型             | `fixed \| auction` | fixed:一口价;auction:拍卖            |
-| disabled          | 是否禁止该宝贝       | `boolean`          | -                                    |
-| tag               | 图片底部角标文字内容 | `string`           | 一般用于标识已投放，已指定等         |
-| error             | 错误提示信息         | `string`           | 一般为记录页面，失败时，展示失败信息 |
-| [propName:string] | 其他信息             | `any`              | 其他数据                             |
+| 参数              | 说明                        | 类型               | 备注                                 |
+| ----------------- | --------------------------- | ------------------ | ------------------------------------ |
+| num_iid           | 商品数字 id                 | `number`           | 默认用作 check 组件的 identify       |
+| title             | 标题                        | `string`           | -                                    |
+| pic_url           | 主图片地址                  | `string`           | -                                    |
+| stuff_status      | 判断是否为闲鱼              | `string`           | `unused`为闲鱼                       |
+| is_xinpin         | 是否为新品                  | `boolean`          | -                                    |
+| type              | 商品类型                    | `fixed \| auction` | fixed:一口价;auction:拍卖            |
+| disabled          | 是否禁止该宝贝              | `boolean`          | -                                    |
+| disabledToast     | 禁用点击时 Toast 提示的内容 | `string`           | -                                    |
+| tag               | 图片底部角标文字内容        | `string`           | 一般用于标识已投放，已指定等         |
+| error             | 错误提示信息                | `string`           | 一般为记录页面，失败时，展示失败信息 |
+| [propName:string] | 其他信息                    | `any`              | 其他数据                             |
 
 ### Events
 

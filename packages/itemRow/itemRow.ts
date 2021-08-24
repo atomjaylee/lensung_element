@@ -8,6 +8,7 @@ interface ItemServerRequest {
   is_xinpin?: boolean;
   type?: string;
   disabled?: boolean;
+  disabledToast?: string;
   tag?: string;
   error?: string;
   [propName: string]: any;
@@ -49,6 +50,9 @@ Component({
     checkInstance(ref) {
       this.__checkInstance__ = ref;
     },
+    toastInstance(ref) {
+      this.__toastInstance__ = ref;
+    },
 
     // 监听组件内check组件group状态下的勾选情况
     onCheckChangeByGroup(checked) {
@@ -58,8 +62,13 @@ Component({
     // 手动触发勾选或取消勾选check
     checkItemRowByContentHandler() {
       const { checkByContent, showCheck, source, disabledAttrName } = this.props;
-      if (checkByContent && showCheck && source[disabledAttrName] !== true) {
-        this.__checkInstance__.onCheckTapHandler();
+      if (checkByContent && showCheck) {
+        if (source[disabledAttrName] === false) {
+          this.__checkInstance__.onCheckTapHandler();
+        } else {
+          // 禁用并且存在disabledToast时，进行提示
+          source.disabledToast && this.__toastInstance__.show(source.disabledToast);
+        }
       }
     },
 

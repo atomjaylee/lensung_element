@@ -30,3 +30,5 @@
 
   <slot name="extend" checked="{{ checked }}" item="{{ source }}"></slot>
 </view>
+
+<ls-toast ref="toastInstance" />
