@@ -1,7 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "drop-panel": "../dropPanel/dropPanel",
-    "ls-flex": "../flex/flex"
+    "drop-panel": "../dropPanel/dropPanel"
   }
 }

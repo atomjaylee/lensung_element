@@ -9,7 +9,6 @@ type SchemaType = {
 
 export interface BaseActionSheetProps {
   tip?: string;
-  space?: boolean;
   schema: SchemaType[];
   maskClosable?: boolean;
   zIndex?: number;
@@ -22,7 +21,6 @@ export interface BaseActionSheetProps {
 const defaultProps: BaseActionSheetProps = {
   schema: [],
   maskClosable: true,
-  space: true,
 };
 
 Component({

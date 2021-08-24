@@ -1,8 +1,7 @@
 import { getComponentAttr } from '../_utils/tool';
 const defaultProps = {
   schema: [],
-  maskClosable: true,
-  space: true
+  maskClosable: true
 };
 Component({
   props: defaultProps,

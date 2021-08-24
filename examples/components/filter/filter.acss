@@ -1,5 +1,8 @@
 .ls_filter-slot-header {
+  position: relative;
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   height: 84rpx;
   background-color: #fff;
   color: #333;
@@ -13,6 +16,64 @@
 .ls_filter-slot-header .ls-icon-arrowRotate {
   transform: rotate(180deg);
 }
+.ls_filter-slot-header .tab-radius {
+  position: absolute;
+  width: 25rpx;
+  height: 25rpx;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+.ls_filter-slot-header .tab-radius-circle {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.ls_filter-slot-header .tab-radius-left {
+  position: absolute;
+  width: 25rpx;
+  height: 25rpx;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  left: -25rpx;
+}
+.ls_filter-slot-header .tab-radius-left:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  right: 0;
+}
+.ls_filter-slot-header .tab-radius-right {
+  position: absolute;
+  width: 25rpx;
+  height: 25rpx;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  right: -25rpx;
+}
+.ls_filter-slot-header .tab-radius-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 0;
+}
 .ls_filter-activeHeader {
   background-color: #f2f2f2;
   border-radius: 24rpx 24rpx 0 0;
@@ -23,6 +84,9 @@
   padding-top: 40rpx;
 }
 .ls_filter-slot-body .ls_filter_radio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-left: 24rpx;
   width: 726 rpx;
   padding-right: 24rpx;

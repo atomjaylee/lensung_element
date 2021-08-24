@@ -57,17 +57,16 @@ methods: {
 
 ### options
 
-| 参数            | 说明                           | 类型                        | 默认值  | 备注                                               |
-| --------------- | ------------------------------ | --------------------------- | ------- | -------------------------------------------------- |
-| tip             | 顶部提示信息                   | `string`                    | -       | -                                                  |
-| space           | 是否显示为操作和取消分离的样式 | `boolean`                   | `true`  | -                                                  |
-| schema          | 操作按钮配置                   | `[<label, key, statistic>]` | `[]`    | `[{ label: '显示', key: '值', statistic: '埋点'}]` |
-| cancelText      | 取消按钮文本                   | `string`                    | `取消`  | -                                                  |
-| maskClosable    | 点击遮罩关闭弹窗               | `boolean`                   | `false` | -                                                  |
-| statisticCancel | 点击取消埋点标记               | `string`                    | -       | -                                                  |
-| zIndex          | z-index 的值                   | `number`                    | `999`   | -                                                  |
-| class           | 自定义样式类                   | `string`                    | -       | -                                                  |
-| style           | 自定义样式                     | `string`                    | -       | -                                                  |
+| 参数            | 说明             | 类型                        | 默认值  | 备注                                               |
+| --------------- | ---------------- | --------------------------- | ------- | -------------------------------------------------- |
+| tip             | 顶部提示信息     | `string`                    | -       | -                                                  |
+| schema          | 操作按钮配置     | `[<label, key, statistic>]` | `[]`    | `[{ label: '显示', key: '值', statistic: '埋点'}]` |
+| cancelText      | 取消按钮文本     | `string`                    | `取消`  | -                                                  |
+| maskClosable    | 点击遮罩关闭弹窗 | `boolean`                   | `false` | -                                                  |
+| statisticCancel | 点击取消埋点标记 | `string`                    | -       | -                                                  |
+| zIndex          | z-index 的值     | `number`                    | `999`   | -                                                  |
+| class           | 自定义样式类     | `string`                    | -       | -                                                  |
+| style           | 自定义样式       | `string`                    | -       | -                                                  |
 
 ### Methods
 

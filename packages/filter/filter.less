@@ -5,7 +5,10 @@
 
 // 头部
 .ls_filter-slot-header {
+  position: relative;
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
   height: @filter_header_height;
   background-color: #fff;
   color: #333;
@@ -19,6 +22,46 @@
 
   .ls-icon-arrowRotate {
     transform: rotate(180deg);
+  }
+
+  .tab-radius {
+    position: absolute;
+    width: 25rpx;
+    height: 25rpx;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+  }
+
+  .tab-radius-circle {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  .tab-radius-left {
+    .tab-radius;
+    left: -25rpx;
+
+    &:after {
+      .tab-radius-circle;
+      right: 0;
+    }
+  }
+
+  .tab-radius-right {
+    .tab-radius;
+    right: -25rpx;
+
+    &:after {
+      .tab-radius-circle;
+      left: 0;
+    }
   }
 }
 
@@ -34,6 +77,9 @@
   padding-top: 40rpx;
 
   .ls_filter_radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-left: 24rpx;
     width: (750 - 24) rpx;
     padding-right: 24rpx;
