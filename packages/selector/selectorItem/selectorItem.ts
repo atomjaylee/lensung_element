@@ -1,8 +1,28 @@
 export interface BaseSelectorItemProps {
-  schema: Record<string, any>[];
-  activeLabel: 'label';
-  activeKey: 'key';
-  activeChildren: 'children';
+  source: Record<string, any>;
+  activeLabel: string;
+  activeKey: string;
+  activeChildren: string;
 }
 
-Component({});
+const defaultProps: BaseSelectorItemProps = {
+  source: {},
+  activeLabel: 'label',
+  activeKey: 'key',
+  activeChildren: 'children',
+};
+
+Component({
+  props: defaultProps,
+
+  methods: {
+    checkInstance(ref) {
+      this.$checkInstance = ref;
+    },
+
+    // 通过点击body选中check
+    onCheckedByBodyHandler() {
+      this.$checkInstance.onCheckTapHandler();
+    },
+  },
+});

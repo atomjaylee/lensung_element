@@ -2,4 +2,4 @@
   <ls-button type="primary" onTap="selectMainImageHandler">选择主图</ls-button>
 </view>
 
-<ls-selector ref="selector"></ls-selector>
+<ls-selector ref="selector" schema="{{ schema }}"></ls-selector>

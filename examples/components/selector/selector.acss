@@ -36,6 +36,7 @@
 .ls_selector-content {
   min-height: 300rpx;
   padding-left: 24rpx;
+  padding-top: 24rpx;
 }
 .ls_selector-button {
   position: sticky;

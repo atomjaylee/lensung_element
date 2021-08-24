@@ -2,6 +2,6 @@
   "component": true,
   "usingComponents": {
     "ls-check": "../../check/check",
-    "ls-select-item": "./selectorItem"
+    "ls-selector-item": "./selectorItem"
   }
 }
