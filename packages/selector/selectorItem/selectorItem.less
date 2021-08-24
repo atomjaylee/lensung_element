@@ -14,8 +14,23 @@
     padding-right: 24rpx;
     border-top: 1rpx solid #f7f7f7;
 
-    text {
+    .label-wrap {
       flex: 1;
+      display: flex;
+      align-items: center;
+
+      .wrap-icon-arrow {
+        font-size: 24rpx;
+        color: #333;
+        margin-left: 30rpx;
+        margin-right: 40rpx;
+        padding: 20rpx;
+        transition: transform 150ms ease;
+      }
+
+      .wrap-active-icon {
+        transform: rotate(180deg);
+      }
     }
   }
 

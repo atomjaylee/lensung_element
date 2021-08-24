@@ -1,10 +1,13 @@
 <view class="ls_selector-item">
   <view class="ls_selector-item-inner {{ source[activeDisabled] ? 'ls_selector-item-disabled': '' }}" onTap="onCheckedByBodyHandler">
-    <text number-of-lines="1">{{ source[activeLabel] }}</text>
+    <view class="label-wrap">
+      <text number-of-lines="1">{{ source[activeLabel] }}</text>
+      <text a:if="{{ source[activeChildren].length }}" class="iconfont icon-jiantou_zhankai wrap-icon-arrow {{ foldControl[source[activeKey]] ? 'wrap-active-icon': '' }}" catchTap="onFoldItemHandler" data-key="{{ source[activeKey] }}"></text>
+    </view>
     <ls-check groupId="__selector_group__" value="{{ source }}" identify="{{ activeKey }}" size="small" disabled="{{ source[activeDisabled] }}" ref="checkInstance" />
   </view>
 
-  <view class="ls_selector-item-children" a:if="{{ source[activeChildren].length }}">
+  <view class="ls_selector-item-children" a:if="{{ source[activeChildren].length && foldControl[source[activeKey]] }}">
     <ls-selector-item a:for="{{ source[activeChildren] }}" source="{{ item }}" activeLabel="{{ activeLabel }}" activeKey="{{ activeKey }}" activeChildren="{{ activeChildren }}" activeDisabled="{{ activeDisabled }}"></ls-selector-item>
   </view>
 </view>

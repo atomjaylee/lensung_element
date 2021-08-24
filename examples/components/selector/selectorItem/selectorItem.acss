@@ -13,8 +13,21 @@
   padding-right: 24rpx;
   border-top: 1rpx solid #f7f7f7;
 }
-.ls_selector-item-inner text {
+.ls_selector-item-inner .label-wrap {
   flex: 1;
+  display: flex;
+  align-items: center;
+}
+.ls_selector-item-inner .label-wrap .wrap-icon-arrow {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+  padding: 20rpx;
+  transition: transform 150ms ease;
+}
+.ls_selector-item-inner .label-wrap .wrap-active-icon {
+  transform: rotate(180deg);
 }
 .ls_selector-item-children {
   padding-left: 24rpx;
