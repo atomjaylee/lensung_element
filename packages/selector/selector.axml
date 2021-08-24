@@ -1,17 +1,19 @@
-<ls-popup ref="popup">
+<ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel">
   <view class="ls_selector">
     <ls-flex class="ls_selector-title" justify="center">
-      <text>原宝贝链接</text>
-      <view class="ls_selector-closeIcon"></view>
+      <text>{{ title }}</text>
+      <view class="ls_selector-closeIcon" hidden="{{ hiddenCloseIcon }}" onTap="mockMaskClose"></view>
     </ls-flex>
-    <view class="ls_selector-content">
-      <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="1">
-        <ls-selector-item a:for="{{ schema }}" a:key="{{ item[activeKey] }}" source="{{ item }}" activeLabel="{{ activeLabel }}" activeKey="{{ activeKey }}" activeChildren="{{ activeChildren }}"></ls-selector-item>
-      </ls-check-group>
-    </view>
+    <slot>
+      <view class="ls_selector-content">
+        <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="1">
+          <ls-selector-item a:for="{{ schema }}" a:key="{{ item[activeKey] }}" source="{{ item }}" activeLabel="{{ activeLabel }}" activeKey="{{ activeKey }}" activeChildren="{{ activeChildren }}" activeDisabled="{{ activeDisabled }}"></ls-selector-item>
+        </ls-check-group>
+      </view>
+    </slot>
 
     <view class="ls_selector-button">
-      <ls-button block type="primary">确定</ls-button>
+      <ls-button block type="primary" onTap="onConfirmHandler">{{ confirmText }}</ls-button>
     </view>
   </view>
 </ls-popup>

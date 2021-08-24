@@ -1,8 +1,9 @@
 export interface BaseSelectorItemProps {
   source: Record<string, any>;
-  activeLabel: string;
-  activeKey: string;
-  activeChildren: string;
+  activeLabel?: string;
+  activeKey?: string;
+  activeChildren?: string;
+  activeDisabled?: string;
 }
 
 const defaultProps: BaseSelectorItemProps = {
@@ -10,6 +11,7 @@ const defaultProps: BaseSelectorItemProps = {
   activeLabel: 'label',
   activeKey: 'key',
   activeChildren: 'children',
+  activeDisabled: 'disabled',
 };
 
 Component({
@@ -21,8 +23,10 @@ Component({
     },
 
     // 通过点击body选中check
-    onCheckedByBodyHandler() {
-      this.$checkInstance.onCheckTapHandler();
+    onCheckedByBodyHandler({ target: { targetDataset } }) {
+      if (targetDataset.nodeName !== 'check') {
+        this.$checkInstance.onCheckTapHandler();
+      }
     },
   },
 });

@@ -2,6 +2,9 @@
   font-size: 28rpx;
   color: #333;
 }
+.ls_selector-item-disabled {
+  color: rgba(51, 51, 51, 0.3);
+}
 .ls_selector-item-inner {
   display: flex;
   justify-content: space-between;
