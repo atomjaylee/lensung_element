@@ -77,7 +77,7 @@ toSelectItem() {
 | detailFields       | 查询详情接口 fields 参数     | `string`  | `'is_xinpin,stuff_status'`                                                                                   | -                                                                                                 |
 | defaultCheckedList | 默认选中的宝贝列表           | `[]`      | `[]`                                                                                                         | `用于识别是否勾选的num_iid字段必须存在`                                                           |
 | confirmText        | 底部确定选择按钮的显示文本   | `string`  | `'确定'`                                                                                                     | -                                                                                                 |
-| pageTitle          | 跳转后页面标题               | `string`  | -                                                                                                            | 此参数仅适用于页面用法                                                                            |
+| pageTitle          | 跳转后页面标题               | `string`  | `选择宝贝`                                                                                                   | 此参数仅适用于页面用法                                                                            |
 | isSingleMode       | 是否进入单选模式             | `boolean` | `false`                                                                                                      | -                                                                                                 |
 
 ### Events
