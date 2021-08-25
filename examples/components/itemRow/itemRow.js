@@ -39,11 +39,11 @@ Component({
       } = this.props;
 
       if (checkByContent && showCheck) {
-        if (source[disabledAttrName] === false) {
-          this.__checkInstance__.onCheckTapHandler();
-        } else {
+        if (source[disabledAttrName] === true) {
           // 禁用并且存在disabledToast时，进行提示
           source.disabledToast && this.__toastInstance__.show(source.disabledToast);
+        } else {
+          this.__checkInstance__.onCheckTapHandler();
         }
       }
     },
