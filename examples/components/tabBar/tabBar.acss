@@ -10,10 +10,14 @@
   align-items: center;
   height: inherit;
 }
-.ls_tabs_item text:first-child {
+.ls_tabs_item .flex-baseline {
+  display: flex;
+  align-items: baseline;
+}
+.ls_tabs_item .text-label {
   font-size: 28rpx;
 }
-.ls_tabs_item text:nth-child(2) {
+.ls_tabs_item .text-num {
   font-size: 24rpx;
 }
 .ls_tabs_line {

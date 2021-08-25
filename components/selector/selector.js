@@ -1,18 +1,21 @@
-const defaultProps = {
+const defaultAttrs = {
   title: '',
   confirmText: '确定',
   schema: [],
+  defaultChecked: undefined,
   hiddenCloseIcon: false,
   maskClosable: true,
   activeLabel: 'label',
   activeKey: 'key',
   activeChildren: 'children',
   activeDisabled: 'disabled',
-  onBeforeClose: () => true
+  onBeforeClose: () => true,
+  onAfterClose: () => {},
+  onCancel: () => {},
+  onConfirm: () => {}
 };
 Component({
-  props: defaultProps,
-  data: {
+  data: { ...defaultAttrs,
     checkedList: []
   },
   methods: {
@@ -20,8 +23,16 @@ Component({
       this.$popup = ref;
     },
 
-    show() {
+    show(options) {
       this.$popup.show();
+      const {
+        defaultChecked,
+        ...customAttrs
+      } = options;
+      this.setData({
+        checkedList: defaultChecked ? [defaultChecked] : [],
+        ...customAttrs
+      });
     },
 
     close() {
@@ -29,11 +40,11 @@ Component({
     },
 
     async onConfirmHandler() {
-      const isPass = await this.props.onBeforeClose(this.data.checkedList[0]);
+      const isPass = await this.data.onBeforeClose(this.data.checkedList[0]);
 
       if (isPass) {
         this.close();
-        this.props.onConfirm && this.props.onConfirm(this.data.checkedList[0]);
+        this.data.onConfirm(this.data.checkedList[0]);
       }
     },
 
@@ -50,12 +61,12 @@ Component({
 
     // 代理onAfterClose事件
     proxyAfterClose() {
-      this.props.onAfterClose && this.props.onAfterClose();
+      this.data.onAfterClose();
     },
 
     // 代理onCancel事件
     proxyCancel() {
-      this.props.onCancel && this.props.onCancel();
+      this.data.onCancel();
     },
 
     // checkGroup修改

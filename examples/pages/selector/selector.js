@@ -12,6 +12,8 @@ Page({
       { label: '选项三', key: '3', disabled: true },
       { label: '选项四', key: '4' },
     ],
+
+    checked: { label: '选项四', key: '4' }
   },
   onLoad() {
     setTimeout(() => {
@@ -23,23 +25,12 @@ Page({
     this.$selector = ref;
   },
   selectMainImageHandler() {
-    this.$selector.show();
-  },
-
-  onAfterCloseHandler() {
-    console.log('afterClose');
-  },
-
-  onCancelHandler() {
-    console.log('onCancel');
-  },
-
-  onConfirmHandler(checked) {
-    console.log(checked);
-  },
-
-  onBeforeCloseHandler(checked) {
-    console.log(checked);
-    return false;
+    this.$selector.show({
+      schema: this.data.schema,
+      defaultChecked: { label: '选项四', key: '4' },
+      onCancel: () => {
+        console.log("cancel")
+      }
+    });
   },
 });

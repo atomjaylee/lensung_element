@@ -26,13 +26,7 @@ group:
 ## 基础用法
 
 ```html
-<!-- 单个使用 -->
-<ls-selector
-  title="选择模板"
-  schema="{{ schema }}"
-  onConfirm="onConfirmHandler"
-  onBeforeClose="onBeforeCloseHandler"
-></ls-selector>
+<ls-selector ref="selector"></ls-selector>
 ```
 
 ```js
@@ -49,17 +43,26 @@ data: {
   ];
 },
 methods: {
-  onBeforeClose(checked) {
-    if(checked === undefined) {
-      this.$toast("最少选中一个");
-      return false;
-    }
-    return true;
+  selector(ref) {
+    this.$selector = ref;
   },
 
-  onConfirm(checked) {
-    // logic
-  }
+  showSelector() {
+    this.$selector.show({
+      title: "请选择",
+      schema: this.data.schema,
+      onBeforeClose: (checked) => {
+        if(checked === undefined) {
+          this.$toast("最少选中一个");
+          return false;
+        }
+        return true;
+      },
+      onConfirm: (checked) => {
+        // logic
+      }
+    })
+  },
 }
 ```
 
@@ -67,17 +70,18 @@ methods: {
 
 ### Attributes
 
-| 参数            | 说明                                | 类型                 | 默认值     | 备注               |
-| --------------- | ----------------------------------- | -------------------- | ---------- | ------------------ |
-| title           | 自定义标题                          | `string`             | -          | -                  |
-| confirmText     | 底部确定按钮文本                    | `string`             | `确定`     | -                  |
-| schema          | 展示内容                            | `Record<string,any>` | `[]`       | -                  |
-| hiddenCloseIcon | 是否隐藏关闭按钮                    | `boolean`            | `false`    | -                  |
-| maskCloseable   | 是否点击遮罩层关闭                  | `boolean`            | `true`     | -                  |
-| activeLabel     | schema 数据中映射 label 的字段名    | `string`             | `label`    | 用于显示           |
-| activeKey       | schema 数据中映射 key 的字段名      | `string`             | `key`      | 用于判定勾选       |
-| activeChildren  | schema 数据中映射 children 的字段名 | `string`             | `children` | 用于递归显示子数据 |
-| activeDisabled  | schema 数据中映射 disabled 的字段名 | `string`             | `disabled` | 用于禁用勾选       |
+| 参数            | 说明                                | 类型                   | 默认值      | 备注               |
+| --------------- | ----------------------------------- | ---------------------- | ----------- | ------------------ |
+| title           | 自定义标题                          | `string`               | -           | -                  |
+| confirmText     | 底部确定按钮文本                    | `string`               | `确定`      | -                  |
+| schema          | 展示内容                            | `Record<string,any>[]` | `[]`        | -                  |
+| defaultChecked  | 默认选中                            | `Record<string,any>`   | `undefined` | -                  |
+| hiddenCloseIcon | 是否隐藏关闭按钮                    | `boolean`              | `false`     | -                  |
+| maskCloseable   | 是否点击遮罩层关闭                  | `boolean`              | `true`      | -                  |
+| activeLabel     | schema 数据中映射 label 的字段名    | `string`               | `label`     | 用于显示           |
+| activeKey       | schema 数据中映射 key 的字段名      | `string`               | `key`       | 用于判定勾选       |
+| activeChildren  | schema 数据中映射 children 的字段名 | `string`               | `children`  | 用于递归显示子数据 |
+| activeDisabled  | schema 数据中映射 disabled 的字段名 | `string`               | `disabled`  | 用于禁用勾选       |
 
 ### Events
 

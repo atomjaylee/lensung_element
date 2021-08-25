@@ -3,8 +3,10 @@
 <view class="ls_tabs {{ className }}" style="{{ style }}" hidden="{{ hidden }}">
   <view a:for="{{ schema }}" key="{{ item.key }}" class="ls_tabs_item" style="width: {{ sjs.calcItemWidth(schema) }}; color: {{ activeKey === item.key ? activeColor : unActiveColor }}" onTap="onTapHandler" data-key="{{ item.key }}" data-statistic="{{ statistic }}">
     <slot name="{{ item.key }}">
-      <text>{{ item.label }}</text>
-      <text a:if="{{ source[item.key] }}">({{ source[item.key] }})</text>
+      <view class="flex-baseline">
+        <text class="text-label">{{ item.label }}</text>
+        <text class="text-num" a:if="{{ source[item.key] }}">({{ source[item.key] }})</text>
+      </view>
     </slot>
   </view>
   <view class="ls_tabs_line" style="width: {{ sjs.calcItemWidth(schema) }}; left: {{ sjs.distance(activeKey, schema) }}" a:if="{{ showLine }}">
