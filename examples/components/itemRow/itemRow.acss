@@ -77,6 +77,9 @@
   color: #fff;
 }
 .ls_itemRow .error-tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 56rpx;
   background: #fff6f5;
   border-radius: 12rpx;

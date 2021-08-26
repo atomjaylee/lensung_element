@@ -1,6 +1,6 @@
 <view class="page">
   <ls-check-group id="test" checkedList="{{ checkedList }}" onChange="onCheckedChangeHandler">
-    <ls-item-row showCheck checkByContent fillTitleHeight checkGroupId="test" a:for="{{ source  }}" key="{{ item }}" source="{{ item }}">
+    <ls-item-row fillTitleHeight checkGroupId="test" a:for="{{ source  }}" key="{{ item }}" source="{{ item }}" onTap="onItemTapHandler">
       <image slot="image" style="width: 400rpx;height: 200rpx" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e3b60d493d1548a9b312efcd434b471c~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp" />
       <view slot="title">测试标题</view>
       <view slot-scope="scoped">

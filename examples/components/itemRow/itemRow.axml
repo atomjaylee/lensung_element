@@ -23,10 +23,10 @@
 
   </ls-flex>
 
-  <ls-flex class="error-tip" justify="between" catchTap="onErrorTipClickHandler" a:if="{{ source.error }}">
+  <view class="error-tip" catchTap="onErrorTipClickHandler" a:if="{{ source.error }}">
     <view class="tip-text">失败原因: {{ source.error }}</view>
     <view class="arrow-right"></view>
-  </ls-flex>
+  </view>
 
   <slot name="extend" checked="{{ checked }}" item="{{ source }}"></slot>
 </view>

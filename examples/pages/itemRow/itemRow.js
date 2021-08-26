@@ -14,4 +14,8 @@ Page({
   onCheckedChangeHandler(checkedList) {
     this.setData({ checkedList })
   },
+
+  onItemTapHandler() {
+    console.log("tap")
+  }
 });
