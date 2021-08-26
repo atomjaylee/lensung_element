@@ -29,8 +29,8 @@ Component({
       });
     },
 
-    // 手动触发勾选或取消勾选check
-    checkItemRowByContentHandler() {
+    // 整个宝贝点击事件 或 点击内容区勾选宝贝
+    onRowTapHandler(evt) {
       const {
         checkByContent,
         showCheck,
@@ -39,12 +39,20 @@ Component({
       } = this.props;
 
       if (checkByContent && showCheck) {
+        const nodeName = evt.target.targetDataset.nodeName;
+
         if (source[disabledAttrName] === true) {
           // 禁用并且存在disabledToast时，进行提示
           source.disabledToast && this.__toastInstance__.show(source.disabledToast);
-        } else {
+        } else if (nodeName !== 'check') {
+          // 点击的不为check组件时，也触发check的勾选动作
           this.__checkInstance__.onCheckTapHandler();
         }
+      }
+
+      if (checkByContent === false) {
+        const event = fmtEvent(this.props, evt);
+        this.props.onTap && this.props.onTap(event);
       }
     },
 
@@ -57,13 +65,6 @@ Component({
           content: this.props.source.error
         });
       }
-    },
-
-    // 整个宝贝点击事件
-    onItemRowTapHandler(evt) {
-      if (this.props.checkByContent) return;
-      const event = fmtEvent(this.props, evt);
-      this.props.onTap && this.props.onTap(event);
     }
 
   }
