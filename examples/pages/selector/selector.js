@@ -13,6 +13,10 @@ Page({
       { label: '选项四', key: '4' },
     ],
 
+    schema2: [
+      { label: '测试单个实例', key: '4' },
+    ],
+
     checked: { label: '选项四', key: '4' }
   },
   onLoad() {
@@ -33,4 +37,13 @@ Page({
       }
     });
   },
+
+  testSelector() {
+    this.$selector.show({
+      schema: this.data.schema2,
+      onCancel: () => {
+        console.log("cancel")
+      }
+    });
+  }
 });
