@@ -15,6 +15,27 @@ Page({
 
     schema2: [
       { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' },
     ],
 
     checked: { label: '选项四', key: '4' }

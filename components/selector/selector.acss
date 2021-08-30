@@ -11,6 +11,7 @@
   height: 92rpx;
   background-color: #fff;
   border-bottom: 1rpx solid #f2f2f2;
+  z-index: 1;
 }
 .ls_selector-closeIcon {
   position: absolute;
@@ -44,6 +45,7 @@
 .ls_selector-button {
   position: sticky;
   bottom: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
