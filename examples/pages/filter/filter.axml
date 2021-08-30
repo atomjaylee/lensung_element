@@ -1,4 +1,4 @@
-<view style="{{ hasOpen ? 'height: 100vh;overflow:hidden': 'height: 200vh'}}; background-image: linear-gradient(to bottom, red, blue);">
+<view style="{{ hasOpen ? 'height: 100vh; overflow:hidden': 'height: 200vh'}};">
   <view class="filter-bar">
     <ls-filter id="filter" activeKey="{{ activeKey }}" schema="{{ schema }}" onVisibleChange="onFilterVisibleChange" onChange="onChange" style="margin-left: 30rpx"></ls-filter>
   </view>

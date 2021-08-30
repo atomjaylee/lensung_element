@@ -1,9 +1,9 @@
 <ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel">
   <view class="ls_selector">
-    <ls-flex class="ls_selector-title" justify="center">
+    <view class="ls_selector-title" justify="center">
       <text>{{ title }}</text>
       <view class="ls_selector-closeIcon" hidden="{{ hiddenCloseIcon }}" onTap="mockMaskClose"></view>
-    </ls-flex>
+    </view>
     <slot>
       <view class="ls_selector-content">
         <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="1">

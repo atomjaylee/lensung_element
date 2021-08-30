@@ -1,17 +1,20 @@
 .ls_selector {
-  position: relative;
   background-color: #fff;
   border-radius: 24rpx 24rpx 0 0;
   max-height: 92vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
   &-title {
-    position: sticky;
-    top: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 92rpx;
     background-color: #fff;
     border-bottom: 1rpx solid #f2f2f2;
-    z-index: 1;
+    flex-shrink: 0;
   }
 
   &-closeIcon {
@@ -44,17 +47,17 @@
   &-content {
     min-height: 300rpx;
     padding-left: 24rpx;
+    flex: 1;
+    overflow-y: auto;
   }
 
   &-button {
-    position: sticky;
-    bottom: 0;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 24rpx;
     height: 112rpx;
+    flex-shrink: 0;
     background-color: rgba(255, 255, 255, 0.95);
   }
 }

@@ -2,7 +2,6 @@
   "component": true,
   "usingComponents": {
     "ls-popup": "../popup/popup",
-    "ls-flex": "../flex/flex",
     "ls-button": "../button/button",
     "ls-check-group": "../check/checkGroup/checkGroup",
     "ls-selector-item": "./selectorItem/selectorItem"
