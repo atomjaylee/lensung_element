@@ -75,7 +75,7 @@ methods: {
 | title               | 自定义标题                          | `string`               | -           | -                  |
 | confirmText         | 底部确定按钮文本                    | `string`               | `确定`      | -                  |
 | schema              | 展示内容                            | `Record<string,any>[]` | `[]`        | -                  |
-| defaultChecked      | 默认选中                            | `Record<string,any>`   | `undefined` | -                  |
+| defaultCheckedList  | 默认选中                            | `Record<string,any>`   | `undefined` | -                  |
 | hiddenCloseIcon     | 是否隐藏关闭按钮                    | `boolean`              | `false`     | -                  |
 | maskCloseable       | 是否点击遮罩层关闭                  | `boolean`              | `true`      | -                  |
 | max                 | 最大选择个数                        | `number`               | `1`         | -                  |

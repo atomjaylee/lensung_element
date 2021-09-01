@@ -52,13 +52,16 @@ Page({
   selector(ref) {
     this.$selector = ref;
   },
+
   selectMainImageHandler() {
     this.$selector.show({
       title: "测试标题",
       schema: this.data.schema,
-      defaultChecked: { label: '选项四', key: '4' },
-      onCancel: () => {
-        console.log("cancel")
+      defaultCheckedList: this.$checkedList || [],
+      parentSuppressCheck: true,
+      max: this.$checkedList ? 10: Infinity,
+      onConfirm: (checkedList) => {
+        this.$checkedList = checkedList
       }
     });
   },

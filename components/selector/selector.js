@@ -2,7 +2,7 @@ const defaultAttrs = {
   title: '',
   confirmText: '确定',
   schema: [],
-  defaultChecked: [],
+  defaultCheckedList: [],
   hiddenCloseIcon: false,
   maskClosable: true,
   max: 1,
@@ -29,11 +29,11 @@ Component({
     show(options) {
       this.$popup.show();
       const {
-        defaultChecked,
+        defaultCheckedList,
         ...customAttrs
       } = options;
       this.setData({
-        checkedList: defaultChecked ? defaultChecked : [],
+        checkedList: defaultCheckedList ? defaultCheckedList : [],
         ...customAttrs
       });
     },
@@ -65,6 +65,9 @@ Component({
     // 代理onAfterClose事件
     proxyAfterClose() {
       this.data.onAfterClose();
+      this.setData({ ...defaultAttrs,
+        checkedList: []
+      });
     },
 
     // 代理onCancel事件
