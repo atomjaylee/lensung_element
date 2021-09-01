@@ -79,7 +79,6 @@ Component({
 
     // checkGroup修改
     onGroupCheckChangeHandler(checkedList) {
-      console.log(checkedList);
       this.setData({ checkedList });
     },
   },
