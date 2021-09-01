@@ -78,6 +78,7 @@ methods: {
 | defaultChecked  | 默认选中                            | `Record<string,any>`   | `undefined` | -                  |
 | hiddenCloseIcon | 是否隐藏关闭按钮                    | `boolean`              | `false`     | -                  |
 | maskCloseable   | 是否点击遮罩层关闭                  | `boolean`              | `true`      | -                  |
+| max             | 最大选择个数                        | `number`               | `1`         | -                  |
 | activeLabel     | schema 数据中映射 label 的字段名    | `string`               | `label`     | 用于显示           |
 | activeKey       | schema 数据中映射 key 的字段名      | `string`               | `key`       | 用于判定勾选       |
 | activeChildren  | schema 数据中映射 children 的字段名 | `string`               | `children`  | 用于递归显示子数据 |

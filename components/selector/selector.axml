@@ -6,7 +6,7 @@
     </view>
     <slot>
       <view class="ls_selector-content">
-        <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="1">
+        <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="{{ max }}">
           <ls-selector-item a:for="{{ schema }}" a:key="{{ item[activeKey] }}" checkedList="{{ checkedList }}" source="{{ item }}" activeLabel="{{ activeLabel }}" activeKey="{{ activeKey }}" activeChildren="{{ activeChildren }}" activeDisabled="{{ activeDisabled }}"></ls-selector-item>
         </ls-check-group>
       </view>

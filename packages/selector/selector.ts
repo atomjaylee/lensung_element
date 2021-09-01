@@ -9,6 +9,7 @@ export interface BaseSelectorAttrs {
   activeKey?: string;
   activeChildren?: string;
   activeDisabled?: string;
+  max?: number;
   onBeforeClose?: (checked: Record<string, any> | undefined) => boolean;
   onAfterClose?: () => void;
   onCancel?: () => void;
@@ -23,6 +24,7 @@ const defaultAttrs: BaseSelectorAttrs = {
   defaultChecked: undefined,
   hiddenCloseIcon: false,
   maskClosable: true,
+  max: 1,
   activeLabel: 'label',
   activeKey: 'key',
   activeChildren: 'children',
@@ -55,10 +57,10 @@ Component({
     },
 
     async onConfirmHandler() {
-      const isPass = await this.data.onBeforeClose(this.data.checkedList[0]);
+      const isPass = await this.data.onBeforeClose(this.data.checkedList);
       if (isPass) {
         this.close();
-        this.data.onConfirm(this.data.checkedList[0]);
+        this.data.onConfirm(this.data.checkedList);
       }
     },
 

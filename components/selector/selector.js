@@ -5,6 +5,7 @@ const defaultAttrs = {
   defaultChecked: undefined,
   hiddenCloseIcon: false,
   maskClosable: true,
+  max: 1,
   activeLabel: 'label',
   activeKey: 'key',
   activeChildren: 'children',
@@ -40,11 +41,11 @@ Component({
     },
 
     async onConfirmHandler() {
-      const isPass = await this.data.onBeforeClose(this.data.checkedList[0]);
+      const isPass = await this.data.onBeforeClose(this.data.checkedList);
 
       if (isPass) {
         this.close();
-        this.data.onConfirm(this.data.checkedList[0]);
+        this.data.onConfirm(this.data.checkedList);
       }
     },
 
