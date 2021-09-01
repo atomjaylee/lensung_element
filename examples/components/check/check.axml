@@ -1,1 +1,7 @@
-<view class="ls_check {{ baseClass }} {{ localChecked ? 'ls_check-checked' : '' }} {{ className }}" style="{{ style }}" onTap="onCheckTapHandler" data-nodeName="check"></view>
+<view 
+  class="ls_check {{ baseClass }} {{ localChecked ? 'ls_check-checked' : '' }} {{ className }}" 
+  style="{{ style }}" 
+  onTap="onCheckTapHandler" 
+  hidden="{{ hidden }}"
+  data-nodeName="check"
+></view>

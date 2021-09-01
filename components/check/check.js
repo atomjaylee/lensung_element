@@ -6,6 +6,7 @@ const defaultProps = {
   checked: false,
   disabled: false,
   value: true,
+  hidden: false,
   size: 'medium'
 };
 Component({

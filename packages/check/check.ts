@@ -12,6 +12,7 @@ export interface BaseCheckProps {
   style?: string;
   groupId?: string;
   identify?: string;
+  hidden?: boolean;
   onChange?: (e: tinyapp.IBaseEvent) => void;
   onChangeByGroup?: (checked: boolean) => void;
 }
@@ -20,6 +21,7 @@ const defaultProps: BaseCheckProps = {
   checked: false,
   disabled: false,
   value: true,
+  hidden: false,
   size: 'medium',
 };
 

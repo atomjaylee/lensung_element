@@ -7,6 +7,8 @@ Page({
         key: '2',
         children: [
           { label: '子选项1', key: '2-1', children: [{ label: '孙子选项', key: '2-1-1' }] },
+          { label: '子选项2', key: '2-2', children: [{ label: '孙子选项', key: '2-2-1' }] },
+          { label: '子选项3', key: '2-3', children: [{ label: '孙子选项', key: '2-3-1' }] },
         ],
       },
       { label: '选项三', key: '3', disabled: true },

@@ -13,6 +13,7 @@ interface BaseCheckProps {
   identify?: string;
   className?: string;
   style?: string;
+  hidden?: boolean;
   onChange?: (e: tinyapp.IBaseEvent) => void;
 }
 
@@ -23,6 +24,7 @@ const defaultProps: BaseCheckProps = {
   checkedColor: '#ff5001',
   disabled: false,
   value: true,
+  hidden: false,
 };
 
 Component({

@@ -10,6 +10,8 @@ export interface BaseSelectorAttrs {
   activeChildren?: string;
   activeDisabled?: string;
   max?: number;
+  parentSuppressCheck?: boolean; // 父类禁止选择
+  defaultFold?: boolean; // 默认是否全部展开
   onBeforeClose?: (checked: Record<string, any> | undefined) => boolean;
   onAfterClose?: () => void;
   onCancel?: () => void;
@@ -29,6 +31,8 @@ const defaultAttrs: BaseSelectorAttrs = {
   activeKey: 'key',
   activeChildren: 'children',
   activeDisabled: 'disabled',
+  parentSuppressCheck: false,
+  defaultFold: false,
   onBeforeClose: () => true,
   onAfterClose: () => {},
   onCancel: () => {},

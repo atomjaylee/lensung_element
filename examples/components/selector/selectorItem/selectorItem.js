@@ -4,31 +4,32 @@ const defaultProps = {
   activeKey: 'key',
   activeChildren: 'children',
   activeDisabled: 'disabled',
-  checkedList: []
+  checkedList: [],
+  parentSuppressCheck: false,
+  defaultFold: false
 };
 Component({
   props: defaultProps,
   data: {
     // 折叠控制
-    foldControl: {}
+    isFold: false
   },
+
+  onInit() {
+    this.setData({
+      isFold: this.props.defaultFold
+    });
+  },
+
   methods: {
     checkInstance(ref) {
       this.$checkInstance = ref;
     },
 
     // 展开和折叠子选项
-    onFoldItemHandler({
-      target: {
-        dataset
-      }
-    }) {
-      const key = dataset.key;
-      const currentState = this.data.foldControl[key];
+    onFoldItemHandler() {
       this.setData({
-        foldControl: { ...this.data.foldControl,
-          [key]: !currentState
-        }
+        isFold: !this.data.isFold
       });
     },
 
@@ -38,6 +39,13 @@ Component({
         targetDataset
       }
     }) {
+      const {
+        source,
+        activeChildren,
+        parentSuppressCheck
+      } = this.props;
+      if (source[activeChildren] && source[activeChildren].length && parentSuppressCheck) return;
+
       if (targetDataset.nodeName !== 'check') {
         this.$checkInstance.onCheckTapHandler();
       }

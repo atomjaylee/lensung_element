@@ -5,6 +5,8 @@ export interface BaseSelectorItemProps {
   activeChildren?: string;
   activeDisabled?: string;
   checkedList: Record<string, any>[];
+  parentSuppressCheck?: boolean; // 父类禁止选择
+  defaultFold?: boolean; // 默认是否全部展开
 }
 
 const defaultProps: BaseSelectorItemProps = {
@@ -14,6 +16,8 @@ const defaultProps: BaseSelectorItemProps = {
   activeChildren: 'children',
   activeDisabled: 'disabled',
   checkedList: [],
+  parentSuppressCheck: false,
+  defaultFold: false,
 };
 
 Component({
@@ -21,7 +25,11 @@ Component({
 
   data: {
     // 折叠控制
-    foldControl: {},
+    isFold: false,
+  },
+
+  onInit() {
+    this.setData({ isFold: this.props.defaultFold });
   },
 
   methods: {
@@ -30,14 +38,14 @@ Component({
     },
 
     // 展开和折叠子选项
-    onFoldItemHandler({ target: { dataset } }) {
-      const key = dataset.key;
-      const currentState = this.data.foldControl[key];
-      this.setData({ foldControl: { ...this.data.foldControl, [key]: !currentState } });
+    onFoldItemHandler() {
+      this.setData({ isFold: !this.data.isFold });
     },
 
     // 通过点击body选中check
     onCheckedByBodyHandler({ target: { targetDataset } }) {
+      const { source, activeChildren, parentSuppressCheck } = this.props;
+      if (source[activeChildren] && source[activeChildren].length && parentSuppressCheck) return;
       if (targetDataset.nodeName !== 'check') {
         this.$checkInstance.onCheckTapHandler();
       }

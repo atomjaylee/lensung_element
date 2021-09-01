@@ -7,7 +7,8 @@ const defaultProps = {
   checkedBorderColor: '#ff5001',
   checkedColor: '#ff5001',
   disabled: false,
-  value: true
+  value: true,
+  hidden: false
 };
 Component({
   props: defaultProps,

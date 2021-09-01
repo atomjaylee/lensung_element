@@ -72,6 +72,7 @@ onCheckGroupChangeHandler(checkedList) {
 | value    | 该 check 绑定的值                      | `boolean`\|`string`\|`number`\|`{}` | `true`   | 当`checked === value`时，该 check 勾选 |
 | groupId  | 关联的 checkGroup                      | `string`                            | -        | -                                      |
 | identify | value 为对象时，用于判断选中的标识字段 | `string`                            | -        | 如 value 为对象，则为必填项            |
+| hidden   | 是否隐藏                               | `boolean`                           | `false`  | -                                      |
 | style    | 自定义按钮样式                         | `string`                            | -        | -                                      |
 | class    | 自定义按钮样式类                       | `string`                            | -        | -                                      |
 
@@ -91,6 +92,7 @@ onCheckGroupChangeHandler(checkedList) {
 | value              | 该 check 绑定的值                      | `boolean`\|`string`\|`number`\|`{}` | `true`    | 当`checked === value`时，该 check 勾选 |
 | groupId            | 关联的 checkGroup                      | `string`                            | -         | -                                      |
 | identify           | value 为对象时，用于判断选中的标识字段 | `string`                            | -         | 如 value 为对象，则为必填项            |
+| hidden             | 是否隐藏                               | `boolean`                           | `false`   | -                                      |
 | checkedBackground  | 选中时背景色                           | `string`                            | `#fff7f1` | -                                      |
 | checkedBorderColor | 选中时边框颜色                         | `string`                            | `#ff5001` | -                                      |
 | checkedColor       | 选中时字体色                           | `string`                            | `#ff5001` | -                                      |

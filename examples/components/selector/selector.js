@@ -10,6 +10,8 @@ const defaultAttrs = {
   activeKey: 'key',
   activeChildren: 'children',
   activeDisabled: 'disabled',
+  parentSuppressCheck: false,
+  defaultFold: false,
   onBeforeClose: () => true,
   onAfterClose: () => {},
   onCancel: () => {},
