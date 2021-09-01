@@ -2,7 +2,7 @@ export interface BaseSelectorAttrs {
   title?: string;
   confirmText?: string;
   schema: Record<string, any>[];
-  defaultChecked?: Record<string, any>;
+  defaultChecked?: Record<string, any>[];
   hiddenCloseIcon?: boolean;
   maskClosable?: boolean;
   activeLabel?: string;
@@ -23,7 +23,7 @@ const defaultAttrs: BaseSelectorAttrs = {
   title: '',
   confirmText: '确定',
   schema: [],
-  defaultChecked: undefined,
+  defaultChecked: [],
   hiddenCloseIcon: false,
   maskClosable: true,
   max: 1,
@@ -53,7 +53,7 @@ Component({
     show(options: BaseSelectorAttrs) {
       this.$popup.show();
       const { defaultChecked, ...customAttrs } = options;
-      this.setData({ checkedList: defaultChecked ? [defaultChecked] : [], ...customAttrs });
+      this.setData({ checkedList: defaultChecked ? defaultChecked : [], ...customAttrs });
     },
 
     close() {

@@ -2,7 +2,7 @@ const defaultAttrs = {
   title: '',
   confirmText: '确定',
   schema: [],
-  defaultChecked: undefined,
+  defaultChecked: [],
   hiddenCloseIcon: false,
   maskClosable: true,
   max: 1,
@@ -33,7 +33,7 @@ Component({
         ...customAttrs
       } = options;
       this.setData({
-        checkedList: defaultChecked ? [defaultChecked] : [],
+        checkedList: defaultChecked ? defaultChecked : [],
         ...customAttrs
       });
     },
