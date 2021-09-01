@@ -4,6 +4,7 @@ export interface BaseSelectorItemProps {
   activeKey?: string;
   activeChildren?: string;
   activeDisabled?: string;
+  checkedList: Record<string, any>[];
 }
 
 const defaultProps: BaseSelectorItemProps = {
@@ -12,6 +13,7 @@ const defaultProps: BaseSelectorItemProps = {
   activeKey: 'key',
   activeChildren: 'children',
   activeDisabled: 'disabled',
+  checkedList: [],
 };
 
 Component({

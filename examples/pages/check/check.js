@@ -6,6 +6,12 @@ Page({
     list: [],
     checkSchema1: [1, 2, 3, 4, 5, 6],
     checkSchema2: [11, 12, 13, 14, 15, 16, 17],
+    checkSchema3: [
+      { label: "选项1", key: 1 },
+      { label: "选项2", key: 2 },
+      { label: "选项3", key: 3 },
+    ],
+    checked3: { label: "选项2", key: 2 },
 
     checkBoxList: ["造物节"],
     checkBoxKey: "",

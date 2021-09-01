@@ -3,7 +3,8 @@ const defaultProps = {
   activeLabel: 'label',
   activeKey: 'key',
   activeChildren: 'children',
-  activeDisabled: 'disabled'
+  activeDisabled: 'disabled',
+  checkedList: []
 };
 Component({
   props: defaultProps,

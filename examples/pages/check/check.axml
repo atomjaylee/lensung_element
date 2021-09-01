@@ -27,6 +27,9 @@
       <ls-check-box groupId="bottom" checked value="双十一">双十一大促</ls-check-box>
     </ls-check-group>
   </view>
+  
+  ------------- object ----------------
+  <ls-check a:for="{{ checkSchema3 }}" value="{{ item }}" checked="{{ checked3 }}" identify="key"></ls-check>
 
   <view onTap="switchData">change data</view>
 

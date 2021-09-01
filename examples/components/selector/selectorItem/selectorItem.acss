@@ -26,6 +26,9 @@
   padding: 20rpx;
   transition: transform 150ms ease;
 }
+.ls_selector-item-inner .label-wrap .label-active {
+  color: #ff5001;
+}
 .ls_selector-item-inner .label-wrap .wrap-active-icon {
   transform: rotate(180deg);
 }

@@ -11,6 +11,7 @@ Page({
       },
       { label: '选项三', key: '3', disabled: true },
       { label: '选项四', key: '4' },
+      { label: '孙子选项', key: '5' }
     ],
 
     schema2: [
@@ -51,6 +52,7 @@ Page({
   },
   selectMainImageHandler() {
     this.$selector.show({
+      title: "测试标题",
       schema: this.data.schema,
       defaultChecked: { label: '选项四', key: '4' },
       onCancel: () => {
@@ -61,6 +63,7 @@ Page({
 
   testSelector() {
     this.$selector.show({
+      title: "测试标题",
       schema: this.data.schema2,
       onCancel: () => {
         console.log("cancel")
