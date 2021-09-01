@@ -125,3 +125,4 @@ methods: {
 | default | 自定义标题下面的内容， 参数为`checked` - 勾选模式下是否被选中, `item` - 本条商品信息 |
 | title   | 自定义标题， 参数为`checked` - 勾选模式下是否被选中 , `item` - 本条商品信息          |
 | image   | 自定义图片， 参数为`checked` - 勾选模式下是否被选中 , `item` - 本条商品信息          |
+| extend  | 自定义底部内容 参数为`checked` - 勾选模式下是否被选中 , `item` - 本条商品信息        |
