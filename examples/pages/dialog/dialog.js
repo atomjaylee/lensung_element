@@ -7,7 +7,7 @@ Page({
   },
 
   async onOpenDialogHandler() {
-    this.$dialog.confirm({
+    this.$dialog.alert({
       content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
       title: "测试标题",
       maskClosable: true,

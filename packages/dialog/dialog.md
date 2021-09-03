@@ -84,6 +84,7 @@ methods: {
 | contentJustify | 内容区子元素横轴排列 | `start` \| `center`\|`end` \|`between` \|`around` | `start` | -                    |
 | closable       | 是否显示关闭按钮     | `boolean`                                         | `false` | -                    |
 | maskClosable   | 点击遮罩关闭弹窗     | `boolean`                                         | `false` | -                    |
+| hiddenButtons  | 是否隐藏底部按钮     | `boolean`                                         | `false` | -                    |
 | class          | 自定义样式类         | `string`                                          | -       | -                    |
 | style          | 自定义样式           | `string`                                          | -       | -                    |
 

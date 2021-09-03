@@ -13,7 +13,7 @@
         </slot>
       </ls-flex>
     </view>
-    <view class="ls_dialog-content_buttons">
+    <view class="ls_dialog-content_buttons" hidden="{{ hiddenButtons }}">
       <slot name="buttons">
         <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_cancel" hidden="{{ isAlert }}" onTap="onCancelHandler">{{ cancelText }}</ls-flex>
         <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_confirm" onTap="onConfirmHandler">{{ confirmText }}</ls-flex>

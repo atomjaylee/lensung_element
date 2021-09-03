@@ -6,7 +6,8 @@ const defaultProps = {
   confirmText: '确定',
   cancelText: '取消',
   closable: false,
-  maskClosable: false
+  maskClosable: false,
+  hiddenButtons: false
 };
 const defaultData = {
   visible: false,

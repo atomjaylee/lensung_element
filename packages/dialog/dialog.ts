@@ -19,6 +19,7 @@ interface BaseDialogProps {
   maxLine?: number;
   closable?: boolean;
   maskClosable?: boolean;
+  hiddenButtons?: boolean;
   [propName: string]: any;
 }
 
@@ -30,6 +31,7 @@ const defaultProps: BaseDialogProps = {
   cancelText: '取消',
   closable: false,
   maskClosable: false,
+  hiddenButtons: false,
 };
 
 const defaultData: BaseDialogProps = {
