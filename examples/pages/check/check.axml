@@ -24,7 +24,7 @@
     <ls-check-group id="bottom" checkedList="{{ checkBoxList }}" onChange="onCheckBoxChangeHandler">
       <ls-check-box groupId="bottom" value="618">618大促</ls-check-box>
       <ls-check-box groupId="bottom" disabled value="造物节">造物节</ls-check-box>
-      <ls-check-box groupId="bottom" checked value="双十一">双十一大促</ls-check-box>
+      <ls-check-box groupId="bottom" checked value="双十一" style="width: 300rpx">双十一大促</ls-check-box>
     </ls-check-group>
   </view>
   

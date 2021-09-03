@@ -1,8 +1,8 @@
 const fmtStyle = (checkedBackground, checkedBorderColor, checkedColor, disabled, localChecked) => {
   if (localChecked) {
-    const style = `background-color: ${checkedBackground};border-color:${checkedBorderColor};color:${checkedColor}`;
+    const style = `background-color: ${checkedBackground};border-color:${checkedBorderColor};color:${checkedColor};`;
     if (disabled) {
-      return `${style}; opacity: 0.25`;
+      return `${style}; opacity: 0.25;`;
     } else {
       return style;
     }
