@@ -1,8 +1,18 @@
 <import-sjs from="./filter.sjs" name="sjs" />
 
-<drop-panel class="{{ className }}" style="{{ style }}" bodyClosable id="{{ id }}" onVisibleChange="onDropPanelVisibleChange">
+<drop-panel
+  bodyClosable 
+  id="{{ id }}" 
+  class="{{ className }}" 
+  style="{{ style }}" 
+  onVisibleChange="onDropPanelVisibleChange"
+>
 
-  <view justify="center" class="ls_filter-slot-header {{ scoped.bodyVisible ? 'ls_filter-activeHeader' : '' }}" style="{{ sjs.fmtWidth(width) }}" slot-scope="scoped">
+  <view 
+    class="ls_filter-slot-header {{ scoped.bodyVisible ? 'ls_filter-activeHeader' : '' }}" 
+    style="{{ sjs.fmtWidth(width) }}" 
+    slot-scope="scoped"
+  >
     <text number-of-lines="1">{{ sjs.fmtLabel(activeKey, schema, labelIdentify, keyIdentify) }}</text>
     <view class="iconfont icon-jiantou_zhankai ls-icon-arrow {{ scoped.bodyVisible ? 'ls-icon-arrowRotate' : '' }}"></view>
     <block a:if="{{ scoped.bodyVisible }}">
@@ -12,7 +22,14 @@
   </view>
 
   <view slot="body" class="ls_filter-slot-body">
-    <view justify="between" a:for="{{ schema }}" key="{{ item[keyIdentify] }}" class="ls_filter_radio {{ activeKey === item[keyIdentify] ? 'ls_filter_activeRadio' : '' }}" data-statistic="{{ item.statistic }}" onTap="onSelectItemHandler" data-item="{{ item }}">
+    <view 
+      a:for="{{ schema }}" 
+      a:key="{{ item[keyIdentify] }}" 
+      class="ls_filter_radio {{ activeKey === item[keyIdentify] ? 'ls_filter_activeRadio' : '' }}" 
+      data-statistic="{{ item.statistic }}"
+      data-item="{{ item }}"
+      onTap="onSelectItemHandler"
+    >
       <text class="label-max-width">{{ item[labelIdentify] }}</text>
       <text class="filter-icon-checked iconfont icon-duigou" a:if="{{ activeKey === item[keyIdentify] }}"></text>
     </view>

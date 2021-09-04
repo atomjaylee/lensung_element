@@ -22,7 +22,7 @@ Component({
         onChange
       } = this.props;
       const item = dataset.item;
-      onChange && onChange(item[keyIdentify]);
+      onChange && onChange(item[keyIdentify], this.props);
     }
 
   }
