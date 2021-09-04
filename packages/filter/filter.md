@@ -56,16 +56,16 @@ onFilterChangeHandler(key) {
 
 ### Attributes
 
-| 参数          | 说明                                 | 类型                    | 默认值  | 备注                                               |
-| ------------- | ------------------------------------ | ----------------------- | ------- | -------------------------------------------------- |
-| id            | 标识                                 | `string`                | -       | -                                                  |
-| width         | 该过滤器的宽度                       | `string`                | `auto`  | `auto` \| `100`\|`100rpx`                          |
-| activeKey     | 选中的值                             | `string` \| `number`    | -       | -                                                  |
-| schema        | 下拉面板展示的数据                   | `Record<string, any>[]` | `[]`    | `[{ label: '显示', key: '值', statistic: '埋点'}]` |
-| style         | 自定义样式                           | `string`                | -       | -                                                  |
-| class         | 自定义样式类                         | `string`                | -       | -                                                  |
-| labelIdentify | 标记 schema 对象中用于显示的字段名称 | `string`                | `label` | -                                                  |
-| keyIdentify   | 标记 schema 对象中作为值的字段名称   | `string`                | `key`   | -                                                  |
+| 参数          | 说明                                 | 类型                    | 默认值                        | 备注                                               |
+| ------------- | ------------------------------------ | ----------------------- | ----------------------------- | -------------------------------------------------- |
+| id            | 标识                                 | `string`                | 可以使用此标识手动关闭 filter | -                                                  |
+| width         | 该过滤器的宽度                       | `string`                | `auto`                        | `auto` \| `100`\|`100rpx`                          |
+| activeKey     | 选中的值                             | `string` \| `number`    | -                             | -                                                  |
+| schema        | 下拉面板展示的数据                   | `Record<string, any>[]` | `[]`                          | `[{ label: '显示', key: '值', statistic: '埋点'}]` |
+| style         | 自定义样式                           | `string`                | -                             | -                                                  |
+| class         | 自定义样式类                         | `string`                | -                             | -                                                  |
+| labelIdentify | 标记 schema 对象中用于显示的字段名称 | `string`                | `label`                       | -                                                  |
+| keyIdentify   | 标记 schema 对象中作为值的字段名称   | `string`                | `key`                         | -                                                  |
 
 ### Events
 
