@@ -85,7 +85,7 @@ toSelectItem() {
 | 事件名称         | 说明                    | 回调参数                                    | 备注                                                     |
 | ---------------- | ----------------------- | ------------------------------------------- | -------------------------------------------------------- |
 | onConfirm        | 确认选择的回调函数      | `checkedList`                               | -                                                        |
-| onFormatRequest  | 格式化 top 接口调用参数 | `params`                                    | 格式化后需要将最终的配置，作为返回值，供选择宝贝组件使用 |
+| onFormatRequest  | 格式化 top 接口调用参数 | `params, { topParams, customParams }`       | 格式化后需要将最终的配置，作为返回值，供选择宝贝组件使用 |
 | onFilterListFunc | 格式化 top 接口返回数据 | `responseList, { topParams, customParams }` | 格式化后需要将最终的列表数据，作为返回值，供选择宝贝显示 |
 
 ### Scoped Slot
