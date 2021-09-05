@@ -23,6 +23,7 @@
   bottom: 0;
   overflow: hidden;
   background-color: #f2f2f2;
+  z-index: 1;
 }
 .ls_filter-slot-header .tab-radius-circle {
   content: '';
@@ -41,6 +42,7 @@
   bottom: 0;
   overflow: hidden;
   background-color: #f2f2f2;
+  z-index: 1;
   left: -25rpx;
 }
 .ls_filter-slot-header .tab-radius-left:after {
@@ -61,6 +63,7 @@
   bottom: 0;
   overflow: hidden;
   background-color: #f2f2f2;
+  z-index: 1;
   right: -25rpx;
 }
 .ls_filter-slot-header .tab-radius-right:after {
