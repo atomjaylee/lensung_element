@@ -8,7 +8,7 @@ export interface BaseFilterProps {
   style?: string;
   className?: string;
   onVisibleChange?: (visible: boolean) => void;
-  onChange?: (key: string | number) => void;
+  onChange?: <T extends BaseFilterProps>(key: string | number, props: T) => void;
 }
 
 const defaultProps: BaseFilterProps = {
@@ -30,7 +30,7 @@ Component({
     onSelectItemHandler({ target: { dataset } }) {
       const { keyIdentify, onChange } = this.props;
       const item = dataset.item;
-      onChange && onChange(item[keyIdentify]);
+      onChange && onChange(item[keyIdentify], this.props);
     },
   },
 });

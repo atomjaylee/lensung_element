@@ -68,7 +68,7 @@ toSelectItem() {
 | showContent        | 配置显示内容                 | `string`  | `'sort,search,popup'`                                                                                        | `sort`为默认的排序, `search`为搜索栏， `popup`为高级筛选弹窗                                      |
 | popupContent       | 配置弹窗内显示内容           | `string`  | `'state,type,category'`                                                                                      | `state`为宝贝状态, `type`为宝贝类型, `video`为主图视频 ，`filter`为宝贝筛选, `category`为类目选择 |
 | slotContent        | 配置单个宝贝标题底部显示内容 | `string`  | `'price,num,quantity'`                                                                                       | `price`为宝贝价格, `num`为宝贝库存, `quantity`为宝贝销量                                          |
-| customFilterList   | 自定义添加 filter 筛选       | `[]`      | `[]`                                                                                                         | 正在实现，暂不要使用                                                                              |
+| customFilterList   | 自定义添加 filter 筛选       | `[]`      | `[]`                                                                                                         | 添加自定义 filter 组件                                                                            |
 | stateSchema        | 配置宝贝状态显示             | `[]`      | `[{label:'出售中',key:'sale',isDefault:true},{label:'仓库中',key:'inventory'},{label:'售完',key:'soldOut'}]` | -                                                                                                 |
 | typeSchema         | 配置宝贝类型显示             | `[]`      | `[{label:'新品',key:'xinPin'},{label:'拍卖',key:'paiMai'},{label:'闲鱼',key:'xianYu'}]`                      | -                                                                                                 |
 | filterSchema       | 配置宝贝筛选显示             | `[]`      | `[]`                                                                                                         | `{ label: xxx, key: xxx, isDefault: true }`                                                       |
@@ -80,12 +80,24 @@ toSelectItem() {
 | pageTitle          | 跳转后页面标题               | `string`  | `选择宝贝`                                                                                                   | 此参数仅适用于页面用法                                                                            |
 | isSingleMode       | 是否进入单选模式             | `boolean` | `false`                                                                                                      | -                                                                                                 |
 
+#### customFilterList Attributes
+
+| 参数          | 说明                                 | 类型                    | 默认值                        | 备注                                               |
+| ------------- | ------------------------------------ | ----------------------- | ----------------------------- | -------------------------------------------------- |
+| id            | 标识                                 | `string`                | 可以使用此标识手动关闭 filter | -                                                  |
+| width         | 该过滤器的宽度                       | `string`                | `auto`                        | `auto` \| `100`\|`100rpx`                          |
+| schema        | 下拉面板展示的数据                   | `Record<string, any>[]` | `[]`                          | `[{ label: '显示', key: '值', statistic: '埋点'}]` |
+| labelIdentify | 标记 schema 对象中用于显示的字段名称 | `string`                | `label`                       | -                                                  |
+| keyIdentify   | 标记 schema 对象中作为值的字段名称   | `string`                | `key`                         | -                                                  |
+| paramAttrName | 作为参数(customParams)时的字段名     | `string`                | -                             | -                                                  |
+| defaultKey    | 该自定义 filter 默认选中的值         | `string`                | -                             | 该值为 schema 配置中其中一项的 key                 |
+
 ### Events
 
 | 事件名称         | 说明                    | 回调参数                                    | 备注                                                     |
 | ---------------- | ----------------------- | ------------------------------------------- | -------------------------------------------------------- |
 | onConfirm        | 确认选择的回调函数      | `checkedList`                               | -                                                        |
-| onFormatRequest  | 格式化 top 接口调用参数 | `params`                                    | 格式化后需要将最终的配置，作为返回值，供选择宝贝组件使用 |
+| onFormatRequest  | 格式化 top 接口调用参数 | `params, { topParams, customParams }`       | 格式化后需要将最终的配置，作为返回值，供选择宝贝组件使用 |
 | onFilterListFunc | 格式化 top 接口返回数据 | `responseList, { topParams, customParams }` | 格式化后需要将最终的列表数据，作为返回值，供选择宝贝显示 |
 
 ### Scoped Slot
