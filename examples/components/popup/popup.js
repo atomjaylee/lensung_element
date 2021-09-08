@@ -3,7 +3,7 @@ const defaultProps = {
   maskClosable: false,
   position: 'bottom',
   zIndex: 999,
-  title: 'undefined',
+  title: undefined,
   suppressRadius: false,
   hiddenCloseIcon: false
 };
@@ -15,7 +15,6 @@ Component({
   },
   methods: {
     onAppearHandler() {
-      console.log(this);
       this.setData({
         contentVisible: true
       });

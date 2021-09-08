@@ -18,7 +18,7 @@ const defaultProps: BasePopupProps = {
   maskClosable: false,
   position: 'bottom',
   zIndex: 999,
-  title: 'undefined',
+  title: undefined,
   suppressRadius: false,
   hiddenCloseIcon: false,
 };
