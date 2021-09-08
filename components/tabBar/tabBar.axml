@@ -5,7 +5,7 @@
     <slot name="{{ item.key }}">
       <view class="flex-baseline">
         <text class="text-label">{{ item.label }}</text>
-        <text class="text-num" a:if="{{ source[item.key] }}">({{ source[item.key] }})</text>
+        <text class="text-num" a:if="{{ source[item.key] !== undefined }}">({{ source[item.key] }})</text>
       </view>
     </slot>
   </view>
