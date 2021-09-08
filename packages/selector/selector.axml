@@ -1,11 +1,5 @@
-<ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel">
+<ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel" title="{{ title }}" hiddenCloseIcon="{{ hiddenCloseIcon }}">
   <view class="ls_selector">
-
-    <view class="ls_selector-title" justify="center">
-      <text>{{ title }}</text>
-      <view class="ls_selector-closeIcon" hidden="{{ hiddenCloseIcon }}" onTap="mockMaskClose"></view>
-    </view>
-
     <slot>
       <view class="ls_selector-content">
         <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="{{ max }}">
@@ -26,6 +20,7 @@
     </slot>
 
     <view class="ls_selector-button">
+      <ls-button block a:for="{{ extraButtons }}" a:key="{{ item }}" style="margin-right: 24rpx" onTap="onExtraButtonClickHandler" data-label="{{ item.label }}">{{ item.label }}</ls-button>
       <ls-button block type="primary" onTap="onConfirmHandler">{{ confirmText }}</ls-button>
     </view>
 

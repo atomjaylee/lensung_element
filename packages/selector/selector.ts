@@ -1,3 +1,7 @@
+export type extraButtonProps = {
+  label: string;
+  callback: (checkedList: []) => void;
+};
 export interface BaseSelectorAttrs {
   title?: string;
   confirmText?: string;
@@ -12,6 +16,7 @@ export interface BaseSelectorAttrs {
   max?: number;
   parentSuppressCheck?: boolean; // 父类禁止选择
   defaultFold?: boolean; // 默认是否全部展开
+  extraButtons?: extraButtonProps[];
   onBeforeClose?: (checked: Record<string, any> | undefined) => boolean;
   onAfterClose?: () => void;
   onCancel?: () => void;
@@ -33,6 +38,7 @@ const defaultAttrs: BaseSelectorAttrs = {
   activeDisabled: 'disabled',
   parentSuppressCheck: false,
   defaultFold: false,
+  extraButtons: [],
   onBeforeClose: () => true,
   onAfterClose: () => {},
   onCancel: () => {},
@@ -87,6 +93,13 @@ Component({
     // checkGroup修改
     onGroupCheckChangeHandler(checkedList) {
       this.setData({ checkedList });
+    },
+
+    // 自定义额外按钮点击
+    onExtraButtonClickHandler(evt) {
+      const label = evt.target.dataset.label;
+      const targetCallback = this.data.extraButtons.find((x) => x.label === label).callback;
+      targetCallback(this.data.checkedList)
     },
   },
 });

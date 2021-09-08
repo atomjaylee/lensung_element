@@ -21,24 +21,7 @@ Page({
       { label: '测试单个实例', key: '4' },
       { label: '测试单个实例', key: '4' },
       { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
-      { label: '测试单个实例', key: '4' },
+      { label: '测试单个实例', key: '4' }
     ],
 
     checked: { label: '选项四', key: '4' }
@@ -60,6 +43,9 @@ Page({
       defaultCheckedList: this.$checkedList || [],
       parentSuppressCheck: true,
       max: this.$checkedList ? 10: Infinity,
+      extraButtons: [
+        { label: "新建模板", callback: (checkedList) => {console.log(checkedList)}}
+      ],
       onConfirm: (checkedList) => {
         this.$checkedList = checkedList
       }

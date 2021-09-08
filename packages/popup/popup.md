@@ -50,12 +50,15 @@ methods: {
 
 ### options
 
-| 参数            | 说明             | 类型                               | 默认值   | 备注 |
-| --------------- | ---------------- | ---------------------------------- | -------- | ---- |
-| position        | 弹出位置         | `top` \| `right`\|`bottom`\|`left` | `bottom` | -    |
-| zIndex          | 弹出层 z-index   | `number`                           | `999`    | -    |
-| maskClosable    | 点击遮罩是否关闭 | `boolean`                          | `false`  | -    |
-| statisticCancel | 点击取消埋点标记 | `string`                           | -        | -    |
+| 参数            | 说明                   | 类型                               | 默认值   | 备注 |
+| --------------- | ---------------------- | ---------------------------------- | -------- | ---- |
+| position        | 弹出位置               | `top` \| `right`\|`bottom`\|`left` | `bottom` | -    |
+| zIndex          | 弹出层 z-index         | `number`                           | `999`    | -    |
+| title           | 弹出层标题             | `string`                           | -        | -    |
+| suppressRadius  | 是否隐藏弹出层的圆角   | `boolean`                          | `false`  | -    |
+| hiddenCloseIcon | 是否隐藏标题栏关闭按钮 | `boolean`                          | `false`  | -    |
+| maskClosable    | 点击遮罩是否关闭       | `boolean`                          | `false`  | -    |
+| statisticCancel | 点击取消埋点标记       | `string`                           | -        | -    |
 
 ### Methods
 
@@ -73,6 +76,7 @@ methods: {
 
 ### Slot
 
-| name    | 说明                    |
-| ------- | ----------------------- |
-| default | 自定义 popup 的显示内容 |
+| name    | 说明                       |
+| ------- | -------------------------- |
+| default | 自定义 popup 的显示内容    |
+| title   | 自定义 popup 的 title 内容 |

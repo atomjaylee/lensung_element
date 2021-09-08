@@ -6,6 +6,9 @@ export interface BasePopupProps {
   maskClosable?: boolean;
   position?: positionType;
   zIndex?: number;
+  title?: string;
+  suppressRadius?: boolean;
+  hiddenCloseIcon?: boolean;
   statisticCancel?: string;
   onAfterClose?: () => void;
   onCancel?: () => void;
@@ -15,6 +18,9 @@ const defaultProps: BasePopupProps = {
   maskClosable: false,
   position: 'bottom',
   zIndex: 999,
+  title: 'undefined',
+  suppressRadius: false,
+  hiddenCloseIcon: false,
 };
 
 Component({
@@ -27,6 +33,7 @@ Component({
 
   methods: {
     onAppearHandler() {
+      console.log(this);
       this.setData({ contentVisible: true });
     },
 
@@ -51,11 +58,15 @@ Component({
       this.__promise_resolve__ = undefined;
     },
 
+    cancelHandler() {
+      getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
+      this.close();
+    },
+
     onMaskTapHandler({ target: { targetDataset } }) {
       const nodeName = targetDataset.nodeName;
       if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
-        getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
-        this.close();
+        this.cancelHandler();
       }
     },
   },

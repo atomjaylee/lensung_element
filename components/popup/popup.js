@@ -2,7 +2,10 @@ import { getComponentAttr } from '../_utils/tool';
 const defaultProps = {
   maskClosable: false,
   position: 'bottom',
-  zIndex: 999
+  zIndex: 999,
+  title: 'undefined',
+  suppressRadius: false,
+  hiddenCloseIcon: false
 };
 Component({
   props: defaultProps,
@@ -12,6 +15,7 @@ Component({
   },
   methods: {
     onAppearHandler() {
+      console.log(this);
       this.setData({
         contentVisible: true
       });
@@ -47,6 +51,11 @@ Component({
       this.__promise_resolve__ = undefined;
     },
 
+    cancelHandler() {
+      getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
+      this.close();
+    },
+
     onMaskTapHandler({
       target: {
         targetDataset
@@ -55,8 +64,7 @@ Component({
       const nodeName = targetDataset.nodeName;
 
       if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
-        getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
-        this.close();
+        this.cancelHandler();
       }
     }
 

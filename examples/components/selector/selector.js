@@ -12,6 +12,7 @@ const defaultAttrs = {
   activeDisabled: 'disabled',
   parentSuppressCheck: false,
   defaultFold: false,
+  extraButtons: [],
   onBeforeClose: () => true,
   onAfterClose: () => {},
   onCancel: () => {},
@@ -80,6 +81,13 @@ Component({
       this.setData({
         checkedList
       });
+    },
+
+    // 自定义额外按钮点击
+    onExtraButtonClickHandler(evt) {
+      const label = evt.target.dataset.label;
+      const targetCallback = this.data.extraButtons.find(x => x.label === label).callback;
+      targetCallback(this.data.checkedList);
     }
 
   }

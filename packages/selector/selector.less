@@ -1,49 +1,9 @@
 .ls_selector {
   background-color: #fff;
-  border-radius: 24rpx 24rpx 0 0;
-  max-height: 95vh;
+  max-height: calc(100vh - 82rpx - 60rpx);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
-  &-title {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 92rpx;
-    background-color: #fff;
-    border-bottom: 1rpx solid #f2f2f2;
-    flex-shrink: 0;
-    font-size: 32rpx;
-  }
-
-  &-closeIcon {
-    position: absolute;
-    right: 30rpx;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24rpx;
-    height: 24rpx;
-    &:before,
-    &:after {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 26rpx;
-      height: 2rpx;
-      background-color: #666;
-    }
-    &:before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    &:after {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-  }
 
   &-content {
     min-height: 240rpx;
