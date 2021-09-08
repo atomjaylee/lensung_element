@@ -33,7 +33,6 @@ Component({
 
   methods: {
     onAppearHandler() {
-      console.log(this);
       this.setData({ contentVisible: true });
     },
 
