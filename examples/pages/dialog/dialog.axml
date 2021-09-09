@@ -1,3 +1,3 @@
-<ls-dialog ref="dialog"></ls-dialog>
+<ls-dialog ref="dialog" hiddenButtons="{{ hiddenButton }}"></ls-dialog>
 <ls-button type="primary" onTap="onOpenDialogHandler">打开对话框</ls-button>
 <ls-button type="primary" onTap="onDialogSecondOpenHandler">连续调用</ls-button>

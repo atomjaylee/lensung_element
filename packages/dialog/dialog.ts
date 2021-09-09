@@ -85,8 +85,7 @@ Component({
         this.setData(
           {
             ..._data,
-            ...defaultProps,
-            ...defaultData,
+            ...defaultData
           },
           () => {
             this.$instanceClose();

@@ -8,6 +8,7 @@ export interface BasePopupProps {
   zIndex?: number;
   title?: string;
   suppressRadius?: boolean;
+  showTitleBorder?: boolean;
   hiddenCloseIcon?: boolean;
   statisticCancel?: string;
   onAfterClose?: () => void;
@@ -18,7 +19,6 @@ const defaultProps: BasePopupProps = {
   maskClosable: false,
   position: 'bottom',
   zIndex: 999,
-  title: undefined,
   suppressRadius: false,
   hiddenCloseIcon: false,
 };

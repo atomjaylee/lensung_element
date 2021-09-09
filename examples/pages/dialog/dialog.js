@@ -1,5 +1,7 @@
 Page({
-  data: {},
+  data: {
+    hiddenButton: true
+  },
   onLoad() { },
 
   dialog(ref) {

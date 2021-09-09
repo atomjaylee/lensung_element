@@ -3,7 +3,6 @@ const defaultProps = {
   maskClosable: false,
   position: 'bottom',
   zIndex: 999,
-  title: undefined,
   suppressRadius: false,
   hiddenCloseIcon: false
 };

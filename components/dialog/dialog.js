@@ -64,7 +64,6 @@ Component({
 
         Object.keys(_data).forEach(x => _data[x] = null);
         this.setData({ ..._data,
-          ...defaultProps,
           ...defaultData
         }, () => {
           this.$instanceClose();
