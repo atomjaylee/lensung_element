@@ -20,6 +20,8 @@ interface BaseDialogProps {
   closable?: boolean;
   maskClosable?: boolean;
   hiddenButtons?: boolean;
+  statisticCancel?: string;
+  statisticConfirm?: string;
   [propName: string]: any;
 }
 
@@ -85,7 +87,7 @@ Component({
         this.setData(
           {
             ..._data,
-            ...defaultData
+            ...defaultData,
           },
           () => {
             this.$instanceClose();
