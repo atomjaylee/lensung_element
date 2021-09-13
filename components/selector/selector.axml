@@ -20,7 +20,10 @@
     </slot>
 
     <view class="ls_selector-button">
-      <ls-button block a:for="{{ extraButtons }}" a:key="{{ item }}" style="margin-right: 24rpx" onTap="onExtraButtonClickHandler" data-label="{{ item.label }}">{{ item.label }}</ls-button>
+      <block a:for="{{ extraButtons }}">
+        <ls-button block style="margin-right: 23rpx" onTap="onExtraButtonClickHandler" data-label="{{ item.label }}">{{ item.label }}</ls-button>
+        <view style="width: 1rpx;height:1rpx;"></view>
+      </block>
       <ls-button block type="primary" onTap="onConfirmHandler">{{ confirmText }}</ls-button>
     </view>
 
