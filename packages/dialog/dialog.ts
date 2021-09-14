@@ -36,7 +36,7 @@ const defaultProps: BaseDialogProps = {
   hiddenButtons: false,
 };
 
-const defaultData: BaseDialogProps = {
+const defaultData = {
   visible: false,
   contentVisible: false,
   isAlert: false,

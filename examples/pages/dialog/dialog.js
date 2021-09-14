@@ -39,6 +39,7 @@ Page({
       title: "title",
       content: "是否二次调用",
       maskClosable: true,
+      hiddenButtons: true,
       onConfirm: () => {
         this.$dialog.alert({ content: "您点击了确定" })
       }

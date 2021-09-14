@@ -1,4 +1,4 @@
-import { getComponentAttr } from '../_utils/tool';
+import { getComponentAttr, getMultiComponentAttr } from '../_utils/tool';
 export interface BaseToastOptions {
   content?: string;
   icon?: string;
@@ -16,7 +16,6 @@ export interface BaseToastOptions {
 
 const defaultProps: BaseToastOptions = {
   content: '',
-  icon: '',
   duration: 2000,
   suppressOperate: false,
   position: 'center',
@@ -25,13 +24,16 @@ const defaultProps: BaseToastOptions = {
   zIndex: 999,
 };
 
+const defaultData = {
+  show: false,
+  innerVisible: false,
+  propData: {},
+};
+
 Component({
   props: defaultProps,
 
-  data: {
-    show: false,
-    innerVisible: false,
-  } as BaseToastOptions,
+  data: defaultData,
 
   methods: {
     onAppearHandler() {
@@ -44,17 +46,18 @@ Component({
         clearTimeout(this._timeInstance);
         this.resetInitialStatus();
       }
-      this.setData({ show: true, ...userOptions });
+      this.setData({ show: true, propData: userOptions });
       this._timeInstance = setTimeout(() => {
         this.setData({ innerVisible: false });
-      }, getComponentAttr(this, 'duration'));
+      }, getMultiComponentAttr(this, 'duration'));
     },
 
     onTransitionEndHandler() {
-      if (this.data.show && this.data.innerVisible) return;
-      const onClosed = getComponentAttr(this, 'onClosed');
-      onClosed && onClosed();
-      this.resetInitialStatus();
+      if (this.data.show && this.data.innerVisible === false) {
+        const onClosed = getMultiComponentAttr(this, 'onClosed');
+        onClosed && onClosed();
+        this.resetInitialStatus();
+      }
     },
 
     // 重置为初始化状态

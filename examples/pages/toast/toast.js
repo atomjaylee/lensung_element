@@ -10,7 +10,7 @@ Page({
     this.$toast.show({
       content: "公共组件统一维护，文件保护，其他人有任何组件修改需求",
       duration:500000,
-      style: "width: 700rpx"
+      maxWidth: 700
     })
     // this.$toast.show({
     //   content: "公共组件统一维护，文件保护，其他人有任何组件修改需求",
