@@ -1,5 +1,5 @@
 import { justifyType } from '../flex/flex';
-import { getComponentAttr, deepClone } from '../_utils/tool';
+import { getMultiComponentAttr } from '../_utils/tool';
 
 interface BaseDialogProps {
   title?: string;
@@ -40,6 +40,7 @@ const defaultData: BaseDialogProps = {
   visible: false,
   contentVisible: false,
   isAlert: false,
+  propData: {}, // 命令行模式props传递存储，方便重置
 };
 
 Component({
@@ -57,7 +58,7 @@ Component({
       this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
-        this.setData({ ...options, visible: true, isAlert: false });
+        this.setData({ propData: options, visible: true, isAlert: false });
       });
     },
 
@@ -67,10 +68,12 @@ Component({
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
         this.setData({
-          ...options,
+          propData: {
+            ...options,
+            contentJustify: options.contentJustify || 'center',
+          },
           visible: true,
           isAlert: true,
-          contentJustify: options.contentJustify || 'center',
         });
       });
     },
@@ -82,11 +85,8 @@ Component({
     onTransitionEndHandler() {
       // 仅处理组件消失的处理逻辑
       if (this.data.visible && this.data.contentVisible === false) {
-        const _data = deepClone(this.data);
-        Object.keys(_data).forEach((x) => (_data[x] = null));
         this.setData(
           {
-            ..._data,
             ...defaultData,
           },
           () => {
@@ -95,29 +95,29 @@ Component({
             this.__instance_closed__ = undefined;
           }
         );
-        const onAfterClose = getComponentAttr(this, 'onAfterClose');
+        const onAfterClose = getMultiComponentAttr(this, 'onAfterClose');
         onAfterClose && onAfterClose();
       }
     },
 
     async onConfirmHandler() {
-      const onBeforeClose = getComponentAttr(this, 'onBeforeClose');
+      const onBeforeClose = getMultiComponentAttr(this, 'onBeforeClose');
       const isPass = onBeforeClose ? await onBeforeClose() : true;
       if (isPass) {
         this.__promise_resolve__();
-        getComponentAttr(this, 'onConfirm') && getComponentAttr(this, 'onConfirm')();
+        getMultiComponentAttr(this, 'onConfirm') && getMultiComponentAttr(this, 'onConfirm')();
         this.close();
       }
     },
 
     onCancelHandler() {
-      getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
+      getMultiComponentAttr(this, 'onCancel') && getMultiComponentAttr(this, 'onCancel')();
       this.close();
     },
 
     onMaskTapHandler({ target: { targetDataset } }) {
       const nodeName = targetDataset.nodeName;
-      if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
+      if (nodeName === 'mask' && getMultiComponentAttr(this, 'maskClosable')) {
         this.onCancelHandler();
       }
     },

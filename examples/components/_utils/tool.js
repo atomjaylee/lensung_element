@@ -8,6 +8,17 @@ export const getComponentAttr = (component, attrName) => {
   return component.data[attrName] ? component.data[attrName] : component.props[attrName];
 };
 /**
+ * 获取toast, dialog, popup等命令式或props的组件值
+ * @param component - 目标组件
+ * @param attrName - 属性名
+ * @param cacheName - 缓存在data上对象的属性名
+ * @returns - 属性或undefined
+ */
+
+export const getMultiComponentAttr = (component, attrName, cacheName = 'propData') => {
+  return component.data[cacheName][attrName] ? component.data[cacheName][attrName] : component.props[cacheName];
+};
+/**
  * 通过元素id获取位置和尺寸信息
  * @param elementId - 元素id
  * @returns - { left, right, top, bottom, width, height }

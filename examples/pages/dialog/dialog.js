@@ -1,6 +1,6 @@
 Page({
   data: {
-    hiddenButton: true
+    hiddenButton: false
   },
   onLoad() { },
 
@@ -9,10 +9,11 @@ Page({
   },
 
   async onOpenDialogHandler() {
-    this.$dialog.alert({
+    this.$dialog.confirm({
       content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
       title: "测试标题",
       maskClosable: true,
+      confirmText: "去订购",
       onCancel: () => {
         console.log("11123123")
       },
@@ -37,6 +38,7 @@ Page({
     this.$dialog.confirm({
       title: "title",
       content: "是否二次调用",
+      maskClosable: true,
       onConfirm: () => {
         this.$dialog.alert({ content: "您点击了确定" })
       }
