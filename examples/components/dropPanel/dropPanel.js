@@ -27,8 +27,13 @@ Component({
       this.props.onVisibleChange && this.props.onVisibleChange(false);
     },
 
-    onHeaderClickHandler() {
-      this.data.visible ? this.close() : this.show();
+    async onHeaderClickHandler() {
+      if (this.data.visible) {
+        this.close();
+      } else {
+        this.props.onBeforeOpen && (await this.props.onBeforeOpen());
+        this.show();
+      }
     },
 
     onContentClickHandler() {

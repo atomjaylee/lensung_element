@@ -6,7 +6,7 @@
     <view a:for="{{ 10 }}">{{ index }}</view>
   </view>
 </ls-drop-panel>
-<ls-drop-panel id="sort">
+<ls-drop-panel id="sort" onBeforeOpen="onBeforeOpenHandler">
   <ls-flex class="drop-header">排序</ls-flex>
   <view slot="body" class="drop-body">
     <view a:for="{{ 5 }}">{{ index + 20 }}</view>
