@@ -1,22 +1,28 @@
 <import-sjs from="./dialog.sjs" name="sjs" />
-<view class="ls_dialog {{ contentVisible ? 'ls_dialog-active' : '' }} {{ className }}" style="z-index: {{ zIndex }}; {{ style }}" a:if="{{ visible }}" onAppear="onAppearHandler" onTap="onMaskTapHandler" data-nodeName="mask">
+<view 
+  class="ls_dialog {{ contentVisible ? 'ls_dialog-active' : '' }} {{ sjs.attr(propData, 'className', className) }}"
+  style="z-index: {{ sjs.attr(propData, 'zIndex', zIndex) }}; {{ sjs.attr(propData, 'style', style) }}" 
+  a:if="{{ visible }}" 
+  onAppear="onAppearHandler" 
+  onTap="onMaskTapHandler" 
+  data-nodeName="mask">
   <view class="ls_dialog-content {{ contentVisible ? 'ls_dialog-contentActive' : '' }}" onTransitionEnd="onTransitionEndHandler">
     <view class="ls_dialog-content_body">
-      <text class="content_close iconfont icon--close" a:if="{{ closable }}"></text>
-      <view class="content_title" a:if="{{ title }}">{{ title }}</view>
-      <view class="content_icon" a:if="{{ icon }}">
-        <text class="iconfont {{ sjs.fmtIcon(icon) }}"></text>
+      <text class="content_close iconfont icon--close" a:if="{{ sjs.attr(propData, 'closable', closable) }}"></text>
+      <view class="content_title" a:if="{{ sjs.attr(propData, 'title', title) }}">{{ sjs.attr(propData, 'title', title) }}</view>
+      <view class="content_icon" a:if="{{ sjs.attr(propData, 'icon', icon) }}">
+        <text class="iconfont {{ sjs.fmtIcon(propData['icon'] ? propData['icon'] : icon) }}"></text>
       </view>
-      <ls-flex class="content_text {{ title ? '' : 'content_minHeight' }} {{ contentClass }}" justify="{{ contentJustify }}">
+      <ls-flex class="content_text {{ sjs.attr(propData, 'title', title) ? '' : 'content_minHeight' }} {{ sjs.attr(propData, 'contentClass', contentClass) }}" justify="{{ sjs.attr(propData, 'contentJustify', contentJustify) }}">
         <slot>
-          <text number-of-lines="{{ maxLine }}">{{ content }}</text>
+          <text number-of-lines="{{ sjs.attr(propData, 'maxLine', maxLine) }}">{{ sjs.attr(propData, 'content', content) }}</text>
         </slot>
       </ls-flex>
     </view>
-    <view class="ls_dialog-content_buttons" hidden="{{ hiddenButtons }}">
+    <view class="ls_dialog-content_buttons" hidden="{{ sjs.attr(propData, 'hiddenButtons', hiddenButtons) }}">
       <slot name="buttons">
-        <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_cancel" hidden="{{ isAlert }}" data-statistic="{{ statisticCancel }}" onTap="onCancelHandler">{{ cancelText }}</ls-flex>
-        <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_confirm" data-statistic="{{ statisticConfirm }}" onTap="onConfirmHandler">{{ confirmText }}</ls-flex>
+        <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_cancel" hidden="{{ isAlert }}" data-statistic="{{ sjs.attr(propData, 'statisticCancel', statisticCancel) }}" onTap="onCancelHandler">{{ sjs.attr(propData, 'cancelText', cancelText) }}</ls-flex>
+        <ls-flex justify="center" class="ls_dialog-button-item ls_dialog-button_confirm" data-statistic="{{ sjs.attr(propData, 'statisticConfirm', statisticConfirm) }}" onTap="onConfirmHandler">{{ sjs.attr(propData, 'confirmText', confirmText) }}</ls-flex>
       </slot>
     </view>
   </view>

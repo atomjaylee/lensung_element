@@ -9,6 +9,12 @@ const fmtIcon = (icon) => {
   }
 };
 
+// 获取propData上的值或者是props上的值
+const attr = (propData, attrName, propAttrValue) => {
+  return propData[attrName] ? propData[attrName] : propAttrValue;
+};
+
 export default {
   fmtIcon,
+  attr
 };

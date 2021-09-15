@@ -1,9 +1,16 @@
 <import-sjs from="./toast.sjs" name="sjs" />
-<view class="ls_toast {{ suppressOperate && 'ls_toast-operate' }} {{ className }}" a:if="{{ show }}" style="z-index: {{ zIndex }}; {{ style }}" onAppear="onAppearHandler">
-  <view class="ls_toast-inner {{ icon ? 'ls_toast-innerHasIcon' : '' }} {{ 'ls_toast-position_' + position }} {{ innerVisible && 'ls_toast-innerActive' }} {{ class }}" style="max-width: {{ maxWidth }}rpx;{{ style }}" onTransitionEnd="onTransitionEndHandler">
+<view 
+  class="ls_toast {{ sjs.attr(propData, 'suppressOperate', suppressOperate) && 'ls_toast-operate' }}" 
+  a:if="{{ show }}" 
+  style="z-index: {{ sjs.attr(propData, 'zIndex', zIndex) }};" 
+  onAppear="onAppearHandler">
+  <view 
+    class="ls_toast-inner {{ sjs.attr(propData, 'icon', icon) ? 'ls_toast-innerHasIcon' : '' }} {{ 'ls_toast-position_' + sjs.attr(propData, 'position', position) }} {{ innerVisible && 'ls_toast-innerActive' }} {{ sjs.attr(propData, 'className', className) }}" 
+    style="max-width: {{ sjs.attr(propData, 'maxWidth', maxWidth) }}rpx;{{ sjs.attr(propData, 'style', style) }}" 
+    onTransitionEnd="onTransitionEndHandler">
     <slot>
-      <text class="toast_iconfont iconfont {{ sjs.fmtIcon(icon) }}" a:if="{{ icon }}"></text>
-      <text number-of-lines="{{ maxLine }}">{{ content }}</text>
+      <text class="toast_iconfont iconfont {{ sjs.fmtIcon(propData['icon'] ? propData['icon'] : icon) }}" a:if="{{ sjs.attr(propData, 'icon', icon) }}"></text>
+      <text number-of-lines="{{ sjs.attr(propData, 'maxLine', maxLine) }}">{{ sjs.attr(propData, 'content', content) }}</text>
     </slot>
   </view>
 </view>
