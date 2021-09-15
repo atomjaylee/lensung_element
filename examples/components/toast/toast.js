@@ -30,7 +30,6 @@ Component({
 
       if (this._timeInstance) {
         clearTimeout(this._timeInstance);
-        this.resetInitialStatus();
       }
 
       this.setData({
@@ -54,11 +53,9 @@ Component({
 
     // 重置为初始化状态
     resetInitialStatus() {
-      this.setData({
-        show: false,
-        ...defaultProps
-      });
       this._timeInstance = null;
+      this.setData({ ...defaultData
+      });
     }
 
   }

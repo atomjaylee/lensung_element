@@ -22,7 +22,7 @@ Page({
     this.$toast.show({
       icon: "success",
       content: "操作成功",
-      duration: 50000
+      duration: 2000
     })
   }
 });

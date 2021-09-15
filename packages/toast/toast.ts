@@ -1,4 +1,4 @@
-import { getComponentAttr, getMultiComponentAttr } from '../_utils/tool';
+import { getMultiComponentAttr } from '../_utils/tool';
 export interface BaseToastOptions {
   content?: string;
   icon?: string;
@@ -44,7 +44,6 @@ Component({
       const userOptions = typeof options === 'string' ? { content: options } : options;
       if (this._timeInstance) {
         clearTimeout(this._timeInstance);
-        this.resetInitialStatus();
       }
       this.setData({ show: true, propData: userOptions });
       this._timeInstance = setTimeout(() => {
@@ -62,11 +61,10 @@ Component({
 
     // 重置为初始化状态
     resetInitialStatus() {
-      this.setData({
-        show: false,
-        ...defaultProps,
-      });
       this._timeInstance = null;
+      this.setData({
+        ...defaultData,
+      });
     },
   },
 });
