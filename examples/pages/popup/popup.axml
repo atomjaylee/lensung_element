@@ -1,4 +1,4 @@
-<ls-popup ref="popupBottom" maskClosable position="bottom" onAfterClose="onAfterCloseHandler">
+<ls-popup ref="popupBottom" maskClosable position="bottom" onVisibleChange="onVisibleChangeHandler">
   <view style="height: 300rpx; background: #fff"></view>
 </ls-popup>
 <ls-popup ref="popupTop" maskClosable position="top">

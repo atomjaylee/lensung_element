@@ -29,8 +29,8 @@ Component({
       this.setData({
         visible: false
       });
-      getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
       getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(false);
+      getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
     },
 
     show(options) {

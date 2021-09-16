@@ -22,7 +22,7 @@ Page({
     this[`$popup${dataset.position}`].show()
   },
 
-  onAfterCloseHandler() {
-    console.log("after close")
+  onVisibleChangeHandler(visible) {
+    console.log(visible)
   }
 });

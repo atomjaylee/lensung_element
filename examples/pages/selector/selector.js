@@ -26,11 +26,7 @@ Page({
 
     checked: { label: '选项四', key: '4' }
   },
-  onLoad() {
-    setTimeout(() => {
-      this.selectMainImageHandler();
-    });
-  },
+  onLoad() {},
 
   selector(ref) {
     this.$selector = ref;
@@ -56,6 +52,9 @@ Page({
     this.$selector.show({
       title: "测试标题",
       schema: this.data.schema2,
+      onVisibleChange: () => {
+        console.log(111111)
+      },
       onCancel: () => {
         console.log("cancel")
       }

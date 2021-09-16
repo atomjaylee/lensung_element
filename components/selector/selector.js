@@ -29,15 +29,17 @@ Component({
     },
 
     show(options) {
-      this.$popup.show();
       const {
         defaultCheckedList,
         ...customAttrs
       } = options;
       this.setData({
         checkedList: defaultCheckedList ? defaultCheckedList : [],
-        ...customAttrs
+        ...customAttrs,
+        test: () => void 0
       });
+      this.$popup.show();
+      console.log(this);
     },
 
     close() {
@@ -79,6 +81,7 @@ Component({
 
     proxyVisibleChange(visible) {
       this.data.onVisibleChange(visible);
+      console.log(visible);
     },
 
     // checkGroup修改
