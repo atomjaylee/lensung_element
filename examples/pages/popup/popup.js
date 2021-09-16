@@ -20,5 +20,9 @@ Page({
 
   openPopupHandler({ target: { dataset } }) {
     this[`$popup${dataset.position}`].show()
+  },
+
+  onAfterCloseHandler() {
+    console.log("after close")
   }
 });

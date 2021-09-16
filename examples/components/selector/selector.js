@@ -16,7 +16,8 @@ const defaultAttrs = {
   onBeforeClose: () => true,
   onAfterClose: () => {},
   onCancel: () => {},
-  onConfirm: () => {}
+  onConfirm: () => {},
+  onVisibleChange: () => {}
 };
 Component({
   data: { ...defaultAttrs,
@@ -74,6 +75,10 @@ Component({
     // 代理onCancel事件
     proxyCancel() {
       this.data.onCancel();
+    },
+
+    proxyVisibleChange(visible) {
+      this.data.onVisibleChange(visible);
     },
 
     // checkGroup修改

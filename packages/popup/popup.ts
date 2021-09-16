@@ -13,6 +13,7 @@ export interface BasePopupProps {
   statisticCancel?: string;
   onAfterClose?: () => void;
   onCancel?: () => void;
+  onVisibleChange?: (visible: boolean) => void;
 }
 
 const defaultProps: BasePopupProps = {
@@ -43,12 +44,14 @@ Component({
       }
       this.setData({ visible: false });
       getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
+      getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(false);
     },
 
     show(options: BasePopupProps) {
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
         this.setData({ visible: true, ...options });
+        getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(true);
       });
     },
 

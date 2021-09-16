@@ -1,4 +1,4 @@
-<ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel" title="{{ title }}" hiddenCloseIcon="{{ hiddenCloseIcon }}">
+<ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel" onVisibleChange="proxyVisibleChange" title="{{ title }}" hiddenCloseIcon="{{ hiddenCloseIcon }}">
   <view class="ls_selector">
     <slot>
       <view class="ls_selector-content">

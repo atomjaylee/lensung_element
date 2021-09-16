@@ -30,6 +30,7 @@ Component({
         visible: false
       });
       getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
+      getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(false);
     },
 
     show(options) {
@@ -39,6 +40,7 @@ Component({
           visible: true,
           ...options
         });
+        getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(true);
       });
     },
 

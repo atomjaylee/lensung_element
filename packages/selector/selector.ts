@@ -21,6 +21,7 @@ export interface BaseSelectorAttrs {
   onAfterClose?: () => void;
   onCancel?: () => void;
   onConfirm?: (checked: Record<string, any> | undefined) => void;
+  onVisibleChange?: (visible: boolean) => void;
   [propName: string]: any;
 }
 
@@ -43,6 +44,7 @@ const defaultAttrs: BaseSelectorAttrs = {
   onAfterClose: () => {},
   onCancel: () => {},
   onConfirm: () => {},
+  onVisibleChange: () => {},
 };
 
 Component({
@@ -90,6 +92,10 @@ Component({
       this.data.onCancel();
     },
 
+    proxyVisibleChange(visible) {
+      this.data.onVisibleChange(visible);
+    },
+
     // checkGroup修改
     onGroupCheckChangeHandler(checkedList) {
       this.setData({ checkedList });
@@ -99,7 +105,7 @@ Component({
     onExtraButtonClickHandler(evt) {
       const label = evt.target.dataset.label;
       const targetCallback = this.data.extraButtons.find((x) => x.label === label).callback;
-      targetCallback(this.data.checkedList)
+      targetCallback(this.data.checkedList);
     },
   },
 });
