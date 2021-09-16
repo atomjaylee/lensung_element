@@ -101,7 +101,7 @@ methods: {
 | onAfterClose    | 弹窗关闭后(动画结束)回调             | -                                           |
 | onCancel        | 点击遮罩层或关闭按钮取消操作时回调   | -                                           |
 | onConfirm       | 确认选择回调                         | `checked: Record<string, any> \| undefined` |
-| onVisibleChange | 当下拉内容出现和隐藏状态变化式的回调 | visible - 是否为开启状态                    | 获取该状态后可用于设置页面的不可滚动等功能 |
+| onVisibleChange | 当内容出现和隐藏状态变化式的回调 | visible - 是否为开启状态                    | 获取该状态后可用于设置页面的不可滚动等功能 |
 
 ### Slot
 
