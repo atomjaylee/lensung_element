@@ -16,7 +16,7 @@ export const getComponentAttr = (component, attrName) => {
  */
 
 export const getMultiComponentAttr = (component, attrName, cacheName = 'propData') => {
-  return component.data[cacheName][attrName] ? component.data[cacheName][attrName] : component.props[cacheName];
+  return component.data[cacheName][attrName] ? component.data[cacheName][attrName] : component.props[attrName];
 };
 /**
  * 通过元素id获取位置和尺寸信息

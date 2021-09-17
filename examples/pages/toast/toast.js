@@ -22,7 +22,9 @@ Page({
     this.$toast.show({
       icon: "success",
       content: "操作成功",
-      duration: 2000
+      onClosed: () => {
+        console.error("closed")
+      }
     })
   }
 });

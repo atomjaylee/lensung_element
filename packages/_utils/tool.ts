@@ -22,7 +22,7 @@ export const getMultiComponentAttr = (
 ): any => {
   return component.data[cacheName][attrName]
     ? component.data[cacheName][attrName]
-    : component.props[cacheName];
+    : component.props[attrName];
 };
 
 /**
