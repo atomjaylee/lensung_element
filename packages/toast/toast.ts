@@ -21,7 +21,7 @@ const defaultProps: BaseToastOptions = {
   position: 'center',
   maxLine: 3,
   maxWidth: 400,
-  zIndex: 999,
+  zIndex: 1000,
 };
 
 const defaultData = {

@@ -2,7 +2,7 @@
 <view 
   class="ls_toast {{ sjs.attr(propData, 'suppressOperate', suppressOperate) && 'ls_toast-operate' }}" 
   a:if="{{ show }}" 
-  style="z-index: {{ sjs.attr(propData, 'zIndex', zIndex) }};" 
+  style="z-index: {{ sjs.attr(propData, 'zIndex', zIndex) }}; transform: translateZ({{ sjs.attr(propData, 'zIndex', zIndex) }}px);" 
   onAppear="onAppearHandler">
   <view 
     class="ls_toast-inner {{ sjs.attr(propData, 'icon', icon) ? 'ls_toast-innerHasIcon' : '' }} {{ 'ls_toast-position_' + sjs.attr(propData, 'position', position) }} {{ innerVisible && 'ls_toast-innerActive' }} {{ sjs.attr(propData, 'className', className) }}" 
