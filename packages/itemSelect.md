@@ -96,7 +96,7 @@ toSelectItem() {
 
 | 事件名称         | 说明               | 回调参数                                    | 备注                                                                                                  |
 | ---------------- | ------------------ | ------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| onConfirm        | 确认选择的回调函数 | `checkedList`                               | -                                                                                                     |
+| onConfirm        | 确认选择的回调函数 | `checkedList, context`                      | `checkedList`为勾选的宝贝，`context`为选择宝贝组件实例                                                |
 | onFormatRequest  | 组装接口请求参数   | `params, { topParams, customParams }`       | 格式化后需要将最终的配置，作为返回值，供选择宝贝组件使用                                              |
 | onFilterListFunc | 格式化接口返回数据 | `responseList, { topParams, customParams }` | 格式化后需要将最终的列表数据，作为返回值，供选择宝贝显示，自定义数据时可以参考`itemRow`组件的数据结构 |
 | onCustomFetch    | 自定义数据源       | 参数为`onFormatRequest`钩子函数的返回体     | 格式化后需要将最终的列表数据，作为返回值，供选择宝贝显示，自定义数据时可以参考`itemRow`组件的数据结构 |
