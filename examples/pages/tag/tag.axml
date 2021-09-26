@@ -1,0 +1,7 @@
+<ls-item-row source="{{ source }}">
+  <ls-tag type="{{ isGhost ? 'ghost' : 'fill'}}">闲鱼</ls-tag>
+  <ls-tag type="{{ isGhost ? 'ghost' : 'fill'}}">新品</ls-tag>
+  <ls-tag type="{{ isGhost ? 'ghost' : 'fill'}}">主图视频无</ls-tag>
+  <ls-tag type="{{ isGhost ? 'ghost' : 'fill'}}">手机详情无</ls-tag>
+  <ls-tag fillColor="red" fontColor="blue" type="{{ isGhost ? 'ghost' : 'fill'}}">默认标签</ls-tag>
+</ls-item-row>

@@ -53,4 +53,8 @@ export const deepClone = obj => {
 
 export const isObject = target => {
   return Object.prototype.toString.call(target) === '[object Object]';
+}; // 目标是否为字符串
+
+export const isString = target => {
+  return Object.prototype.toString.call(target) === '[object String]';
 };

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ls-tag": "/components/tag/tag",
+    "ls-item-row": "/components/itemRow/itemRow"
+  }
+}

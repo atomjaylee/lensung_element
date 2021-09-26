@@ -1,0 +1,3 @@
+<view class="ls_tag_wrap {{ className }}" style="color: {{ fontColor }}; {{ type === 'fill' && 'background-color: ' + fillColor }}; {{ type === 'ghost' && 'border: 1px solid ' + fontColor }};" hidden="{{ hidden }}">
+  <slot></slot>
+</view>
