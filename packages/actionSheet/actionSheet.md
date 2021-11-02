@@ -38,10 +38,9 @@ methods: {
 
   // 调用
   async openActionSheetHandler() {
-    const key = await this.$dialog.confirm({
+    const key = await this.$actionSheet.show({
       schema: [{ label: "按钮一", key: 1},{ label: "按钮二", key: 2}],
       tip: "温馨提示：图片从选中位置依次往后替换",
-      space: false,
       maskClosable: false,
       onBeforeClose: () => {
         const isPass = await request(params);
