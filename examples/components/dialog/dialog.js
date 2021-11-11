@@ -65,14 +65,14 @@ Component({
     onTransitionEndHandler() {
       // 仅处理组件消失的处理逻辑
       if (this.data.visible && this.data.contentVisible === false) {
+        const onAfterClose = getMultiComponentAttr(this, 'onAfterClose');
+        onAfterClose && onAfterClose();
         this.setData({ ...defaultData
         }, () => {
           this.$instanceClose();
           this.__promise_resolve__ = undefined;
           this.__instance_closed__ = undefined;
         });
-        const onAfterClose = getMultiComponentAttr(this, 'onAfterClose');
-        onAfterClose && onAfterClose();
       }
     },
 

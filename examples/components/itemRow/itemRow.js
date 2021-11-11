@@ -37,10 +37,9 @@ Component({
         source,
         disabledAttrName
       } = this.props;
+      const nodeName = evt.target.targetDataset.nodeName;
 
       if (checkByContent && showCheck) {
-        const nodeName = evt.target.targetDataset.nodeName;
-
         if (source[disabledAttrName] === true) {
           // 禁用并且存在disabledToast时，进行提示
           source.disabledToast && this.__toastInstance__.show(source.disabledToast);
@@ -50,7 +49,7 @@ Component({
         }
       }
 
-      if (checkByContent === false) {
+      if (checkByContent === false && nodeName !== 'check') {
         const event = fmtEvent(this.props, evt);
         this.props.onTap && this.props.onTap(event);
       }
