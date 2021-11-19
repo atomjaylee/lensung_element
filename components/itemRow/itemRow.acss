@@ -5,9 +5,6 @@
   margin-top: 16rpx;
   box-sizing: border-box;
 }
-.ls_itemRow .info-check {
-  margin-right: 24rpx;
-}
 .ls_itemRow .info-image-medium {
   width: 168rpx;
   height: 168rpx;
@@ -17,10 +14,19 @@
   height: 200rpx;
 }
 .ls_itemRow .info-image {
+  margin-right: 16rpx;
+  display: flex;
+  align-items: stretch;
+}
+.ls_itemRow .info-image .check-wrap {
+  width: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.ls_itemRow .info-image .image-wrap {
   position: relative;
   border-radius: 12rpx;
   overflow: hidden;
-  margin-right: 16rpx;
 }
 .ls_itemRow .info-image image {
   display: block;

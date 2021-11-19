@@ -10,7 +10,7 @@
     "components"
   ],
   "scripts": {
-    "start": "rm -rf ./examples/components && node scripts/transpiler.js",
+    "dev": "rm -rf ./examples/components && node scripts/transpiler.js",
     "build": "rm -rf ./components && NODE_ENV=product node scripts/transpiler.js",
     "doc:dev": "dumi dev",
     "doc:build": "dumi build",

@@ -72,9 +72,16 @@ Component({
           this.__checkInstance__.onCheckTapHandler();
         }
       }
-      if (checkByContent === false && nodeName !== 'check') {
-        const event = fmtEvent(this.props, evt);
-        this.props.onTap && this.props.onTap(event);
+
+      if (checkByContent === false) {
+        if (showCheck && nodeName === 'check') {
+          return;
+        } else if (showCheck && nodeName === 'checkWrap') {
+          this.__checkInstance__.onCheckTapHandler();
+        } else {
+          const event = fmtEvent(this.props, evt);
+          this.props.onTap && this.props.onTap(event);
+        }
       }
     },
 

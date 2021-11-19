@@ -8,10 +8,6 @@
   margin-top: 16rpx;
   box-sizing: border-box;
 
-  .info-check {
-    margin-right: 24rpx;
-  }
-
   .info-image-medium {
     width: @image_size_medium;
     height: @image_size_medium;
@@ -23,10 +19,21 @@
   }
 
   .info-image {
-    position: relative;
-    border-radius: 12rpx;
-    overflow: hidden;
     margin-right: 16rpx;
+    display: flex;
+    align-items: stretch;
+
+    .check-wrap {
+      width: 60rpx;
+      display: flex;
+      align-items: center;
+    }
+
+    .image-wrap {
+      position: relative;
+      border-radius: 12rpx;
+      overflow: hidden;
+    }
 
     image {
       display: block;
