@@ -8,6 +8,7 @@ export interface BaseDropPanelProps {
   bodyClosable?: boolean;
   coverHeader?: boolean;
   className?: string;
+  bodyClass?: string;
   style?: string;
   onVisibleChange?: (visible: boolean) => void;
   onBeforeOpen?: () => void;
