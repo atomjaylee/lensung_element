@@ -7,7 +7,7 @@
   <view class="panel-body" a:if="{{ visible }}" onAppear="onAppearHandler" onTap="onMaskTapHandler">
     <view class="panel-transparent-layer" style="height: {{ transparentHeight }}rpx"></view>
     <view class="panel-body-layer {{ bodyVisible ? 'panel-body-layerActive' : '' }}" data-nodeName="mask">
-      <view class="panel-body-content {{ bodyVisible ? 'panel-body-active' : '' }}" onTransitionEnd="onTransitionEndHandler" onTap="onContentClickHandler">
+      <view class="panel-body-content {{ bodyClass }} {{ bodyVisible ? 'panel-body-active' : '' }}" onTransitionEnd="onTransitionEndHandler" onTap="onContentClickHandler">
         <slot name="body" visible="{{ visible }}" bodyVisible="{{ bodyVisible }}"></slot>
       </view>
     </view>
