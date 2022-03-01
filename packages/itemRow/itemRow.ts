@@ -88,7 +88,12 @@ Component({
     // 错误信息点击事件
     onErrorTipClickHandler() {
       if (this.$alert) {
-        this.$alert({ isNew: true, title: '失败原因', content: this.props.source.error });
+        this.$alert({
+          isNew: true,
+          title: '失败原因',
+          contentJustify: 'start',
+          content: this.props.source.error,
+        });
       }
     },
   },
