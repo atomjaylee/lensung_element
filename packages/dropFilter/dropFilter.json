@@ -1,3 +1,6 @@
 {
-  "component": true
+  "component": true,
+  "usingComponents": {
+    "drop-panel": "../dropPanel/dropPanel"
+  }
 }
