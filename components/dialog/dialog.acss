@@ -39,10 +39,11 @@
   font-size: 32rpx;
   color: #333;
   line-height: 1.38;
+  font-weight: 500;
   padding: 40rpx 40rpx 0 40rpx;
 }
 .ls_dialog-content_body .content_text {
-  color: #333;
+  color: #666;
   line-height: 1.57;
   padding: 40rpx;
   box-sizing: border-box;
