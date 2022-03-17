@@ -1,0 +1,20 @@
+<import-sjs from="./dropFilter.sjs" name="sjs" />
+
+<drop-panel bodyClosable id="{{ id }}" class="{{ className }}" style="{{ style }}" onVisibleChange="onDropPanelVisibleChange" onBeforeOpen="onProxyBeforeOpen">
+  
+  <view class="ls_drop_filter-slot-header {{ scoped.bodyVisible ? 'ls_drop_filter-activeHeader' : '' }}" style="{{ sjs.fmtWidth(width) }}" slot-scope="scoped">
+    <text number-of-lines="1">
+      <slot visible="{{ scoped.visible }}" bodyVisible="{{ scoped.bodyVisible }}"></slot>
+    </text>
+    <view class="iconfont icon-jiantou_zhankai ls-icon-arrow {{ scoped.bodyVisible ? 'ls-icon-arrowRotate' : '' }}"></view>
+    <block a:if="{{ scoped.bodyVisible }}">
+      <view class="tab-radius-left"></view>
+      <view class="tab-radius-right"></view>
+    </block>
+  </view>
+  
+  <view slot="body" class="ls_drop_filter-slot-body">
+    <slot name="body" visible="{{ scoped.visible }}" bodyVisible="{{ scoped.bodyVisible }}"></slot>
+  </view>
+  
+</drop-panel>

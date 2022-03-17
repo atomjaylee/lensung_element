@@ -1,0 +1,79 @@
+@import '../_style/color.less';
+
+@filter_header_height: 84rpx;
+@filter_body_height: 80rpx;
+
+// 头部
+.ls_drop_filter-slot-header {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: @filter_header_height;
+  background-color: #fff;
+  color: #333;
+
+  .ls-icon-arrow {
+    font-size: 18rpx;
+    margin-left: 12rpx;
+    transform: rotate(0);
+    transition: transform 150ms ease-in;
+  }
+
+  .ls-icon-arrowRotate {
+    transform: rotate(180deg);
+  }
+
+  .tab-radius {
+    position: absolute;
+    width: 25rpx;
+    height: 25rpx;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    z-index: 1;
+  }
+
+  .tab-radius-circle {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  .tab-radius-left {
+    .tab-radius;
+    left: -25rpx;
+
+    &:after {
+      .tab-radius-circle;
+      right: 0;
+    }
+  }
+
+  .tab-radius-right {
+    .tab-radius;
+    right: -25rpx;
+
+    &:after {
+      .tab-radius-circle;
+      left: 0;
+    }
+  }
+}
+
+.ls_drop_filter-activeHeader {
+  background-color: #f2f2f2;
+  border-radius: 24rpx 24rpx 0 0;
+}
+
+// 内容区
+.ls_drop_filter-slot-body {
+  background-image: linear-gradient(180deg, #f2f2f2 0%, #fff 19%);
+  border-radius: 0 0 24rpx 24rpx;
+  padding-top: 40rpx;
+}
