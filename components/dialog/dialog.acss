@@ -43,7 +43,7 @@
   padding: 40rpx 40rpx 0 40rpx;
 }
 .ls_dialog-content_body .content_text {
-  color: #666;
+  color: #333;
   line-height: 1.57;
   padding: 40rpx;
   box-sizing: border-box;
