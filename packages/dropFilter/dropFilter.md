@@ -1,5 +1,5 @@
 ---
-title: Filter 过滤器
+title: DropFilter 下拉面板
 nav:
   title: 组件
   path: /components
