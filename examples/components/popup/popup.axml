@@ -1,4 +1,5 @@
-<view class="ls_popup {{ contentVisible ? 'ls_popup-active' : '' }}" style="z-index: {{ zIndex }}" a:if="{{ visible }}" onAppear="onAppearHandler" onTap="onMaskTapHandler" data-nodeName="mask" data-statistic="{{ statisticCancel }}">
+<view class="ls_popup" style="z-index: {{ zIndex }}" a:if="{{ visible }}" onAppear="onAppearHandler">
+  <view class="ls_popup-mask {{ contentVisible ? 'ls_popup-active' : '' }}" disable-scroll onTap="onMaskTapHandler" data-nodeName="mask" data-statistic="{{ statisticCancel }}"></view>
   <view class="ls_popup-content {{ 'ls_popup-position_' + position }} {{ contentVisible ? 'ls_popup-active_' + position : '' }} {{ suppressRadius ? '' : 'ls_popup-radius_' + position }}" onTransitionEnd="onTransitionEndHandler">
     <view class="ls_popup-content-title {{ showTitleBorder ? 'ls_popup-content-titleBorder' : '' }}" a:if="{{ title || $slots.title }}">
       <slot name="title">

@@ -1,5 +1,5 @@
 <ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel" onVisibleChange="proxyVisibleChange" title="{{ title }}" hiddenCloseIcon="{{ hiddenCloseIcon }}">
-  <view class="ls_selector">
+  <scroll-view class="ls_selector" trap-scroll>
     <slot>
       <view class="ls_selector-content">
         <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="{{ max }}">
@@ -27,5 +27,5 @@
       <ls-button block type="primary" onTap="onConfirmHandler">{{ confirmText }}</ls-button>
     </view>
 
-  </view>
+  </scroll-view>
 </ls-popup>

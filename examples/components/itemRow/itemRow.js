@@ -67,6 +67,7 @@ Component({
         this.$alert({
           isNew: true,
           title: '失败原因',
+          contentJustify: 'start',
           content: this.props.source.error
         });
       }
