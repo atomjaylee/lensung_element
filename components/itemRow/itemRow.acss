@@ -102,6 +102,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: left;
 }
 .ls_itemRow .error-tip .arrow-right {
   flex-shrink: 0;
