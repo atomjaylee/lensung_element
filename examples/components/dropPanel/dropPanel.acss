@@ -17,12 +17,15 @@
 .ls_dropPanel .panel-body .panel-body-layer {
   flex: 1;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0);
-  transition: background 200ms ease-out;
+  background-position: 0 4rpx;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  transition: opacity 200ms ease-out;
   pointer-events: initial;
+  opacity: 0;
 }
 .ls_dropPanel .panel-body .panel-body-layerActive {
-  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
 .ls_dropPanel .panel-body .panel-body-content {
   max-height: calc(100% - 60rpx);
@@ -33,5 +36,4 @@
 }
 .ls_dropPanel .panel-body .panel-body-active {
   transform: translateY(0);
-  margin-top: -1rpx;
 }

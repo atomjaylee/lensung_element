@@ -6,6 +6,7 @@
   height: 84rpx;
   background-color: #fff;
   color: #333;
+  font-size: 28rpx;
 }
 .ls_filter-slot-header .ls-icon-arrow {
   font-size: 18rpx;
