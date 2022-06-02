@@ -42,6 +42,8 @@
   font-size: 32rpx;
   background-color: #fff;
   color: #ff5001;
+  padding-bottom: calc(constant(safe-area-inset-bottom) / 2);
+  padding-bottom: calc(env(safe-area-inset-bottom) / 2);
 }
 .ls_actionSheet_cancel:active {
   background-color: rgba(255, 255, 255, 0.9);
