@@ -18,21 +18,17 @@ Component({
         contentVisible: true
       });
     },
-
     onTransitionEndHandler() {
       if (this.data.visible && this.data.contentVisible) {
         this.__promise_resolve__();
-
         return;
       }
-
       this.setData({
         visible: false
       });
       getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(false);
       getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
     },
-
     show(options) {
       return new Promise(resolve => {
         this.__promise_resolve__ = resolve;
@@ -43,30 +39,25 @@ Component({
         getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(true);
       });
     },
-
     close() {
       this.setData({
         contentVisible: false
       });
       this.__promise_resolve__ = undefined;
     },
-
     cancelHandler() {
       getComponentAttr(this, 'onCancel') && getComponentAttr(this, 'onCancel')();
       this.close();
     },
-
     onMaskTapHandler({
       target: {
         targetDataset
       }
     }) {
       const nodeName = targetDataset.nodeName;
-
       if (nodeName === 'mask' && getComponentAttr(this, 'maskClosable')) {
         this.cancelHandler();
       }
     }
-
   }
 });

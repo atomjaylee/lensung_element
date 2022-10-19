@@ -10,13 +10,11 @@ const defaultProps = {
 };
 Component({
   props: defaultProps,
-
   onInit() {
     if (this.props.immediate) {
       this.emitActiveKey(this.props.activeKey);
     }
   },
-
   methods: {
     onTapHandler({
       target: {
@@ -26,11 +24,9 @@ Component({
       const key = dataset.key;
       this.emitActiveKey(key);
     },
-
     emitActiveKey(key) {
       this.props.onChange && this.props.onChange(key);
     }
-
   }
 });
 export {};

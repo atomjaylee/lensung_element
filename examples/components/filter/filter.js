@@ -11,7 +11,6 @@ Component({
     onDropPanelVisibleChange(visible) {
       this.props.onVisibleChange && this.props.onVisibleChange(visible);
     },
-
     onSelectItemHandler({
       target: {
         dataset
@@ -24,7 +23,6 @@ Component({
       const item = dataset.item;
       onChange && onChange(item[keyIdentify], this.props);
     }
-
   }
 });
 export {};

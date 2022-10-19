@@ -3,14 +3,17 @@ import fmtEvent from '../_utils/fmtEvent';
 
 export type justifyType = 'start' | 'end' | 'center' | 'between' | 'around';
 export type alignType = 'start' | 'center' | 'end' | 'baseline' | 'stretch';
+export type directionType = 'row' | 'row-reverse' | 'column' | 'column-reverse';
+export type wrapType = 'nowrap' | 'wrap' | 'wrap-reverse';
+export type alignContentType = 'start' | 'end' | 'center' | 'between' | 'around' | 'stretch';
 
 export interface BaseFlexProps {
   type?: 'flex' | 'inline-flex';
-  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
-  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+  direction?: directionType;
+  wrap?: wrapType;
   justify?: justifyType;
   align?: alignType;
-  alignContent?: 'start' | 'end' | 'center' | 'between' | 'around' | 'stretch';
+  alignContent?: alignContentType;
   hidden?: boolean;
   className?: string;
   style?: string;

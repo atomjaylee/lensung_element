@@ -1,9 +1,10 @@
-import { justifyType } from '../flex/flex';
+import { justifyType, directionType, alignType } from '../flex/flex';
 import { getMultiComponentAttr } from '../_utils/tool';
 
 interface BaseDialogProps {
   title?: string;
   content?: string;
+  subContent?: string;
   icon?: string;
   zIndex?: number;
   confirmText?: string;
@@ -16,6 +17,8 @@ interface BaseDialogProps {
   style?: string;
   contentClass?: string;
   contentJustify?: justifyType;
+  contentAlign?: alignType;
+  contentDirection?: directionType;
   maxLine?: number;
   closable?: boolean;
   maskClosable?: boolean;
@@ -29,6 +32,8 @@ const defaultProps: BaseDialogProps = {
   zIndex: 999,
   maxLine: 3,
   contentJustify: 'start',
+  contentDirection: 'row',
+  contentAlign: 'center',
   confirmText: '确定',
   cancelText: '取消',
   closable: false,
@@ -85,10 +90,9 @@ Component({
     onTransitionEndHandler() {
       // 仅处理组件消失的处理逻辑
       if (this.data.visible && this.data.contentVisible === false) {
-
         const onAfterClose = getMultiComponentAttr(this, 'onAfterClose');
         onAfterClose && onAfterClose();
-        
+
         this.setData(
           {
             ...defaultData,

@@ -10,7 +10,7 @@ Page({
 
   async onOpenDialogHandler() {
     this.$dialog.confirm({
-      content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
+      content: "显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容显示内容",
       title: "测试标题",
       maskClosable: true,
       confirmText: "去订购",

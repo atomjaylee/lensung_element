@@ -19,13 +19,11 @@ Component({
   data: {
     baseClasses: ''
   },
-
   onInit() {
     this.setData({
       baseClasses: this.wrapClasses()
     });
   },
-
   methods: {
     wrapClasses() {
       const {
@@ -38,13 +36,12 @@ Component({
         [`${prefixCls}-disabled`]: disabled
       });
     },
-
     onChangeHandler(evt) {
-      const event = fmtEvent(this.props, { ...evt,
+      const event = fmtEvent(this.props, {
+        ...evt,
         checked: !this.props.checked
       });
       this.props.onChange && this.props.onChange(event);
     }
-
   }
 });

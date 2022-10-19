@@ -48,6 +48,12 @@
   padding: 40rpx;
   box-sizing: border-box;
 }
+.ls_dialog-content_body .subText {
+  margin-top: 4rpx;
+  color: #FF7A0E;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
 .ls_dialog-content_body .content_minHeight {
   min-height: 172rpx;
 }

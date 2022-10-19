@@ -71,24 +71,27 @@ methods: {
 
 ### options
 
-| 参数             | 说明                 | 类型                                              | 默认值  | 备注                 |
-| ---------------- | -------------------- | ------------------------------------------------- | ------- | -------------------- |
-| title            | 显示标题             | `string`                                          | -       | -                    |
-| content          | 显示内容             | `string`                                          | -       | -                    |
-| icon             | 显示图标             | `success` \| `error`\|`warn`\|`string`            | -       | 可传入 iconfont 图标 |
-| confirmText      | 确定按钮文本         | `string`                                          | `确定`  | -                    |
-| cancelText       | 取消按钮文本         | `string`                                          | `取消`  | -                    |
-| zIndex           | z-index 的值         | `number`                                          | `999`   | -                    |
-| maxLine          | 文本最大行数         | `number`                                          | `3`     | -                    |
-| contentClass     | 内容区自定义 class   | `string`                                          | -       | -                    |
-| contentJustify   | 内容区子元素横轴排列 | `start` \| `center`\|`end` \|`between` \|`around` | `start` | -                    |
-| closable         | 是否显示关闭按钮     | `boolean`                                         | `false` | -                    |
-| maskClosable     | 点击遮罩关闭弹窗     | `boolean`                                         | `false` | -                    |
-| hiddenButtons    | 是否隐藏底部按钮     | `boolean`                                         | `false` | -                    |
-| class            | 自定义样式类         | `string`                                          | -       | -                    |
-| style            | 自定义样式           | `string`                                          | -       | -                    |
-| statisticCancel  | 取消按钮埋点         | `string`                                          | -       | -                    |
-| statisticConfirm | 确定按钮埋点         | `string`                                          | -       | -                    |
+| 参数             | 说明                 | 类型                                                | 默认值   | 备注                 |
+| ---------------- | -------------------- | --------------------------------------------------- | -------- | -------------------- |
+| title            | 显示标题             | `string`                                            | -        | -                    |
+| content          | 显示内容             | `string`                                            | -        | -                    |
+| subContent       | 显示子内容           | `string`                                            | -        | -                    |
+| icon             | 显示图标             | `success` \| `error`\|`warn`\|`string`              | -        | 可传入 iconfont 图标 |
+| confirmText      | 确定按钮文本         | `string`                                            | `确定`   | -                    |
+| cancelText       | 取消按钮文本         | `string`                                            | `取消`   | -                    |
+| zIndex           | z-index 的值         | `number`                                            | `999`    | -                    |
+| maxLine          | 文本最大行数         | `number`                                            | `3`      | -                    |
+| contentClass     | 内容区自定义 class   | `string`                                            | -        | -                    |
+| contentJustify   | 内容区子元素横轴排列 | `start` \| `center`\|`end` \|`between` \|`around`   | `start`  | -                    |
+| contentDirection | 内容区子元素排列方向 | `row` \| `row-reverse`\|`column` \|`column-reverse` | `row`    | -                    |
+| contentAlign     | 内容区子元素纵轴排列 | `start` \| `center`\|`end` \|`baseline`             | `center` | -                    |
+| closable         | 是否显示关闭按钮     | `boolean`                                           | `false`  | -                    |
+| maskClosable     | 点击遮罩关闭弹窗     | `boolean`                                           | `false`  | -                    |
+| hiddenButtons    | 是否隐藏底部按钮     | `boolean`                                           | `false`  | -                    |
+| class            | 自定义样式类         | `string`                                            | -        | -                    |
+| style            | 自定义样式           | `string`                                            | -        | -                    |
+| statisticCancel  | 取消按钮埋点         | `string`                                            | -        | -                    |
+| statisticConfirm | 确定按钮埋点         | `string`                                            | -        | -                    |
 
 ### Methods
 
