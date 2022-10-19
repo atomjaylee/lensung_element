@@ -13,9 +13,10 @@
       <view class="content_icon" a:if="{{ sjs.attr(propData, 'icon', icon) }}">
         <text class="iconfont {{ sjs.fmtIcon(propData['icon'] ? propData['icon'] : icon) }}"></text>
       </view>
-      <ls-flex class="content_text {{ sjs.attr(propData, 'title', title) ? '' : 'content_minHeight' }} {{ sjs.attr(propData, 'contentClass', contentClass) }}" justify="{{ sjs.attr(propData, 'contentJustify', contentJustify) }}">
+      <ls-flex class="content_text {{ sjs.attr(propData, 'title', title) ? '' : 'content_minHeight' }} {{ sjs.attr(propData, 'contentClass', contentClass) }}" justify="{{ sjs.attr(propData, 'contentJustify', contentJustify) }}" direction="{{ sjs.attr(propData, 'contentDirection', contentDirection) }}" align="{{ sjs.attr(propData, 'contentAlign', contentAlign) }}">
         <slot>
           <text number-of-lines="{{ sjs.attr(propData, 'maxLine', maxLine) }}">{{ sjs.attr(propData, 'content', content) }}</text>
+          <text class="subText" a:if="{{sjs.attr(propData, 'subContent', subContent)}}">{{ sjs.attr(propData, 'subContent', subContent) }}</text>
         </slot>
       </ls-flex>
     </view>

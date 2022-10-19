@@ -12,7 +12,6 @@ const defaultProps = {
 };
 Component({
   props: defaultProps,
-
   deriveDataFromProps({
     groupId,
     value,
@@ -20,7 +19,6 @@ Component({
     identify
   }) {
     if (groupId !== undefined) return;
-
     if (isObject(value)) {
       this.setData({
         localChecked: checked[identify] === value[identify]
@@ -31,11 +29,9 @@ Component({
       });
     }
   },
-
   data: {
     localChecked: false
   },
-
   onInit() {
     const {
       value,
@@ -46,10 +42,8 @@ Component({
     this.setData({
       localChecked: isObject(value) ? checked[identify] === value[identify] : checked === value
     });
-
     if (groupId !== undefined) {
       const dependGroup = this.$page[`${PAGE_CONTEXT_NAME}${groupId}`];
-
       if (dependGroup) {
         dependGroup.link(this.$id, this.localUpdate.bind(this));
         this.$groupUpdate = dependGroup.update;
@@ -58,25 +52,22 @@ Component({
       }
     }
   },
-
   didUnmount() {
     this.$unLink && this.$unLink(this.$id);
   },
-
   methods: {
     onCheckTapHandler(evt) {
       if (this.props.disabled) return;
-
       if (this.props.groupId !== undefined) {
         this.$groupUpdate && this.$groupUpdate(this.props.value, this.props.identify);
       } else {
-        const event = fmtEvent(this.props, { ...evt,
+        const event = fmtEvent(this.props, {
+          ...evt,
           checked: this.props.value
         });
         this.props.onChange && this.props.onChange(event);
       }
     },
-
     // 更新本地勾选状态回调
     localUpdate(checkedList) {
       let isChecked = false;
@@ -84,19 +75,16 @@ Component({
         identify,
         value
       } = this.props;
-
       if (isObject(this.props.value)) {
         isChecked = checkedList.some(x => x[identify] === value[identify]);
       } else {
         isChecked = checkedList.some(x => x === value);
       }
-
       if (this.data.localChecked !== isChecked) {
         this.setData({
           localChecked: isChecked
         });
       }
     }
-
   }
 });

@@ -1,12 +1,10 @@
 const hasOwn = {}.hasOwnProperty;
 export default function fmtClass(...args) {
   const classList = [];
-
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (!arg) continue;
     const argType = typeof arg;
-
     if (argType === "string" || argType === "number") {
       classList.push(arg);
     } else if (Array.isArray(arg) && arg.length) {
@@ -18,6 +16,5 @@ export default function fmtClass(...args) {
       }
     }
   }
-
   return classList.join(" ");
 }

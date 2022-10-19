@@ -18,7 +18,6 @@ Component({
         bodyVisible: true
       });
     },
-
     onTransitionEndHandler() {
       if (this.data.visible && this.data.bodyVisible) return;
       this.setData({
@@ -26,7 +25,6 @@ Component({
       });
       this.props.onVisibleChange && this.props.onVisibleChange(false);
     },
-
     async onHeaderClickHandler() {
       if (this.data.visible) {
         this.close();
@@ -35,11 +33,9 @@ Component({
         this.show();
       }
     },
-
     onContentClickHandler() {
       this.props.bodyClosable && this.close();
     },
-
     async show() {
       const {
         windowWidth
@@ -56,35 +52,30 @@ Component({
       });
       const dropPanelInstanceMap = this.$page[SCOPED_NAME] || new Map();
       dropPanelInstanceMap.forEach(instance => instance.close());
-
       if (this.props.id) {
         dropPanelInstanceMap.set(this.props.id, this);
       }
-
       Object.defineProperty(this.$page, SCOPED_NAME, {
         get: () => dropPanelInstanceMap,
         configurable: true
       });
       this.props.onVisibleChange && this.props.onVisibleChange(true);
     },
-
     close() {
-      this.setData({ ...defaultProps,
+      this.setData({
+        ...defaultProps,
         bodyVisible: false
       });
     },
-
     onMaskTapHandler({
       target: {
         targetDataset
       }
     }) {
       const nodeName = targetDataset.nodeName;
-
       if (nodeName === 'mask' && this.props.maskClosable) {
         this.close();
       }
     }
-
   }
 });
