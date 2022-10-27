@@ -7,12 +7,16 @@
   <ls-check-group id="top" checkedList="{{ checkedList }}" onChange="onCheckListChangeHandler" max="1">
     <ls-check groupId="top" a:for="{{ list }}" value="{{ item }}" key="{{ item }}"></ls-check>
     <ls-flex>
-      <ls-check value="5" groupId="top"></ls-check>
+      <ls-check value="5" groupId="top" checkedType="circle"></ls-check>
       <text>嘿嘿</text>
     </ls-flex>
     <ls-flex>
       <ls-check value="6" groupId="top"></ls-check>
       <text>哈哈</text>
+    </ls-flex>
+    <ls-flex>
+      <ls-check value="7" groupId="top" checkedType="circle" size="small"></ls-check>
+      <text>嘿嘿</text>
     </ls-flex>
   </ls-check-group>
   -----------------------------

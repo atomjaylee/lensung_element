@@ -4,6 +4,7 @@ import { PAGE_CONTEXT_NAME } from './checkGroup/checkGroup';
 import { isObject } from '../_utils/tool';
 const defaultProps = {
   checked: false,
+  checkedType: 'check',
   disabled: false,
   value: true,
   hidden: false,

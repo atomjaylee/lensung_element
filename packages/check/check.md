@@ -26,9 +26,9 @@ group:
 ## 基础用法
 
 ```html
-<ls-check checked></ls-check>
+<ls-check checked />
 
-<ls-check-box checked="{{ false }}"></ls-check-box>
+<ls-check-box checked="{{ false }}">内容展示</ls-check-box>
 
 <ls-check-group id="checkGroup" checkedList="{{ checkedList }}">
   <ls-check groupId="checkGroup" value="1" />
@@ -64,17 +64,18 @@ onCheckGroupChangeHandler(checkedList) {
 
 ### Check Attributes
 
-| 参数     | 说明                                   | 类型                                | 默认值   | 备注                                   |
-| -------- | -------------------------------------- | ----------------------------------- | -------- | -------------------------------------- |
-| checked  | 当前选中的值                           | `boolean`\|`string`\|`number`\|`{}` | `false`  | -                                      |
-| disabled | 禁用该 check                           | `boolean`                           | `false`  | -                                      |
-| size     | 尺寸                                   | `medium`\|`small`                   | `medium` | -                                      |
-| value    | 该 check 绑定的值                      | `boolean`\|`string`\|`number`\|`{}` | `true`   | 当`checked === value`时，该 check 勾选 |
-| groupId  | 关联的 checkGroup                      | `string`                            | -        | -                                      |
-| identify | value 为对象时，用于判断选中的标识字段 | `string`                            | -        | 如 value 为对象，则为必填项            |
-| hidden   | 是否隐藏                               | `boolean`                           | `false`  | -                                      |
-| style    | 自定义按钮样式                         | `string`                            | -        | -                                      |
-| class    | 自定义按钮样式类                       | `string`                            | -        | -                                      |
+| 参数        | 说明                                   | 类型                                | 默认值   | 备注                                   |
+| ----------- | -------------------------------------- | ----------------------------------- | -------- | -------------------------------------- |
+| checked     | 当前选中的值                           | `boolean`\|`string`\|`number`\|`{}` | `false`  | -                                      |
+| checkedType | 选中时样式类型                         | `check`\|`circle`                   | `check`  | `check`为对钩样式，`circle`为圆圈样式  |
+| disabled    | 禁用该 check                           | `boolean`                           | `false`  | -                                      |
+| size        | 尺寸                                   | `medium`\|`small`                   | `medium` | -                                      |
+| value       | 该 check 绑定的值                      | `boolean`\|`string`\|`number`\|`{}` | `true`   | 当`checked === value`时，该 check 勾选 |
+| groupId     | 关联的 checkGroup                      | `string`                            | -        | -                                      |
+| identify    | value 为对象时，用于判断选中的标识字段 | `string`                            | -        | 如 value 为对象，则为必填项            |
+| hidden      | 是否隐藏                               | `boolean`                           | `false`  | -                                      |
+| style       | 自定义按钮样式                         | `string`                            | -        | -                                      |
+| class       | 自定义按钮样式类                       | `string`                            | -        | -                                      |
 
 ### Check Events
 
@@ -119,6 +120,6 @@ onCheckGroupChangeHandler(checkedList) {
 
 ### CheckGroup Slot
 
-| name    | 说明                                            |
-| ------- | ----------------------------------------------- |
-| default | 自定义内容，内容包含 check 组件或 checkBox 组件 |
+| name    | 说明                               |
+| ------- | ---------------------------------- |
+| default | 自定义内容，内容包含 checkBox 组件 |

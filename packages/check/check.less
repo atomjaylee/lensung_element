@@ -8,6 +8,7 @@
   box-sizing: border-box;
   border: 2rpx solid #c4c6cf;
   background-color: #fff;
+  box-sizing: border-box;
 
   &-medium {
     width: @check-size-medium;
@@ -19,10 +20,12 @@
     height: @check-size-small;
   }
 
-  &-checked {
+  // 对钩类型
+  &-checked_check {
     position: relative;
     border: none;
     background-color: @brand-color-main;
+    transition: all 120ms linear;
     &:before {
       position: absolute;
       left: 50%;
@@ -34,6 +37,24 @@
       height: 21%;
       border-bottom: 4rpx solid #fff;
       border-left: 4rpx solid #fff;
+    }
+  }
+
+  // 圆圈类型
+  &-checked_circle {
+    position: relative;
+    border: 4rpx solid @brand-color-main;
+    transition: border 120ms linear;
+    &:before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 62%;
+      height: 62%;
+      border-radius: 50%;
+      background-color: @brand-color-main;
     }
   }
 

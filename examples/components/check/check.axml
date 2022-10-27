@@ -1,5 +1,5 @@
 <view 
-  class="ls_check {{ baseClass }} {{ localChecked ? 'ls_check-checked' : '' }} {{ className }}" 
+  class="ls_check {{ baseClass }} {{ localChecked ? checkedType === 'check' ? 'ls_check-checked_check': 'ls_check-checked_circle' : '' }} {{ className }}" 
   style="{{ style }}" 
   onTap="onCheckTapHandler" 
   hidden="{{ hidden }}"

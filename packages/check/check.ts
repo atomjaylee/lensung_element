@@ -5,6 +5,7 @@ import { isObject } from '../_utils/tool';
 
 export interface BaseCheckProps {
   checked: boolean | string | number | Record<string, any>;
+  checkedType: 'circle' | 'check';
   disabled?: boolean;
   size?: 'small' | 'medium';
   value?: boolean | string | number | Record<string, any>;
@@ -19,6 +20,7 @@ export interface BaseCheckProps {
 
 const defaultProps: BaseCheckProps = {
   checked: false,
+  checkedType: 'check',
   disabled: false,
   value: true,
   hidden: false,
