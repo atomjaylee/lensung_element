@@ -27,7 +27,7 @@ group:
 
 ```html
 <!-- 单个使用 -->
-<item-select popupContent="type,category" stateSchema="{{ stateSchema }}" />
+<item-select popupContent="type,category" stateSchema="{{ stateSchema }}" ref="itemSelect" />
 ```
 
 ```js
@@ -38,6 +38,15 @@ data: {
 onFilterBarChange(params) {
   const { topParams, customParams } = params;
   // topParams为接口参数，可直接使用， customParams为一些自定义参数，不可直接使用在top接口参数上
+},
+
+// 外部控制已勾选内容
+itemSelect(ref) {
+  this.$itemSelect = ref;
+}
+
+handler() {
+  this.$itemSelect.emitSetCheckedList([{ num_iid: 1 }])
 }
 
 ```
