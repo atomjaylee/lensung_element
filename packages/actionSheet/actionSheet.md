@@ -60,6 +60,7 @@ methods: {
 | --------------- | ---------------- | --------------------------- | ------- | -------------------------------------------------- |
 | tip             | 顶部提示信息     | `string`                    | -       | -                                                  |
 | schema          | 操作按钮配置     | `[<label, key, statistic>]` | `[]`    | `[{ label: '显示', key: '值', statistic: '埋点'}]` |
+| value           | 选中的 key       | `string \| number`          | -       | 选中会高亮显示                                     |
 | cancelText      | 取消按钮文本     | `string`                    | `取消`  | -                                                  |
 | maskClosable    | 点击遮罩关闭弹窗 | `boolean`                   | `false` | -                                                  |
 | statisticCancel | 点击取消埋点标记 | `string`                    | -       | -                                                  |

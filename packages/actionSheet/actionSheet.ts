@@ -10,6 +10,7 @@ type SchemaType = {
 export interface BaseActionSheetProps {
   tip?: string;
   schema: SchemaType[];
+  value?: string | number;
   maskClosable?: boolean;
   zIndex?: number;
   cancelText?: string;
