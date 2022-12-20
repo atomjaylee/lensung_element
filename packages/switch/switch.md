@@ -56,7 +56,6 @@ group:
 | checkedValue   | 开关开启时的值     | `boolean` \| `string`\|`number` | `true`    | -    |
 | unCheckedColor | 开关关闭后的颜色   | `string`                        | `#e9e9ea` | -    |
 | unCheckedText  | 开关关闭后显示文字 | `string`                        | -         | -    |
-| unCheckedValue | 开关关闭时的值     | `boolean` \| `string`\|`number` | `false`   | -    |
 | hidden         | 是否隐藏           | `boolean`                       | `false`   | -    |
 | style          | 自定义按钮样式     | `string`                        | -         | -    |
 | class          | 自定义按钮样式类   | `string`                        | -         | -    |

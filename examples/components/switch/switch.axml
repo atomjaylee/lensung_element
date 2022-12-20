@@ -4,7 +4,7 @@
     <view a:if="{{ checked === checkedValue }}">
       <slot name="checkedText">{{ checkedText }}</slot>
     </view>
-    <view a:if="{{ checked === unCheckedValue }}">
+    <view a:if="{{ checked !== checkedValue }}">
       <slot name="unCheckedText">{{ unCheckedText }}</slot>
     </view>
   </view>

@@ -9,7 +9,6 @@ const defaultProps = {
   checkedValue: true,
   unCheckedColor: '#e9e9ea',
   unCheckedText: undefined,
-  unCheckedValue: false,
   hidden: false,
   className: '',
   style: ''

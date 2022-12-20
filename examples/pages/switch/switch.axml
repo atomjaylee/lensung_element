@@ -6,4 +6,5 @@
   <ls-switch checked="{{ checked }}" checkedText="开" unCheckedText="关" size="medium"></ls-switch>
   <ls-switch checked="{{ checked }}" size="small" unCheckedColor="red"></ls-switch>
   <ls-switch checked="{{ checked }}" size="small" checkedText="开" unCheckedText="关" disabled></ls-switch>
+  <ls-switch checked="1" checkedValue="true" checkedText="开" unCheckedText="关"></ls-switch>
 </view>

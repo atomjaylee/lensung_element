@@ -12,7 +12,6 @@ export interface BaseSwitchProps {
   checkedValue?: boolean | string | number;
   unCheckedColor?: string;
   unCheckedText?: string;
-  unCheckedValue?: boolean | string | number;
   className?: string;
   hidden?: boolean;
   style?: string;
@@ -28,7 +27,6 @@ const defaultProps: BaseSwitchProps = {
   checkedValue: true,
   unCheckedColor: '#e9e9ea',
   unCheckedText: undefined,
-  unCheckedValue: false,
   hidden: false,
   className: '',
   style: '',
