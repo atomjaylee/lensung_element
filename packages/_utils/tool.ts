@@ -5,7 +5,9 @@
  * @returns - 属性值或undefined
  */
 export const getComponentAttr = (component: tinyapp.ComponentOptions, attrName: string): any => {
-  return component.data[attrName] ? component.data[attrName] : component.props[attrName];
+  return component.data[attrName] !== undefined
+    ? component.data[attrName]
+    : component.props[attrName];
 };
 
 /**
