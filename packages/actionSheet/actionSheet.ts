@@ -15,12 +15,14 @@ export interface BaseActionSheetProps {
   zIndex?: number;
   cancelText?: string;
   statisticCancel?: string;
+  onlyKey?: boolean;
   onBeforeClose?: () => boolean;
   onAfterClose?: () => void;
 }
 
 const defaultProps: BaseActionSheetProps = {
   schema: [],
+  onlyKey: true,
   maskClosable: true,
 };
 
@@ -48,18 +50,14 @@ Component({
     },
 
     async onSelectItemHandler({ target: { dataset } }) {
-      const { key } = dataset.item;
+      const item = dataset.item;
       const onBeforeClose = getComponentAttr(this, 'onBeforeClose');
+      const onlyKey = getComponentAttr(this, 'onlyKey');
       const isPass = onBeforeClose ? await onBeforeClose() : true;
       if (isPass) {
-        this.__promise_resolve__(key);
+        this.__promise_resolve__(onlyKey ? item.key : item);
         this.close();
       }
-    },
-
-    onCancelHandler() {
-      this.__promise_resolve__();
-      this.close();
     },
 
     onAfterCloseHandler() {

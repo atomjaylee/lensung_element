@@ -1,6 +1,7 @@
 import { getComponentAttr } from '../_utils/tool';
 const defaultProps = {
   schema: [],
+  onlyKey: true,
   maskClosable: true
 };
 Component({
@@ -28,19 +29,14 @@ Component({
         dataset
       }
     }) {
-      const {
-        key
-      } = dataset.item;
+      const item = dataset.item;
       const onBeforeClose = getComponentAttr(this, 'onBeforeClose');
+      const onlyKey = getComponentAttr(this, 'onlyKey');
       const isPass = onBeforeClose ? await onBeforeClose() : true;
       if (isPass) {
-        this.__promise_resolve__(key);
+        this.__promise_resolve__(onlyKey ? item.key : item);
         this.close();
       }
-    },
-    onCancelHandler() {
-      this.__promise_resolve__();
-      this.close();
     },
     onAfterCloseHandler() {
       const onAfterClose = getComponentAttr(this, 'onAfterClose');
