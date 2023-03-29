@@ -1,5 +1,6 @@
 <ls-popup ref="popup" maskClosable="{{ maskClosable }}" onAfterClose="proxyAfterClose" onCancel="proxyCancel" onVisibleChange="proxyVisibleChange" title="{{ title }}" hiddenCloseIcon="{{ hiddenCloseIcon }}">
   <view class="ls_selector">
+    <slot name="tip"></slot>
     <slot>
       <view class="ls_selector-content">
         <ls-check-group id="__selector_group__" checkedList="{{ checkedList }}" onChange="onGroupCheckChangeHandler" max="{{ max }}">

@@ -3,4 +3,6 @@
   <ls-button type="primary" onTap="testSelector">测试</ls-button>
 </view>
 
-<ls-selector ref="selector"></ls-selector>
+<ls-selector ref="selector">
+
+</ls-selector>
