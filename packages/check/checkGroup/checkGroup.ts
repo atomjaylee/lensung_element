@@ -1,4 +1,5 @@
 import { deepClone, isObject } from '../../_utils/tool';
+import { PAGE_CONTEXT_NAME } from '../constants';
 interface BaseCheckGroupProps {
   checkedList: [];
   max?: number;
@@ -10,8 +11,6 @@ const defaultProps: BaseCheckGroupProps = {
   checkedList: [],
   max: Infinity,
 };
-
-export const PAGE_CONTEXT_NAME = '__checkGroup';
 
 Component({
   props: defaultProps,

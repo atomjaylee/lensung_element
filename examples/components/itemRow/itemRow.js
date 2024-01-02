@@ -17,15 +17,18 @@ Component({
     checkInstance(ref) {
       this.__checkInstance__ = ref;
     },
+
     toastInstance(ref) {
       this.__toastInstance__ = ref;
     },
+
     // 监听组件内check组件group状态下的勾选情况
     onCheckChangeByGroup(checked) {
       this.setData({
         checked
       });
     },
+
     // 整个宝贝点击事件 或 点击内容区勾选宝贝
     onRowTapHandler(evt) {
       const {
@@ -35,6 +38,7 @@ Component({
         disabledAttrName
       } = this.props;
       const nodeName = evt.target.targetDataset.nodeName;
+
       if (checkByContent && showCheck) {
         if (source[disabledAttrName] === true) {
           // 禁用并且存在disabledToast时，进行提示
@@ -44,6 +48,7 @@ Component({
           this.__checkInstance__.onCheckTapHandler();
         }
       }
+
       if (checkByContent === false) {
         if (showCheck && nodeName === 'check') {
           return;
@@ -55,6 +60,7 @@ Component({
         }
       }
     },
+
     // 错误信息点击事件
     onErrorTipClickHandler() {
       if (this.$alert) {
@@ -66,5 +72,6 @@ Component({
         });
       }
     }
+
   }
 });

@@ -15,11 +15,13 @@ Component({
   data: {
     baseClasses: ''
   },
+
   onInit() {
     this.setData({
       baseClasses: this.wrapClasses()
     });
   },
+
   methods: {
     wrapClasses() {
       const {
@@ -37,10 +39,12 @@ Component({
         [`${prefixCls}-disabled`]: disabled
       });
     },
+
     onClickHandler(evt) {
       if (this.props.disabled) return;
       const event = fmtEvent(this.props, evt);
       this.props.onTap && this.props.onTap(event);
     }
+
   }
 });

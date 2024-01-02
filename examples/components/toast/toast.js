@@ -22,13 +22,16 @@ Component({
         innerVisible: true
       });
     },
+
     show(options) {
       const userOptions = typeof options === 'string' ? {
         content: options
       } : options;
+
       if (this._timeInstance) {
         clearTimeout(this._timeInstance);
       }
+
       this.setData({
         show: true,
         propData: userOptions
@@ -39,6 +42,7 @@ Component({
         });
       }, getMultiComponentAttr(this, 'duration'));
     },
+
     onTransitionEndHandler() {
       if (this.data.show && this.data.innerVisible === false) {
         const onClosed = getMultiComponentAttr(this, 'onClosed');
@@ -46,12 +50,13 @@ Component({
         this.resetInitialStatus();
       }
     },
+
     // 重置为初始化状态
     resetInitialStatus() {
       this._timeInstance = null;
-      this.setData({
-        ...defaultData
+      this.setData({ ...defaultData
       });
     }
+
   }
 });

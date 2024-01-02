@@ -14,11 +14,13 @@ Component({
   data: {
     baseClass: ''
   },
+
   onInit() {
     this.setData({
       baseClass: this.wrapClasses()
     });
   },
+
   methods: {
     wrapClasses() {
       const {
@@ -39,13 +41,16 @@ Component({
         [`${prefixCls}-alignContent_${alignContent}`]: alignContent
       });
     },
+
     onTapHandler(evt) {
       const event = fmtEvent(this.props, evt);
       this.props.onTap && this.props.onTap(event);
     },
+
     onAppearHandler(evt) {
       const event = fmtEvent(this.props, evt);
       this.props.onAppear && this.props.onAppear(event);
     }
+
   }
 });

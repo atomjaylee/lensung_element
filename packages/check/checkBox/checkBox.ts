@@ -1,5 +1,5 @@
 import fmtEvent from '../../_utils/fmtEvent';
-import { PAGE_CONTEXT_NAME } from '../checkGroup/checkGroup';
+import { PAGE_CONTEXT_NAME } from '../constants';
 import { isObject } from '../../_utils/tool';
 
 interface BaseCheckProps {

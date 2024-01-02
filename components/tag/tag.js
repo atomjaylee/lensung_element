@@ -11,12 +11,14 @@ Component({
   data: {
     baseClasses: ''
   },
+
   onInit() {
     this.setData({
       baseClasses: this.wrapClasses()
     });
     this.formatStyleBySlotText();
   },
+
   methods: {
     wrapClasses() {
       const {
@@ -27,6 +29,7 @@ Component({
         [`${prefixCls}-${type}`]: type
       });
     },
+
     // 通过插槽内容，自动设置文字样式
     formatStyleBySlotText() {
       const {
@@ -35,12 +38,13 @@ Component({
       } = this.props;
       const {
         $default
-      } = $slots;
-      // 仅处理插槽内容为文字类型
+      } = $slots; // 仅处理插槽内容为文字类型
+
       if ($default && Array.isArray($default) && $default.length === 1 && isString($default[0])) {
         const slotText = $default[0];
         let _fontColor = defaultProps.fontColor;
         let _fillColor = defaultProps.fillColor;
+
         switch (slotText) {
           case '闲鱼':
             _fontColor = type === 'fill' ? '#333' : '#ffd944';
@@ -50,6 +54,7 @@ Component({
               fillColor: _fillColor
             });
             break;
+
           case '新品':
             _fontColor = type === 'fill' ? '#fff' : '#0891fb';
             _fillColor = '#0891fb';
@@ -58,6 +63,7 @@ Component({
               fillColor: _fillColor
             });
             break;
+
           case '拍卖':
             _fontColor = type === 'fill' ? '#fff' : '#f55358';
             _fillColor = '#f55358';
@@ -66,6 +72,7 @@ Component({
               fillColor: _fillColor
             });
             break;
+
           case '手机详情无':
           case '主图视频无':
             _fontColor = '#f23c3c';
@@ -78,5 +85,6 @@ Component({
         }
       }
     }
+
   }
 });
