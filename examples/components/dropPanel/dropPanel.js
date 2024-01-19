@@ -3,7 +3,8 @@ const SCOPED_NAME = '__dropPanelInstanceMap__';
 const defaultProps = {
   maskClosable: true,
   bodyClosable: false,
-  coverHeader: false
+  coverHeader: false,
+  disableScroll: false
 };
 Component({
   props: defaultProps,

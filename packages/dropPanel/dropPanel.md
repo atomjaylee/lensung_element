@@ -58,14 +58,15 @@ methods: {
 
 ### Attributes
 
-| 参数         | 说明                             | 类型      | 默认值  | 备注                             |
-| ------------ | -------------------------------- | --------- | ------- | -------------------------------- |
-| id           | dropPanel 唯一标识               | `string`  | -       | 可以使用此标识手动关闭 dropPanel |
-| coverHeader  | 展开面板是否从 Header 的顶部开始 | `boolean` | `false` | -                                |
-| maskClosable | 点击遮罩关闭弹窗                 | `boolean` | `false` | -                                |
-| bodyClosable | 点击内容区关闭弹窗                 | `boolean` | `false` | -                                |
-| style        | 自定义样式                       | `string`  | -       | -                                |
-| class        | 自定义样式类                     | `string`  | -       | -                                |
+| 参数          | 说明                             | 类型      | 默认值  | 备注                             |
+| ------------- | -------------------------------- | --------- | ------- | -------------------------------- |
+| id            | dropPanel 唯一标识               | `string`  | -       | 可以使用此标识手动关闭 dropPanel |
+| coverHeader   | 展开面板是否从 Header 的顶部开始 | `boolean` | `false` | -                                |
+| maskClosable  | 点击遮罩关闭弹窗                 | `boolean` | `false` | -                                |
+| bodyClosable  | 点击内容区关闭弹窗               | `boolean` | `false` | -                                |
+| disableScroll | 禁用 body 内滚动行为             | `boolean` | `false` | -                                |
+| style         | 自定义样式                       | `string`  | -       | -                                |
+| class         | 自定义样式类                     | `string`  | -       | -                                |
 
 ### Methods
 

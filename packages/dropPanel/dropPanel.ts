@@ -6,6 +6,7 @@ export interface BaseDropPanelProps {
   id?: string;
   maskClosable?: boolean;
   bodyClosable?: boolean;
+  disableScroll?: boolean;
   coverHeader?: boolean;
   className?: string;
   bodyClass?: string;
@@ -18,6 +19,7 @@ const defaultProps: BaseDropPanelProps = {
   maskClosable: true,
   bodyClosable: false,
   coverHeader: false,
+  disableScroll: false,
 };
 
 Component({
