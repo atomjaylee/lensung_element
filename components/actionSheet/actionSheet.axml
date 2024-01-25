@@ -7,6 +7,6 @@
         <text a:if="{{ item.desc }}" class="item-desc">{{ item.desc }}</text>
       </ls-flex>
     </view>
-    <ls-flex justify="center" class="ls_actionSheet_cancel" onTap="close" data-statistic="{{ statisticCancel }}">取消</ls-flex>
+    <ls-flex justify="center" class="ls_actionSheet_cancel" onTap="close" data-statistic="{{ statisticCancel }}">{{ cancelText }}</ls-flex>
   </view>
 </popup>

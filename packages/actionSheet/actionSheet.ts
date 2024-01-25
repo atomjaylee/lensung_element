@@ -22,6 +22,7 @@ export interface BaseActionSheetProps {
 
 const defaultProps: BaseActionSheetProps = {
   schema: [],
+  cancelText: '取消',
   onlyKey: true,
   maskClosable: true,
 };

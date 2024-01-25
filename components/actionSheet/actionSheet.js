@@ -1,6 +1,7 @@
 import { getComponentAttr } from '../_utils/tool';
 const defaultProps = {
   schema: [],
+  cancelText: '取消',
   onlyKey: true,
   maskClosable: true
 };
