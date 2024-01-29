@@ -6,6 +6,7 @@ export interface BasePopupProps {
   maskClosable?: boolean;
   position?: positionType;
   zIndex?: number;
+  style?: string;
   title?: string;
   suppressRadius?: boolean;
   showTitleBorder?: boolean;
