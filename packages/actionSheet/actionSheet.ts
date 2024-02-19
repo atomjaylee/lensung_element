@@ -14,6 +14,7 @@ export interface BaseActionSheetProps {
   maskClosable?: boolean;
   zIndex?: number;
   style?: string;
+  className?: string;
   cancelText?: string;
   statisticCancel?: string;
   onlyKey?: boolean;
