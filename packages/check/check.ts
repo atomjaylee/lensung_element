@@ -30,14 +30,14 @@ const defaultProps: BaseCheckProps = {
 Component({
   props: defaultProps,
 
-  deriveDataFromProps({ value, identify, checked, groupId }) {
+  deriveDataFromProps({ value, identify, checked, groupId, size, disabled }) {
+    this.setData({ baseClass: this.wrapClasses({ size, disabled }) });
     if (groupId !== undefined) return;
     if (isObject(value)) {
       this.setData({ localChecked: checked[identify] === value[identify] });
     } else {
       this.setData({ localChecked: checked === value });
     }
-    this.setData({ baseClass: this.wrapClasses() });
   },
 
   data: {
@@ -67,8 +67,8 @@ Component({
   },
 
   methods: {
-    wrapClasses() {
-      const { size, disabled } = this.props;
+    wrapClasses(props) {
+      const { size, disabled } = props || this.props;
 
       const prefixCls = 'ls_check';
       return fmtClass({

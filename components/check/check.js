@@ -17,8 +17,16 @@ Component({
     value,
     identify,
     checked,
-    groupId
+    groupId,
+    size,
+    disabled
   }) {
+    this.setData({
+      baseClass: this.wrapClasses({
+        size,
+        disabled
+      })
+    });
     if (groupId !== undefined) return;
 
     if (isObject(value)) {
@@ -30,10 +38,6 @@ Component({
         localChecked: checked === value
       });
     }
-
-    this.setData({
-      baseClass: this.wrapClasses()
-    });
   },
 
   data: {
@@ -70,11 +74,11 @@ Component({
   },
 
   methods: {
-    wrapClasses() {
+    wrapClasses(props) {
       const {
         size,
         disabled
-      } = this.props;
+      } = props || this.props;
       const prefixCls = 'ls_check';
       return fmtClass({
         [`${prefixCls}-${size}`]: size,
