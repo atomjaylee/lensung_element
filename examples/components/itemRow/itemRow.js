@@ -67,7 +67,7 @@ Component({
       if (this.$alert) {
         this.$alert({
           isNew: true,
-          title: '失败原因',
+          title: this.props.errorPrefix,
           contentJustify: 'start',
           content: this.props.source.error
         });
