@@ -1,4 +1,6 @@
 <view class="ls_itemRow {{ source[disabledAttrName] ? 'ls_itemRowDisabled': '' }} {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}" onTap="onRowTapHandler">
+  <slot name="header" checked="{{ checked }}" item="{{ source }}" />
+
   <ls-flex>
 
     <view class="info-image">
@@ -28,7 +30,7 @@
   </ls-flex>
 
   <view class="error-tip" catchTap="onErrorTipClickHandler" a:if="{{ source.error }}">
-    <view class="tip-text">失败原因: {{ source.error }}</view>
+    <view class="tip-text">{{errorPrefix}}: {{ source.error }}</view>
     <view class="arrow-right"></view>
   </view>
 

@@ -6,7 +6,8 @@ const defaultProps = {
   checkByContent: false,
   disabledAttrName: 'disabled',
   imageSize: 'medium',
-  fillTitleHeight: false
+  fillTitleHeight: false,
+  errorPrefix: '失败原因'
 };
 Component({
   props: defaultProps,

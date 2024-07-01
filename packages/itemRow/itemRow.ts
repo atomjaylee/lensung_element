@@ -25,6 +25,7 @@ export interface BaseItemRowProps {
   tagClass?: string;
   fillTitleHeight?: boolean;
   imageSize?: 'medium' | 'large';
+  errorPrefix?: string;
   style?: string;
   onTap?: (e: tinyapp.IBaseEvent) => void;
 }
@@ -37,6 +38,7 @@ const defaultProps: BaseItemRowProps = {
   disabledAttrName: 'disabled',
   imageSize: 'medium',
   fillTitleHeight: false,
+  errorPrefix: '失败原因',
 };
 
 Component({
