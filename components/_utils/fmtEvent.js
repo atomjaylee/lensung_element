@@ -14,7 +14,9 @@ export default function fmtEvent(props, e) {
     },
     target: {
       dataset,
-      targetDataset: dataset
+      targetDataset: { ...(e.target.targetDataset || {}),
+        ...dataset
+      }
     }
   });
 }

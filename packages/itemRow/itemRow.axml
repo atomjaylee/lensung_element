@@ -1,26 +1,52 @@
-<view class="ls_itemRow {{ source[disabledAttrName] ? 'ls_itemRowDisabled': '' }} {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}" style="{{ style }}" onTap="onRowTapHandler">
+<view
+  class="ls_itemRow {{ source[disabledAttrName] ? 'ls_itemRowDisabled': '' }} {{ checked ? 'ls_itemRowActive' : '' }} {{ className }}"
+  style="{{ style }}"
+  onTap="onRowTapHandler"
+>
   <slot name="header" checked="{{ checked }}" item="{{ source }}" />
 
   <ls-flex>
 
     <view class="info-image">
-      <view class="check-wrap" data-nodeName="checkWrap" a:if="{{ showCheck }}">
-        <ls-check class="info-check" disabled="{{ source[disabledAttrName] }}" size="small" value="{{ source }}" groupId="{{ checkGroupId }}" identify="{{ checkIdentify }}" onChangeByGroup="onCheckChangeByGroup" ref="checkInstance"></ls-check>
+      <view a:if="{{ showCheck }}" class="check-wrap" data-nodeName="checkWrap">
+        <ls-check
+          class="info-check"
+          disabled="{{ source[disabledAttrName] }}"
+          size="small"
+          value="{{ source }}"
+          groupId="{{ checkGroupId }}"
+          identify="{{ checkIdentify }}"
+          onChangeByGroup="onCheckChangeByGroup"
+          ref="checkInstance"
+        >
+        </ls-check>
       </view>
       <view class="image-wrap">
         <slot name="image" checked="{{ checked }}" item="{{ source }}">
-          <image class="{{ `info-image-${imageSize}`}}" src="{{ source.pic_url }}" mode="aspectFill" default-source="https://img.alicdn.com/imgextra/i2/479769835/O1CN01th3vGv2MWTsRuzgkC_!!479769835.png" />
+          <image
+            class="{{ `info-image-${imageSize}`}}"
+            src="{{ source.pic_url }}"
+            mode="aspectFill"
+            default-source="https://img.alicdn.com/imgextra/i2/479769835/O1CN01th3vGv2MWTsRuzgkC_!!479769835.png"
+            data-nodeName="imageElement"
+          />
         </slot>
-        <ls-flex justify="center" class="info-tag {{ tagClass }}" a:if="{{ source.tag }}">{{ source.tag }}</ls-flex>
+        <ls-flex a:if="{{ source.tag }}" justify="center" class="info-tag {{ tagClass }}">
+          {{ source.tag }}
+        </ls-flex>
       </view>
     </view>
 
     <view class="info-content">
       <view class="content-title {{ fillTitleHeight ? 'title-fill' : '' }}">
         <slot name="title" checked="{{ checked }}" item="{{ source }}">
-          <view class="tag-module tag-xianYu" a:if="{{ source.stuff_status === 'unused' }}">闲鱼</view>
-          <view class="tag-module tag-xinPin" a:if="{{ source.is_xinpin }}">新品</view>
-          <view class="tag-module tag-paiMai" a:if="{{ source.type === 'auction' }}">拍卖</view>
+          <view a:if="{{ source.stuff_status === 'unused' }}" class="tag-module tag-xianYu">
+            闲鱼
+          </view>
+          <view a:if="{{ source.is_xinpin }}" class="tag-module tag-xinPin">新品</view>
+          <view a:if="{{ source.type === 'auction' }}" class="tag-module tag-paiMai">
+            拍卖
+          </view>
           <text checked="{{ checked }}">{{ source.title }}</text>
         </slot>
       </view>
@@ -29,7 +55,7 @@
 
   </ls-flex>
 
-  <view class="error-tip" catchTap="onErrorTipClickHandler" a:if="{{ source.error }}">
+  <view a:if="{{ source.error }}" class="error-tip" catchTap="onErrorTipClickHandler">
     <view class="tip-text">{{errorPrefix}}: {{ source.error }}</view>
     <view class="arrow-right"></view>
   </view>

@@ -8,7 +8,7 @@ export default function fmtEvent(props, e) {
   }
   return Object.assign({}, e, {
     currentTarget: { dataset },
-    target: { dataset, targetDataset: dataset },
+    target: { dataset, targetDataset: { ...(e.target.targetDataset || {}), ...dataset } },
   }) as tinyapp.IBaseEvent;
 }
 
