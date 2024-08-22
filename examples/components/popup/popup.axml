@@ -1,11 +1,33 @@
-<view class="ls_popup" style="z-index: {{ zIndex }}; {{ style }}" a:if="{{ visible }}" onAppear="onAppearHandler">
-  <view class="ls_popup-mask {{ contentVisible ? 'ls_popup-active' : '' }}" disable-scroll onTap="onMaskTapHandler" data-nodeName="mask" data-statistic="{{ statisticCancel }}"></view>
-  <view class="ls_popup-content {{ 'ls_popup-position_' + position }} {{ contentVisible ? 'ls_popup-active_' + position : '' }} {{ suppressRadius ? '' : 'ls_popup-radius_' + position }}" onTransitionEnd="onTransitionEndHandler">
-    <view class="ls_popup-content-title {{ showTitleBorder ? 'ls_popup-content-titleBorder' : '' }}" a:if="{{ title || $slots.title }}">
+<view
+  a:if="{{ visible }}"
+  class="ls_popup"
+  style="z-index: {{ zIndex }}; {{ style }}"
+  onAppear="onAppearHandler"
+>
+  <view
+    class="ls_popup-mask {{ contentVisible ? 'ls_popup-active' : '' }}"
+    disable-scroll
+    onTap="onMaskTapHandler"
+    data-nodeName="mask"
+    data-statistic="{{ statisticCancel }}"
+  >
+  </view>
+  <view
+    class="ls_popup-content {{ 'ls_popup-position_' + position }} {{ contentVisible ? 'ls_popup-active_' + position : '' }} {{ suppressRadius ? '' : 'ls_popup-radius_' + position }}"
+    onTransitionEnd="onTransitionEndHandler"
+    disable-scroll="{{ disableScroll}}"
+  >
+    <view a:if="{{ title || $slots.title }}" class="ls_popup-content-title {{ showTitleBorder ? 'ls_popup-content-titleBorder' : '' }}">
       <slot name="title">
         <view>{{ title }}</view>
       </slot>
-      <view class="css-close-icon" onTap="cancelHandler" data-statistic="{{ statisticCancel }}" hidden="{{ hiddenCloseIcon }}"></view>
+      <view
+        class="css-close-icon"
+        onTap="cancelHandler"
+        data-statistic="{{ statisticCancel }}"
+        hidden="{{ hiddenCloseIcon }}"
+      >
+      </view>
     </view>
     <slot></slot>
   </view>

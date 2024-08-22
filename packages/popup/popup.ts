@@ -12,6 +12,7 @@ export interface BasePopupProps {
   showTitleBorder?: boolean;
   hiddenCloseIcon?: boolean;
   statisticCancel?: string;
+  disableScroll?: boolean;
   onAfterClose?: () => void;
   onCancel?: () => void;
   onVisibleChange?: (visible: boolean) => void;
@@ -21,6 +22,7 @@ const defaultProps: BasePopupProps = {
   maskClosable: false,
   position: 'bottom',
   zIndex: 999,
+  disableScroll: false,
   suppressRadius: false,
   hiddenCloseIcon: false,
 };

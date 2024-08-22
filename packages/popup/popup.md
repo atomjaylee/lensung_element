@@ -60,6 +60,7 @@ methods: {
 | showTitleBorder | 是否显示 title 底部边框线 | `boolean`                          | `false`  | -    |
 | hiddenCloseIcon | 是否隐藏标题栏关闭按钮    | `boolean`                          | `false`  | -    |
 | maskClosable    | 点击遮罩是否关闭          | `boolean`                          | `false`  | -    |
+| disableScroll   | 是否禁止滚动内容区域      | `boolean`                          | `false`  | -    |
 | statisticCancel | 点击取消埋点标记          | `string`                           | -        | -    |
 
 ### Methods
