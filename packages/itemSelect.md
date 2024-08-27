@@ -89,6 +89,7 @@ toSelectItem() {
 | pageTitle                    | 跳转后页面标题                   | `string`  | `选择宝贝`                                                                                                   | 此参数仅适用于页面用法                                                                            |
 | isSingleMode                 | 是否进入单选模式                 | `boolean` | `false`                                                                                                      | -                                                                                                 |
 | clearCheckedWhenFilterChange | 是否筛选器变更后清空已选中的内容 | `boolean` | `true`                                                                                                       | -                                                                                                 |
+| headerTip                    | 页面顶部提示信息                 | `string`  | -                                                                                                            | -                                                                                                 |
 
 #### customFilterList Attributes
 
