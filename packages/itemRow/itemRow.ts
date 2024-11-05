@@ -89,12 +89,20 @@ Component({
 
     // 错误信息点击事件
     onErrorTipClickHandler() {
-      if (this.$alert) {
-        this.$alert({
+      if (this.$confirm) {
+        this.$confirm({
           isNew: true,
           title: this.props.errorPrefix,
           contentJustify: 'start',
           content: this.props.source.error,
+          cancelText: '复制失败原因',
+          onCancel: () => {
+            my.setClipboard({
+              text: this.props.source.error,
+              success: () => this.$toast('复制成功'),
+              fail: () => this.$toast('复制失败'),
+            });
+          },
         });
       }
     },
