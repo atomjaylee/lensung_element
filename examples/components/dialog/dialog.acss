@@ -60,6 +60,7 @@
 .ls_dialog-content_buttons {
   display: flex;
   height: 82rpx;
+  margin-top: 1rpx;
   border-top: 1rpx solid #e6e9ed;
 }
 .ls_dialog-content_buttons .ls_dialog-button-item {
