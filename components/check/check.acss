@@ -3,6 +3,7 @@
   box-sizing: border-box;
   border: 2rpx solid #c4c6cf;
   background-color: #fff;
+  overflow: hidden;
 }
 .ls_check-medium {
   width: 48rpx;
