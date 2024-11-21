@@ -2,7 +2,8 @@
 <view 
   class="ls_dialog {{ contentVisible ? 'ls_dialog-active' : '' }} {{ sjs.attr(propData, 'className', className) }}"
   style="z-index: {{ sjs.attr(propData, 'zIndex', zIndex) }}; transform: translateZ({{ sjs.attr(propData, 'zIndex', zIndex) }}px); {{ sjs.attr(propData, 'style', style) }}" 
-  a:if="{{ visible }}" 
+  a:if="{{ visible }}"
+  disable-scroll="{{ sjs.attr(propData, 'disableScroll', disableScroll) }}"
   onAppear="onAppearHandler" 
   onTap="onMaskTapHandler" 
   data-nodeName="mask">

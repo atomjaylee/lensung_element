@@ -25,6 +25,7 @@ interface BaseDialogProps {
   hiddenButtons?: boolean;
   statisticCancel?: string;
   statisticConfirm?: string;
+  disableScroll?: boolean;
   [propName: string]: any;
 }
 
@@ -39,6 +40,7 @@ const defaultProps: BaseDialogProps = {
   closable: false,
   maskClosable: false,
   hiddenButtons: false,
+  disableScroll: true,
 };
 
 const defaultData = {

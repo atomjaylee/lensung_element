@@ -9,7 +9,8 @@ const defaultProps = {
   cancelText: '取消',
   closable: false,
   maskClosable: false,
-  hiddenButtons: false
+  hiddenButtons: false,
+  disableScroll: true
 };
 const defaultData = {
   visible: false,
