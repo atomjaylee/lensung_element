@@ -7,11 +7,11 @@
 }
 .ls_check-medium {
   width: 48rpx;
-  height: 48rpx;
+  height: 49rpx;
 }
 .ls_check-small {
   width: 36rpx;
-  height: 36rpx;
+  height: 37rpx;
 }
 .ls_check-checked_check {
   position: relative;
