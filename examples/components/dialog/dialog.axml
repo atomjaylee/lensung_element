@@ -9,7 +9,7 @@
   data-nodeName="mask">
   <view class="ls_dialog-content {{ contentVisible ? 'ls_dialog-contentActive' : '' }}" onTransitionEnd="onTransitionEndHandler">
     <view class="ls_dialog-content_body">
-      <text class="content_close iconfont icon--close" a:if="{{ sjs.attr(propData, 'closable', closable) }}"></text>
+      <text class="content_close iconfont icon--close" a:if="{{ sjs.attr(propData, 'closable', closable) }}" onTap="onCancelHandler"></text>
       <view class="content_title" a:if="{{ sjs.attr(propData, 'title', title) }}">{{ sjs.attr(propData, 'title', title) }}</view>
       <view class="content_icon" a:if="{{ sjs.attr(propData, 'icon', icon) }}">
         <text class="iconfont {{ sjs.fmtIcon(propData['icon'] ? propData['icon'] : icon) }}"></text>
