@@ -1,12 +1,33 @@
-<popup ref="popup" maskClosable="{{ maskClosable }}" zIndex="{{ zIndex}}" style="{{ style }}" onAfterClose="onAfterCloseHandler" statisticCancel="{{ statisticCancel }}">
+<popup
+  ref="popup"
+  maskClosable="{{ maskClosable }}"
+  zIndex="{{ zIndex}}"
+  style="{{ style }}"
+  onAfterClose="onAfterCloseHandler"
+  statisticCancel="{{ statisticCancel }}"
+>
   <view class="ls_actionSheet-wrap {{ className }}">
-    <ls-flex justify="center" class="ls_actionSheet_tip" a:if="{{ tip }}">{{ tip }}</ls-flex>
+    <ls-flex a:if="{{ tip }}" justify="center" class="ls_actionSheet_tip">
+      {{ tip }}
+    </ls-flex>
     <view class="ls_actionSheet_options">
-      <ls-flex direction="column" justify="center" a:for="{{ schema }}" key="{{ item.key }}" class="option-item {{ item.key === value && 'option-item_active' }}" onTap="onSelectItemHandler" data-item="{{ item }}" data-statistic="{{ item.statistic }}">
+      <ls-flex
+        a:for="{{ schema }}"
+        direction="column"
+        justify="center"
+        key="{{ item.key }}"
+        class="option-item {{ item.key === value && 'option-item_active' }}"
+        onTap="onSelectItemHandler"
+        data-item="{{ item }}"
+        data-statistic="{{ item.statistic }}"
+        data-vipCode="{{ item.vipCode }}"
+      >
         <text class="item-label">{{ item.label }}</text>
         <text a:if="{{ item.desc }}" class="item-desc">{{ item.desc }}</text>
       </ls-flex>
     </view>
-    <ls-flex justify="center" class="ls_actionSheet_cancel" onTap="close" data-statistic="{{ statisticCancel }}">{{ cancelText }}</ls-flex>
+    <ls-flex justify="center" class="ls_actionSheet_cancel" onTap="close" data-statistic="{{ statisticCancel }}">
+      {{ cancelText }}
+    </ls-flex>
   </view>
 </popup>

@@ -5,6 +5,7 @@ type SchemaType = {
   key: string | number;
   desc?: string;
   statistic?: string;
+  vipCode?: string;
 };
 
 export interface BaseActionSheetProps {
