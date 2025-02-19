@@ -18,7 +18,6 @@ export interface BaseFlexProps {
   className?: string;
   style?: string;
   vipCode?: string;
-  statistic?: string;
   onTap?: (e: tinyapp.IBaseEvent) => void;
   onAppear?: (e: tinyapp.IBaseEvent) => void;
 }

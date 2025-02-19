@@ -5,7 +5,6 @@
   hidden="{{ hidden }}"
   style="{{ style }}"
   data-vip-code="{{ vipCode }}"
-  data-statistic="{{ statistic }}"
 >
   <slot></slot>
 </view>

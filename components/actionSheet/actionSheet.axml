@@ -19,7 +19,6 @@
         class="option-item {{ item.key === value && 'option-item_active' }}"
         onTap="onSelectItemHandler"
         data-item="{{ item }}"
-        data-statistic="{{ item.statistic }}"
         data-vipCode="{{ item.vipCode }}"
       >
         <text class="item-label">{{ item.label }}</text>

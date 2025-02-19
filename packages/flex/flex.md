@@ -44,6 +44,7 @@ Flex 是 CSS flex 布局的一个封装。
 | hidden       | 是否隐藏                   | `boolean`                                                     | `false`  | -    |
 | class        | 自定义样式类               | `string`                                                      | -        | -    |
 | style        | 自定义样式                 | `string`                                                      | -        | -    |
+| vipCode      | 高级版校验                 | `string`                                                      | -        | -    |
 
 ### Events
 
