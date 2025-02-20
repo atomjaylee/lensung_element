@@ -19,7 +19,7 @@
         class="option-item {{ item.key === value && 'option-item_active' }}"
         onTap="onSelectItemHandler"
         data-item="{{ item }}"
-        data-vipCode="{{ item.vipCode }}"
+        vipCode="{{ item.vipCode }}"
       >
         <text class="item-label">{{ item.label }}</text>
         <text a:if="{{ item.desc }}" class="item-desc">{{ item.desc }}</text>
