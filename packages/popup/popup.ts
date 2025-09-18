@@ -45,22 +45,28 @@ Component({
         this.__promise_resolve__();
         return;
       }
-      this.setData({ visible: false });
+      this.setData({ visible: false }, () => {
+        this.$instanceClose();
+        this.__promise_resolve__ = undefined;
+        this.__instance_closed__ = undefined;
+      });
       getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(false);
       getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
     },
 
-    show(options: BasePopupProps) {
+    async show(options: BasePopupProps) {
+      while (this.__instance_closed__) await this.__instance_closed__;
+      this.__instance_closed__ = new Promise((resolve) => (this.$instanceClose = resolve));
       return new Promise((resolve) => {
         this.__promise_resolve__ = resolve;
         this.setData({ visible: true, ...options });
-        getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(true);
+        getComponentAttr(this, 'onVisibleChange') &&
+          getComponentAttr(this, 'onVisibleChange')(true);
       });
     },
 
     close() {
       this.setData({ contentVisible: false });
-      this.__promise_resolve__ = undefined;
     },
 
     cancelHandler() {

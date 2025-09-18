@@ -29,12 +29,19 @@ Component({
 
       this.setData({
         visible: false
+      }, () => {
+        this.$instanceClose();
+        this.__promise_resolve__ = undefined;
+        this.__instance_closed__ = undefined;
       });
       getComponentAttr(this, 'onVisibleChange') && getComponentAttr(this, 'onVisibleChange')(false);
       getComponentAttr(this, 'onAfterClose') && getComponentAttr(this, 'onAfterClose')();
     },
 
-    show(options) {
+    async show(options) {
+      while (this.__instance_closed__) await this.__instance_closed__;
+
+      this.__instance_closed__ = new Promise(resolve => this.$instanceClose = resolve);
       return new Promise(resolve => {
         this.__promise_resolve__ = resolve;
         this.setData({
@@ -49,7 +56,6 @@ Component({
       this.setData({
         contentVisible: false
       });
-      this.__promise_resolve__ = undefined;
     },
 
     cancelHandler() {
